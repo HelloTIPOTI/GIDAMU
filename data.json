@@ -1,5 +1,26 @@
 [
   {
+    "title": "정의되지 않은 XX",
+    "artist": "애송",
+    "writer": "룽다",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "18",
+    "totalEp": "36",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3498025739",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1vRo9btoPpCr5lHbLx8btNWOiW5Gh00en",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1vRo9btoPpCr5lHbLx8btNWOiW5Gh00en"
+    ],
+    "favorite": false
+  },
+  {
     "title": "히든 엔딩을 생성 중입니다",
     "artist": "요노",
     "writer": "홈키퍼B",
