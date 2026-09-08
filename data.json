@@ -1,5 +1,26 @@
 [
   {
+    "title": "여름눈",
+    "artist": "안녕",
+    "writer": "유랑비",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "23",
+    "totalEp": "33",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5286000034",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1sj64Qp4DEMF8rR4AhzYNhqaM0bpwhubn",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1sj64Qp4DEMF8rR4AhzYNhqaM0bpwhubn"
+    ],
+    "favorite": false
+  },
+  {
     "title": "정의되지 않은 XX",
     "artist": "애송",
     "writer": "룽다",
