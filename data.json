@@ -1,5 +1,27 @@
 [
   {
+    "title": "릴리즈 유어 페르소나",
+    "artist": "이즈",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "19",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5103000290",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1dTKz5MTJa83ZCei_iq5mAUpE3pbe2tkc",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1dTKz5MTJa83ZCei_iq5mAUpE3pbe2tkc",
+      "https://lh3.googleusercontent.com/d/1-z8KibqwgBBB7hKbqQlgVArIC5FMDE6D"
+    ],
+    "favorite": false
+  },
+  {
     "title": "이세계 제자에게 납치당했다",
     "artist": "이크",
     "writer": "",
