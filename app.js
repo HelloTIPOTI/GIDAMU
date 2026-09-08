@@ -90,8 +90,6 @@ async function saveToGitHub(newData) {
     const errRes = await res.json();
     throw new Error("GitHub 저장 실패: " + (errRes.message || "알 수 없는 오류"));
   }
-  
-  alert("✨ GitHub 서버에 성공적으로 자동 저장되었습니다!");
 }
 
 /* ==========================================================
@@ -111,18 +109,15 @@ function toggleFavorite(title) {
   const item = ALL_DATA.find(i => i.title === title);
   if (!item) return;
 
-  // 상태 반전 (true/false)
   item.favorite = !item.favorite;
+  refreshUI();
+  if (currentView === 'fav') {
+    renderSubView(ALL_DATA.filter(i => i.favorite));
+  }
 
-  // 깃허브 서버에 즉시 동기화 저장
-  saveToGitHub(ALL_DATA).then(() => {
-    refreshUI();
-    if (currentView === 'fav') {
-      renderSubView(ALL_DATA.filter(i => i.favorite));
-    }
-  }).catch(e => {
+  // 💡 팝업 없이 백그라운드에서 조용히 깃허브 동기화
+  saveToGitHub(ALL_DATA).catch(e => {
     alert("즐겨찾기 서버 저장 실패: " + e.message);
-    // 실패 시 원래대로 복구
     item.favorite = !item.favorite;
     refreshUI();
   });
@@ -549,7 +544,6 @@ async function processSubmit() {
     await saveToGitHub(ALL_DATA);
     resetAdminForm();
     renderAdminList();
-    alert("완료되었습니다!");
   } catch(e) {
     alert(e.message);
   } finally {
