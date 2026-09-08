@@ -86,7 +86,7 @@ margin:14px 0 20px 0;
 
 .card-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill, minmax(150px, 2fr));
+grid-template-columns:repeat(auto-fill, minmax(150px, 3fr));
 gap:26px;
 
 justify-content:center; /* 🔥 추가 */
