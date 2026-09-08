@@ -1,5 +1,25 @@
 [
   {
+    "title": "성공지향적 가이드",
+    "artist": "이소나",
+    "writer": "박보율",
+    "day": "금",
+    "platform": [
+      "카카오"
+    ],
+    "currentEp": "42",
+    "totalEp": "42",
+    "startDate": "",
+    "endDate": "",
+    "note": "대여권 X",
+    "link": "https://page.kakao.com/content/65710177",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1C6ujZuGvdXPK3FxhdjIjGfwm_RRtOmSC",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1C6ujZuGvdXPK3FxhdjIjGfwm_RRtOmSC"
+    ]
+  },
+  {
     "title": "비엘로 빌런 탈출",
     "artist": "RK",
     "writer": "",
@@ -17,8 +37,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1Jxd3nwPO0sEEs2khzw2qcpb7QHo6DgFq",
     "images": [
       "https://lh3.googleusercontent.com/d/1Jxd3nwPO0sEEs2khzw2qcpb7QHo6DgFq"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "남주와 침대에서 뒹굴었다",
