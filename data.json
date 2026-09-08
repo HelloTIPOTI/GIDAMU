@@ -1,5 +1,28 @@
 [
   {
+    "title": "알파 스캔들",
+    "artist": "사공",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "5",
+    "totalEp": "53",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1561014484",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Z1zbfXndgOlBithKabuC7E-X__v_oicc",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Z1zbfXndgOlBithKabuC7E-X__v_oicc",
+      "https://lh3.googleusercontent.com/d/1kTMl1dTYNesW7Q3baZdqWxQdKTQxaChx",
+      "https://lh3.googleusercontent.com/d/1f8J20nfG-dptEAmCjHiE8Eo8pb0Wh8eA"
+    ],
+    "favorite": false
+  },
+  {
     "title": "아포리아(Aporia)",
     "artist": "선태",
     "writer": "",
