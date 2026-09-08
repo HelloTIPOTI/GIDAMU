@@ -1,5 +1,26 @@
 [
   {
+    "title": "나 말고 팬한테",
+    "artist": "시쿨",
+    "writer": "듀듀다다",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "22",
+    "totalEp": "41",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4799000352",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1EwY1akzsoDLFNZwn9GO_bVDbJ6qTIDEQ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1EwY1akzsoDLFNZwn9GO_bVDbJ6qTIDEQ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "소라의 눈",
     "artist": "썸머",
     "writer": "",
