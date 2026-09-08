@@ -1,5 +1,27 @@
 [
   {
+    "title": "100일 뒤 강공이 되는 남자",
+    "artist": "이안",
+    "writer": "",
+    "day": "수",
+    "platform": [
+      "카카오"
+    ],
+    "currentEp": "77",
+    "totalEp": "87",
+    "startDate": "",
+    "endDate": "",
+    "note": "3일무",
+    "link": "https://page.kakao.com/content/66971860",
+    "link2": "https://ridibooks.com/books/845049369",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1dZ8O3FbcxAepFjzDCjbubg239BKeKHFQ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1dZ8O3FbcxAepFjzDCjbubg239BKeKHFQ",
+      "https://lh3.googleusercontent.com/d/11gbcnwHi_IkaJ3mZdUZNqRdRq7qrfJIw"
+    ],
+    "favorite": false
+  },
+  {
     "title": "멜로합시다",
     "artist": "김첨지",
     "writer": "",
@@ -17,8 +39,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1DIZdKZGVefxWd89T8efLXso5fmbZxSWc",
     "images": [
       "https://lh3.googleusercontent.com/d/1DIZdKZGVefxWd89T8efLXso5fmbZxSWc"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "올 어바웃 유어 러브",
@@ -38,8 +59,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1USN3XivEyDaFOXPqvOOXOrTtl7RQEqGd",
     "images": [
       "https://lh3.googleusercontent.com/d/1USN3XivEyDaFOXPqvOOXOrTtl7RQEqGd"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "연습생",
@@ -59,8 +79,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1vmdVTtsxcTTh-heRSK-pujWGz8BcLYAU",
     "images": [
       "https://lh3.googleusercontent.com/d/1vmdVTtsxcTTh-heRSK-pujWGz8BcLYAU"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "목숨을 다해 꼬셔라",
@@ -81,8 +100,7 @@
     "images": [
       "https://lh3.googleusercontent.com/d/1l-kZl8-eBlSvjTUk7MkPa_SS-gmMvCoW",
       "https://lh3.googleusercontent.com/d/1s3xSrw1tovFF9HQLP_lVWEJKyRUxqwlR"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "유월의 느와르",
@@ -102,8 +120,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1KyXRejNyLFokn8_biUdJaiwrWR-ZdoBM",
     "images": [
       "https://lh3.googleusercontent.com/d/1KyXRejNyLFokn8_biUdJaiwrWR-ZdoBM"
-    ],
-    "favorite": false
+    ]
   },
   {
     "title": "가면극",
@@ -183,8 +200,7 @@
     "thumbnail": "https://lh3.googleusercontent.com/d/1Jxd3nwPO0sEEs2khzw2qcpb7QHo6DgFq",
     "images": [
       "https://lh3.googleusercontent.com/d/1Jxd3nwPO0sEEs2khzw2qcpb7QHo6DgFq"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "남주와 침대에서 뒹굴었다",
@@ -205,8 +221,7 @@
     "images": [
       "https://lh3.googleusercontent.com/d/1adpaLobXOHS2M7fQD7D8arB9fnk_3qu9",
       "https://lh3.googleusercontent.com/d/1gWZJ8qH_YOy0BSzgnmKxytUdNi5fVPqd"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "위아영",
