@@ -143,7 +143,6 @@ function switchView(viewName, param) {
     renderAdminList();
   } else if (viewName === "fav") {
     document.getElementById("view-sub").style.display = "block";
-    document.getElementById("subViewTitle").textContent = "♥ 즐겨찾기 작품";
     renderSubView(ALL_DATA.filter(item => getFavorites().includes(item.title)));
   } else if (viewName === "author") {
     document.getElementById("view-sub").style.display = "block";
@@ -151,7 +150,6 @@ function switchView(viewName, param) {
     renderSubView(ALL_DATA.filter(item => item.artist === param || item.writer === param));
   } else if (viewName === "list") {
     document.getElementById("view-sub").style.display = "block";
-    document.getElementById("subViewTitle").textContent = "작가 전체 리스트";
     renderAuthorList();
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
