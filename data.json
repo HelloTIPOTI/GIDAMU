@@ -1,5 +1,26 @@
 [
   {
+    "title": "메리 마블링",
+    "artist": "펭키",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "카카오"
+    ],
+    "currentEp": "68",
+    "totalEp": "145",
+    "startDate": "",
+    "endDate": "",
+    "note": "3일무, 대여권 2 / 17",
+    "link": "https://page.kakao.com/content/59955273",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1SSUgffHzIKbPKvV9fb94AYG_sI3-EfWS",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1SSUgffHzIKbPKvV9fb94AYG_sI3-EfWS",
+      "https://lh3.googleusercontent.com/d/191oE5NFsMcSnrVNhPVP67makrAESkJmk"
+    ]
+  },
+  {
     "title": "우렁강도",
     "artist": "펭키",
     "writer": "",
