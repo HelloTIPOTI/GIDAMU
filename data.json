@@ -1,5 +1,25 @@
 [
   {
+    "title": "연습생",
+    "artist": "마루",
+    "writer": "",
+    "day": "목",
+    "platform": [
+      "카카오"
+    ],
+    "currentEp": "54",
+    "totalEp": "59",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://webtoon.kakao.com/content/%EC%97%B0%EC%8A%B5%EC%83%9D/4463",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1vmdVTtsxcTTh-heRSK-pujWGz8BcLYAU",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1vmdVTtsxcTTh-heRSK-pujWGz8BcLYAU"
+    ]
+  },
+  {
     "title": "목숨을 다해 꼬셔라",
     "artist": "오청",
     "writer": "",
@@ -18,8 +38,7 @@
     "images": [
       "https://lh3.googleusercontent.com/d/1l-kZl8-eBlSvjTUk7MkPa_SS-gmMvCoW",
       "https://lh3.googleusercontent.com/d/1s3xSrw1tovFF9HQLP_lVWEJKyRUxqwlR"
-    ],
-    "favorite": true
+    ]
   },
   {
     "title": "유월의 느와르",
