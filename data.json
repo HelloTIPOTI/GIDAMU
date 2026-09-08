@@ -1,5 +1,27 @@
 [
   {
+    "title": "용이 비를 내리는 나라",
+    "artist": "썸머",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "168",
+    "totalEp": "180",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4443001621",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1miz2QfwPUEMHVA1kDfISKzCaAhkQfpwT",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1miz2QfwPUEMHVA1kDfISKzCaAhkQfpwT",
+      "https://lh3.googleusercontent.com/d/1blWXSxuVU1jYPgg_hcNF_iCekXv9Q42h"
+    ],
+    "favorite": false
+  },
+  {
     "title": "올림피언",
     "artist": "아나",
     "writer": "한여름",
