@@ -1,5 +1,28 @@
 [
   {
+    "title": "그가 있는 집",
+    "artist": "유하진",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "40",
+    "totalEp": "50",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1180014914",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1JPIdTwNYjGe9D1KshcgK9sUuo8miPAvW",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1JPIdTwNYjGe9D1KshcgK9sUuo8miPAvW",
+      "https://lh3.googleusercontent.com/d/13ePjpibwdYdeZAUFKJxbJv48rLXOMJMK",
+      "https://lh3.googleusercontent.com/d/1QzFeGGSA6Pvb_B7qlpA0O29fjWZsfSkX"
+    ],
+    "favorite": false
+  },
+  {
     "title": "일하고 싸우고 사랑하라(완전판)",
     "artist": "유하진",
     "writer": "",
