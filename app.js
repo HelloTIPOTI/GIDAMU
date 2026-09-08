@@ -516,14 +516,11 @@ async function processSubmit() {
   
   let images = [];
   if (rawInput) {
-    // 쉼표(,) 또는 줄바꿈 기준으로 여러 개를 분리
     images = rawInput.split(/,|\n/).map(link => {
       let cleanLink = link.trim();
       if (!cleanLink) return "";
 
-      // 💡 구글 드라이브 링크 패턴 감지 (Ctrl+C 복사 포함 다양한 형태 대응)
       if (cleanLink.includes("drive.google.com")) {
-        // /d/ 뒤에 오는 ID 혹은 id= 뒤에 오는 ID를 정규식으로 안전하게 추출
         const fileIdMatch = cleanLink.match(/\/d\/([a-zA-Z0-9_-]+)/) || cleanLink.match(/[?&]id=([a-zA-Z0-9_-]+)/);
         if (fileIdMatch && fileIdMatch[1]) {
           cleanLink = `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}`;
@@ -533,8 +530,10 @@ async function processSubmit() {
     }).filter(Boolean);
   }
 
-  // 첫 번째 이미지를 대표 썸네일로 사용, 나머지와 함께 배열로 저장
   const thumbnail = images.length > 0 ? images[0] : (editingIndex !== null ? ALL_DATA[editingIndex].thumbnail : "");
+
+  // 💡 [핵심 수정] 기존에 이미 있던 작품을 수정하는 경우, 기존의 하트(favorite) 상태를 가져와서 유지합니다!
+  const existingFavorite = (editingIndex !== null && ALL_DATA[editingIndex]) ? !!ALL_DATA[editingIndex].favorite : false;
 
   const newItem = {
     title,
@@ -550,7 +549,8 @@ async function processSubmit() {
     link: document.getElementById("admLink").value.trim(),
     link2: document.getElementById("admLink2").value.trim(),
     thumbnail,
-    images: images.length > 0 ? images : (editingIndex !== null ? (ALL_DATA[editingIndex].images || [thumbnail]) : [])
+    images: images.length > 0 ? images : (editingIndex !== null ? (ALL_DATA[editingIndex].images || [thumbnail]) : []),
+    favorite: existingFavorite // 💡 하트 풀림 방지 유지 속성 추가
   };
 
   if(editingIndex !== null) {
