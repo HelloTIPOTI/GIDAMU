@@ -71,14 +71,16 @@ async function saveToGitHub(newData) {
   }
 }
 
-// 실제 깃허브에 푸시를 날리는 내부 함수
+// 실제 깃허브에 푸시를 날리는 내부 함수 (캐시 방지 적용)
 async function executeSave(newData) {
   const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
   
   let sha = null;
   try {
+    // 💡 [핵심] 브라우저가 예전 SHA를 기억하지 못하도록 cache: 'no-store' 추가
     const checkRes = await fetch(url, {
-      headers: { Authorization: `token ${GITHUB_CONFIG.token}` }
+      headers: { Authorization: `token ${GITHUB_CONFIG.token}` },
+      cache: "no-store" 
     });
     if (checkRes.ok) {
       const checkJson = await checkRes.json();
