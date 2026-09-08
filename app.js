@@ -398,8 +398,26 @@ async function processSubmit() {
   if(!title) { alert("작품명을 입력하세요!"); return; }
 
   const platform = document.getElementById("admPlatform").value;
-  const imgName = document.getElementById("admImageNames").value.trim();
-  const thumbnail = imgName ? `file:///E:/Gidamu/${platform}/${imgName}` : (editingIndex !== null ? ALL_DATA[editingIndex].thumbnail : "");
+  const rawInput = document.getElementById("admImageNames").value.trim();
+  
+  let images = [];
+  if (rawInput) {
+    // 쉼표(,) 기준으로 여러 개의 링크를 분리
+    images = rawInput.split(',').map(link => {
+      let cleanLink = link.trim();
+      // 각각의 구글 드라이브 링크를 웹 표준 이미지 주소로 자동 변환
+      if (cleanLink.includes("drive.google.com")) {
+        const fileIdMatch = cleanLink.match(/\/d\/([a-zA-Z0-9_-]+)/) || cleanLink.match(/id=([a-zA-Z0-9_-]+)/);
+        if (fileIdMatch && fileIdMatch[1]) {
+          cleanLink = `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}`;
+        }
+      }
+      return cleanLink;
+    }).filter(Boolean);
+  }
+
+  // 첫 번째 이미지를 대표 썸네일로 사용, 나머지와 함께 배열로 저장
+  const thumbnail = images.length > 0 ? images[0] : (editingIndex !== null ? ALL_DATA[editingIndex].thumbnail : "");
 
   const newItem = {
     title,
@@ -415,7 +433,7 @@ async function processSubmit() {
     link: document.getElementById("admLink").value.trim(),
     link2: document.getElementById("admLink2").value.trim(),
     thumbnail,
-    images: thumbnail ? [thumbnail] : []
+    images: images.length > 0 ? images : (editingIndex !== null ? (ALL_DATA[editingIndex].images || [thumbnail]) : [])
   };
 
   if(editingIndex !== null) {
@@ -437,6 +455,7 @@ async function processSubmit() {
   }
 }
 
+// 기존 작품을 수정하려고 불러올 때 여러 장의 이미지 링크를 다시 input에 채워주는 함수
 function loadItemToEdit(index) {
   editingIndex = index;
   const item = ALL_DATA[index];
@@ -452,7 +471,10 @@ function loadItemToEdit(index) {
   document.getElementById("admNote").value = item.note || "";
   document.getElementById("admLink").value = item.link || "";
   document.getElementById("admLink2").value = item.link2 || "";
-  document.getElementById("admImageNames").value = item.thumbnail ? item.thumbnail.split("/").pop() : "";
+  
+  // 저장된 이미지 배열이 있다면 쉼표로 이어붙여서 input에 표시
+  document.getElementById("admImageNames").value = (item.images && item.images.length > 0) ? item.images.join(", ") : (item.thumbnail || "");
+  
   document.getElementById("adminPanelTitle").textContent = "작품 수정";
   document.getElementById("admSubmitBtn").textContent = "수정사항 GitHub 반영하기";
 }
