@@ -1,5 +1,27 @@
 [
   {
+    "title": "시에라 투 줄리엣",
+    "artist": "유자소금",
+    "writer": "사틴",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "60",
+    "totalEp": "70",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/845048561",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1iaqk10_B2D60qfLE8br3lpjaFzn9DRQ3",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1iaqk10_B2D60qfLE8br3lpjaFzn9DRQ3",
+      "https://lh3.googleusercontent.com/d/17igB7o0x1AXLK5YyCtEOSFK_q1CUmYbB"
+    ],
+    "favorite": false
+  },
+  {
     "title": "그가 있는 집",
     "artist": "유하진",
     "writer": "",
