@@ -1,5 +1,26 @@
 [
   {
+    "title": "사일런트 위시",
+    "artist": "이소록",
+    "writer": "바밀씨",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "30",
+    "totalEp": "30",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5265000463",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1AGolBRoXq4iKWDYWxpLQU-uPgs8cCu__",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1AGolBRoXq4iKWDYWxpLQU-uPgs8cCu__"
+    ],
+    "favorite": false
+  },
+  {
     "title": "문학소년",
     "artist": "이영고",
     "writer": "김손",
