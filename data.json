@@ -1,5 +1,26 @@
 [
   {
+    "title": "쪼가리",
+    "artist": "뽀도",
+    "writer": "페시케이",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "36",
+    "totalEp": "62",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3093001262",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/13mkrPxhR2NF2AGMBXwplLYgeCvEtVooN",
+    "images": [
+      "https://lh3.googleusercontent.com/d/13mkrPxhR2NF2AGMBXwplLYgeCvEtVooN"
+    ],
+    "favorite": false
+  },
+  {
     "title": "알파 스캔들",
     "artist": "사공",
     "writer": "",
