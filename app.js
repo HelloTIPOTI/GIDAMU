@@ -651,3 +651,27 @@ document.getElementById("brandTitle")?.addEventListener("click", () => switchVie
 
 // 최초 실행
 initData();
+
+/* ==========================================================
+   7. 초기화 버튼
+   ========================================================== */
+// 초기화 버튼 기능 구현
+document.getElementById("resetBtn")?.addEventListener("click", () => {
+  // 1. 검색어 입력창 비우기
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) searchInput.value = "";
+
+  // 2. 필터 상태(카테고리, 플랫폼, 검색어) 초기화
+  currentState = { search: "", categories: [], platform: [] };
+  
+  // 3. 보여지는 개수 초기화 및 UI 새로고침
+  visibleCount = 50;
+  refreshUI();
+});
+
+// 실시간 검색어 입력 연동 (혹시 빠져있다면 함께 확인)
+document.getElementById("searchInput")?.addEventListener("input", (e) => {
+  currentState.search = e.target.value;
+  visibleCount = 50;
+  refreshUI();
+});
