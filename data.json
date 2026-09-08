@@ -1,5 +1,27 @@
 [
   {
+    "title": "백일야화",
+    "artist": "지서",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "82",
+    "totalEp": "106",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1518000243",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1RaEI65vtrdm1Ayk8UTmCoZbbK86cHNNe",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1RaEI65vtrdm1Ayk8UTmCoZbbK86cHNNe",
+      "https://lh3.googleusercontent.com/d/1QXoZ1Z1y6IVbSh_X0_rRS91oXTBL_xV1"
+    ],
+    "favorite": false
+  },
+  {
     "title": "나이트 오브 런던",
     "artist": "차이원",
     "writer": "하유",
