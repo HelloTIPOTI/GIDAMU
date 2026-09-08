@@ -1,5 +1,26 @@
 [
   {
+    "title": "문학소년",
+    "artist": "이영고",
+    "writer": "김손",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "40",
+    "totalEp": "65",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1434011398",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1AaUDFzNJJPxoNNQXM2ClO6hSVObMm1DL",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1AaUDFzNJJPxoNNQXM2ClO6hSVObMm1DL"
+    ],
+    "favorite": false
+  },
+  {
     "title": "릴리즈 유어 페르소나",
     "artist": "이즈",
     "writer": "",
