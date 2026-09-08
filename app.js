@@ -393,20 +393,61 @@ function updateSlideView() {
 function renderSubView(list) {
   const wrap = document.getElementById("subCards");
   const count = document.getElementById("subResultCount");
+  if (!wrap) return;
+
   wrap.innerHTML = "";
   count.textContent = `${list.length}개 작품`;
+  const favList = getFavorites();
 
   list.forEach(item => {
+    const isFav = favList.includes(item.title);
+    const dday = getDDay(item.endDate);
+    const platform = (item.platform || [])[0] || "";
+    const platformClass = platform.replace(/[()\s]/g, "");
+    const rawDay = (item.day || "").replace(/\s/g, "");
+    const dayClass = rawDay.match(/^\d/) ? "d" + rawDay : rawDay;
+
     const card = document.createElement("div");
     card.className = "card";
+    // 💡 메인(H) 페이지 카드와 100% 동일한 HTML 구조 적용
     card.innerHTML = `
-      <div class="thumb-wrap"><img class="card-thumb" src="${item.thumbnail || ''}"></div>
+      <div class="fav-btn ${isFav ? "active" : ""}"></div>
+      <div class="thumb-wrap">
+        <img class="card-thumb" src="${item.thumbnail || ''}">
+        ${platform ? `<div class="platform-badge ${platformClass}">${platform}</div>` : ""}
+        ${item.day ? `<div class="day-badge ${dayClass}">${item.day}</div>` : ""}
+      </div>
       <div class="card-body">
-        <div class="card-title">${item.title}</div>
-        <div class="card-author">${item.artist || ""}</div>
+        <div class="card-title">${item.title || ""}</div>
+        <div class="card-author">
+          <span class="author-click" data-name="${item.artist}">${item.artist || ""}</span>
+          ${item.artist && item.writer ? " / " : ""}
+          <span class="author-click" data-name="${item.writer}">${item.writer || ""}</span>
+        </div>
+        <div class="card-author">${item.currentEp || ""} / ${item.totalEp || ""}</div>
+        ${dday ? `<div class="dday">${dday}</div>` : ""}
+        ${item.note ? `<div class="card-note">${item.note}</div>` : ""}
+        ${item.link ? `<div class="link-circle link1" data-link="${item.link}"></div>` : ""}
+        ${item.link2 ? `<div class="link-circle link2" data-link="${item.link2}"></div>` : ""}
+        <div class="edit-circle" data-title="${item.title}"></div>
       </div>
     `;
+
+    // 메인 페이지와 동일한 클릭 이벤트 연결
     card.onclick = () => switchView('detail', item);
+    card.querySelector(".fav-btn").onclick = (e) => { e.stopPropagation(); toggleFavorite(item.title); refreshUI(); if(currentView === 'fav') renderSubView(ALL_DATA.filter(i => getFavorites().includes(i.title))); };
+    card.querySelectorAll(".author-click").forEach(el => {
+      el.onclick = (e) => { e.stopPropagation(); if(el.dataset.name) switchView('author', el.dataset.name); };
+    });
+    card.querySelectorAll(".link-circle").forEach(el => {
+      el.onclick = (e) => { e.stopPropagation(); window.open(el.dataset.link, "_blank"); };
+    });
+    card.querySelector(".edit-circle").onclick = (e) => {
+      e.stopPropagation();
+      const idx = ALL_DATA.findIndex(i => i.title === item.title);
+      if(idx > -1) { switchView('admin'); loadItemToEdit(idx); }
+    };
+
     wrap.appendChild(card);
   });
 }
