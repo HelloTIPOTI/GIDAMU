@@ -1,5 +1,26 @@
 [
   {
+    "title": "배드 플랜",
+    "artist": "티티",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "40",
+    "totalEp": "57",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3086001625",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1EnBxVE37eeS9HhRGH9ck12fCn7oXalLN",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1EnBxVE37eeS9HhRGH9ck12fCn7oXalLN"
+    ],
+    "favorite": false
+  },
+  {
     "title": "자취지화",
     "artist": "해진",
     "writer": "",
