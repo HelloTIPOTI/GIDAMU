@@ -1,5 +1,26 @@
 [
   {
+    "title": "히든 엔딩을 생성 중입니다",
+    "artist": "요노",
+    "writer": "홈키퍼B",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "41",
+    "totalEp": "62",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1716002266",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1mNotApv2RwTmqXbN4L1NuT99j1fyxaX7",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1mNotApv2RwTmqXbN4L1NuT99j1fyxaX7"
+    ],
+    "favorite": false
+  },
+  {
     "title": "폭군의 재상",
     "artist": "용태",
     "writer": "",
