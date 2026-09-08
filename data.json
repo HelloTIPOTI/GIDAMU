@@ -1,5 +1,27 @@
 [
   {
+    "title": "나이트 오브 런던",
+    "artist": "차이원",
+    "writer": "하유",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "12",
+    "totalEp": "73",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3086001311",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1JqNXy9PK5o0NRsZD1Ne2cJK224kKjVKj",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1JqNXy9PK5o0NRsZD1Ne2cJK224kKjVKj",
+      "https://lh3.googleusercontent.com/d/1tKFaRNoNJbOaGcDiFcK-zG_l7xw1lfvb"
+    ],
+    "favorite": false
+  },
+  {
     "title": "캔디 계약서",
     "artist": "케원",
     "writer": "앰버",
