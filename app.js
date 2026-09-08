@@ -104,18 +104,28 @@ async function initData() {
 }
 
 function getFavorites() {
-  return JSON.parse(localStorage.getItem("gidamu_favorites") || "[]");
+  return ALL_DATA.filter(item => item.favorite).map(item => item.title);
 }
 
 function toggleFavorite(title) {
-  let fav = getFavorites();
-  if (fav.includes(title)) {
-    fav = fav.filter(t => t !== title);
-  } else {
-    fav.push(title);
-  }
-  localStorage.setItem("gidamu_favorites", JSON.stringify(fav));
-  refreshUI();
+  const item = ALL_DATA.find(i => i.title === title);
+  if (!item) return;
+
+  // 상태 반전 (true/false)
+  item.favorite = !item.favorite;
+
+  // 깃허브 서버에 즉시 동기화 저장
+  saveToGitHub(ALL_DATA).then(() => {
+    refreshUI();
+    if (currentView === 'fav') {
+      renderSubView(ALL_DATA.filter(i => i.favorite));
+    }
+  }).catch(e => {
+    alert("즐겨찾기 서버 저장 실패: " + e.message);
+    // 실패 시 원래대로 복구
+    item.favorite = !item.favorite;
+    refreshUI();
+  });
 }
 
 function getDDay(endDate) {
