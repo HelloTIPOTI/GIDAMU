@@ -26,7 +26,7 @@ let currentState = { search: "", categories: [], platform: [] };
 let visibleCount = 50;
 
 /* ==========================================================
-   1. GitHub API 연동 (불러오기 & 저장하기)
+   1. GitHub API 연동 (불러오기 & 저장하기 - 큐 시스템 적용)
    ========================================================== */
 
 // GitHub 서버에서 data.json 가져오기
@@ -39,7 +39,6 @@ async function fetchFromGitHub() {
     if (!res.ok) throw new Error("GitHub 데이터를 불러오지 못했습니다.");
     const json = await res.json();
     
-    // GitHub API는 내용을 Base64로 인코딩해서 주므로 디코딩 필요
     const decodedContent = decodeURIComponent(escape(atob(json.content)));
     return { data: JSON.parse(decodedContent), sha: json.sha };
   } catch (err) {
@@ -48,11 +47,34 @@ async function fetchFromGitHub() {
   }
 }
 
-// GitHub 서버에 데이터 저장하기 (자동 Commit & Push)
+// 💡 깃허브 저장 요청이 겹치지 않게 순차적으로 처리하는 큐 변수들
+let isSavingToGitHub = false;
+let saveQueue = null;
+
 async function saveToGitHub(newData) {
+  if (isSavingToGitHub) {
+    saveQueue = newData; // 이미 저장 중이면 가장 최신 데이터로 대기열에 등록
+    return;
+  }
+
+  isSavingToGitHub = true;
+  try {
+    await executeSave(newData);
+    // 대기 중인 데이터가 있다면 순차적으로 마저 저장
+    while (saveQueue) {
+      const nextData = saveQueue;
+      saveQueue = null;
+      await executeSave(nextData);
+    }
+  } finally {
+    isSavingToGitHub = false;
+  }
+}
+
+// 실제 깃허브에 푸시를 날리는 내부 함수
+async function executeSave(newData) {
   const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
   
-  // 1. 최신 파일의 SHA 값을 가져옴 (충돌 방지용)
   let sha = null;
   try {
     const checkRes = await fetch(url, {
@@ -66,10 +88,8 @@ async function saveToGitHub(newData) {
     console.warn("SHA 조회 생략 (신규 파일 생성 가능성)");
   }
 
-  // 2. 데이터를 Base64로 인코딩
   const contentEncoded = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
 
-  // 3. PUT 요청으로 GitHub에 푸시
   const bodyData = {
     message: "Update GIDAMU data via Web App",
     content: contentEncoded,
