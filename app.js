@@ -402,12 +402,15 @@ async function processSubmit() {
   
   let images = [];
   if (rawInput) {
-    // 쉼표(,) 기준으로 여러 개의 링크를 분리
-    images = rawInput.split(',').map(link => {
+    // 쉼표(,) 또는 줄바꿈 기준으로 여러 개를 분리
+    images = rawInput.split(/,|\n/).map(link => {
       let cleanLink = link.trim();
-      // 각각의 구글 드라이브 링크를 웹 표준 이미지 주소로 자동 변환
+      if (!cleanLink) return "";
+
+      // 💡 구글 드라이브 링크 패턴 감지 (Ctrl+C 복사 포함 다양한 형태 대응)
       if (cleanLink.includes("drive.google.com")) {
-        const fileIdMatch = cleanLink.match(/\/d\/([a-zA-Z0-9_-]+)/) || cleanLink.match(/id=([a-zA-Z0-9_-]+)/);
+        // /d/ 뒤에 오는 ID 혹은 id= 뒤에 오는 ID를 정규식으로 안전하게 추출
+        const fileIdMatch = cleanLink.match(/\/d\/([a-zA-Z0-9_-]+)/) || cleanLink.match(/[?&]id=([a-zA-Z0-9_-]+)/);
         if (fileIdMatch && fileIdMatch[1]) {
           cleanLink = `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}`;
         }
