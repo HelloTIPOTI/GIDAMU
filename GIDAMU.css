@@ -987,3 +987,84 @@ margin-bottom:25px;
 .admin-search-wrap .reset-btn{
   white-space:nowrap;
 }
+
+/* ==========================================================
+   📱 모바일 반응형 스타일 (화면 너비 768px 이하)
+   ========================================================== */
+@media screen and (max-width: 768px) {
+  /* 전체 페이지 여백 조절 */
+  .page {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  /* 헤더 영역 컴팩트하게 조정 */
+  .site-header {
+    padding: 10px 15px;
+  }
+  .brand {
+    font-size: 18px;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .circle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* 메인 카드 그리드: 모바일에서는 2열 또는 1열로 촘촘하게 배치 */
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  /* 카드 내부 크기 조정 */
+  .card {
+    border-radius: 6px;
+  }
+  .card-body {
+    padding: 8px;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+  .card-author {
+    font-size: 12px;
+  }
+
+  /* 상세 페이지 그리드: 모바일에서는 위아래로 쌓이도록 변경 */
+  .detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+  
+  /* 상세 페이지 정보 글씨 크기 조정 */
+  .detail-title {
+    font-size: 20px;
+  }
+  .meta-item {
+    font-size: 13px;
+  }
+
+  /* 관리자 입력 폼 세로로 길게 정렬 */
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .admin-form input, 
+  .admin-form select, 
+  .admin-form button {
+    width: 100% !important;
+    grid-column: span 1 !important;
+  }
+
+  /* 필터 박스 영역 크기 조절 */
+  .filter-box {
+    padding: 10px;
+  }
+  .search-input {
+    font-size: 13px;
+  }
+}
