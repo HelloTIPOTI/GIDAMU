@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BL.T GIDAMU (GitHub Sync)</title>
+<link rel="stylesheet" href="GIDAMU.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand" id="brandTitle" style="cursor:pointer;">BL.T GIDAMU</div>
+  <div class="header-actions">
+    <button class="circle-btn home-circle" onclick="switchView('home')"></button>
+    <button class="circle-btn fav-circle" onclick="switchView('fav')"></button>
+    <button class="circle-btn list-circle" onclick="switchView('list')"></button>
+    <button class="circle-btn admin-circle" onclick="switchView('admin')"></button>
+  </div>
+</header>
+
+<div class="page">
+  
+  <!-- 1. 메인 화면 (목록 & 필터) -->
+  <div id="view-home" class="view-section">
+    <div class="filter-box">
+      <div class="filter-row">
+        <div id="categoryFilter" class="pill-row"></div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">플랫폼</div>
+        <div id="tagFilter" class="pill-row"></div>
+      </div>
+      <div class="filter-search-row">
+        <div class="filter-label">검색</div>
+        <input id="searchInput" class="search-input" placeholder="제목 / 작가 검색">
+        <button id="resetBtn" class="reset-btn">초기화</button>
+      </div>
+    </div>
+    <div id="resultCount" class="result-count"></div>
+    <div id="cards" class="card-grid"></div>
+    <div class="loadmore-wrap">
+      <button id="loadMoreBtn" class="loadmore-btn" style="display:none;">더보기</button>
+    </div>
+  </div>
+
+  <!-- 2. 상세 화면 -->
+  <div id="view-detail" class="view-section" style="display:none;">
+    <div class="detail-wrap">
+      <span class="back-link" onclick="switchView('home')" style="cursor:pointer;">← 목록으로 돌아가기</span>
+      <span class="detail-edit-text" id="detailEditBtn" style="cursor:pointer;">수정하기 →</span>
+      <div class="detail-grid" style="margin-top:20px;">
+        <div class="thumb-wrap" id="detailThumbWrap">
+          <img id="detailThumb" class="detail-cover" src="">
+        </div>
+        <div>
+          <div id="detailTitle" class="detail-title"></div>
+          <div class="meta-item"><div class="meta-label">플랫폼</div><div class="meta-value" id="detailPlatform"></div></div>
+          <div class="meta-item"><div class="meta-label">작가</div><div class="meta-value" id="detailAuthor"></div></div>
+          <div class="meta-item"><div class="meta-label">요일</div><div class="meta-value" id="detailDay"></div></div>
+          <div class="meta-item"><div class="meta-label">회차</div><div class="meta-value" id="detailEp"></div></div>
+          <div class="meta-item" id="detailDateWrap"><div class="meta-label">기간</div><div class="meta-value" id="detailDate"></div></div>
+          <div class="meta-item" id="detailNoteWrap"><div class="meta-label">비고</div><div class="meta-value" id="detailNote"></div></div>
+          <div class="meta-item" id="detailLink1Wrap"><div class="meta-label">링크</div><div class="meta-value" id="detailLink1"></div></div>
+          <div class="meta-item" id="detailLink2Wrap"><div class="meta-label">링크2</div><div class="meta-value" id="detailLink2"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 관리자 화면 -->
+  <div id="view-admin" class="view-section" style="display:none;">
+    <div class="admin-panel">
+      <div class="admin-title" id="adminPanelTitle">작품 추가</div>
+      <div class="admin-form">
+        <input id="admTitle" placeholder="작품명 *">
+        <input id="admArtist" placeholder="그림작가">
+        <input id="admWriter" placeholder="스토리작가">
+        
+        <select id="admDay" class="admin-select">
+          <option value="">요일 선택</option>
+          <option value="월">월</option><option value="화">화</option><option value="수">수</option><option value="목">목</option><option value="금">금</option><option value="토">토</option><option value="일">일</option>
+          <option value="1일">1일</option><option value="2일">2일</option><option value="3일">3일</option><option value="4일">4일</option><option value="5일">5일</option><option value="6일">6일</option><option value="7일">7일</option><option value="8일">8일</option><option value="9일">9일</option><option value="10일">10일</option>
+          <option value="기타">기타</option><option value="완결">완결</option>
+        </select>
+
+        <select id="admPlatform" class="admin-select">
+          <option value="">플랫폼 선택</option>
+          <option value="카카오">카카오</option><option value="리디">리디</option><option value="시리즈">시리즈</option><option value="미블">미블</option><option value="마녀">마녀</option><option value="웹소(카카오)">웹소(카카오)</option><option value="웹소(리디)">웹소(리디)</option>
+        </select>
+
+        <input id="admCurrentEp" placeholder="본 회차">
+        <input id="admTotalEp" placeholder="총 회차">
+        <input id="admStartDate" type="date">
+        <input id="admEndDate" type="date">
+        <input id="admNote" placeholder="비고">
+        <input id="admLink" placeholder="링크 1">
+        <input id="admLink2" placeholder="링크 2">
+        <input id="admImageNames" placeholder="이미지 파일명 (예: cover.jpg)">
+        
+        <button id="admSubmitBtn" onclick="processSubmit()" style="grid-column: span 3;">+ 작품 추가 (GitHub 실시간 저장)</button>
+      </div>
+
+      <div class="admin-title" style="margin-top:30px;">등록된 작품 관리</div>
+      <div class="admin-search-wrap">
+        <input type="text" id="admSearch" class="search-input" placeholder="작품명 / 작가 검색">
+        <button type="button" onclick="document.getElementById('admSearch').value=''; renderAdminList();" class="reset-btn">초기화</button>
+      </div>
+      <div id="admResultCount" class="result-count"></div>
+      <div id="admListContainer"></div>
+    </div>
+  </div>
+
+  <!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
+  <div id="view-sub" class="view-section" style="display:none;">
+    <span class="back-link" onclick="switchView('home')" style="cursor:pointer;">← 돌아가기</span>
+    <h2 id="subViewTitle" style="margin-bottom:15px;"></h2>
+    <div id="subResultCount" class="result-count"></div>
+    <div id="subCards" class="card-grid"></div>
+  </div>
+
+</div>
+
+<!-- 스크롤 버튼 -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲</button>
+<button id="scrollBottomBtn" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">▼</button>
+
+<script src="app.js"></script>
+</body>
+</html>

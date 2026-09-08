@@ -1,0 +1,989 @@
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body{
+font-family:'Pretendard',sans-serif;
+margin:0;
+background:#f6f6f8;
+color:#111;
+overflow-y:scroll; /* 🔥 추가 */
+}
+
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+
+.site-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 40px;
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.brand{
+font-size:22px;
+font-weight:800;
+color:#FF6B9A;
+}
+
+.header-actions{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.search-input{
+padding:9px 14px;
+border-radius:14px;
+border:1px solid #ddd;
+font-size:14px;
+width:220px;
+}
+
+/* PAGE */
+
+.page{
+max-width:1200px;
+margin:auto;
+padding:30px 40px;
+}
+
+/* FILTER */
+
+.pill-row{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:10px;
+}
+
+.pill{
+border:1px solid #e2e2e2;
+background:white;
+padding:6px 12px;
+border-radius:999px;
+font-size:13px;
+cursor:pointer;
+}
+
+.pill.active{
+background:#FF6B9A;
+color:white;
+border:1px solid rgba(0,0,0,0.05);
+}
+
+/* RESULT */
+
+.result-count{
+font-size:13px;
+color:#777;
+margin:14px 0 20px 0;
+}
+
+/* CARDS */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,200px);
+gap:26px;
+
+justify-content:center; /* 🔥 추가 */
+}
+
+.card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 6px 22px rgba(0,0,0,0.06);
+transition:.18s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-thumb{
+width:100%;
+aspect-ratio:2/3;
+object-fit:cover;
+background:#eee;
+}
+
+.card-body{padding:12px;}
+
+.card-body > div{
+  margin-top:6px;
+}
+
+.card-body > div:first-child{
+  margin-top:0;
+}
+
+.card-title{
+font-size:15px;
+font-weight:700;
+margin-bottom:4px;
+}
+
+.card-author{
+font-size:12px;
+color:#777;
+}
+
+.dday{
+  font-size:12px;
+  color:#777;
+}
+
+.dday.urgent{
+  font-weight:500;
+  animation: rainbowBlink 1s infinite;
+}
+
+@keyframes rainbowBlink{
+  0%{
+    color:#ff0000;
+  }
+  20%{
+    color:#ff8800;
+  }
+  40%{
+    color:#ffff00;
+  }
+  60%{
+    color:#00ff00;
+  }
+  80%{
+    color:#00ccff;
+  }
+  100%{
+    color:#ff00ff;
+  }
+}
+
+.card-rating{
+color:#e02424;
+font-size:13px;
+margin-top:4px;
+font-weight:600;
+}
+
+.tag{
+background:#f0f0f0;
+border-radius:8px;
+padding:3px 6px;
+font-size:11px;
+margin-right:4px;
+}
+
+/* LOAD MORE */
+
+.loadmore-wrap{
+text-align:center;
+margin-top:30px;
+}
+
+.loadmore-btn{
+padding:10px 18px;
+border-radius:12px;
+border:1px solid #ddd;
+background:white;
+cursor:pointer;
+}
+
+/* DETAIL */
+
+.detail-wrap{
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 6px 22px rgba(0,0,0,0.06);
+}
+
+.back-link{
+display:inline-block;
+margin-bottom:24px;
+font-size:14px;
+color:#666;
+}
+
+.detail-grid{
+display:grid;
+grid-template-columns:320px 1fr;
+gap:40px;
+}
+
+.detail-cover{
+width:100%;
+aspect-ratio:2/3;
+object-fit:cover;
+border-radius:14px;
+}
+
+.detail-title{
+font-size:28px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.meta-item{
+display:flex;
+gap:10px;
+margin-bottom:10px;
+}
+
+.meta-label{
+min-width:40px;
+font-weight:700;
+color:#555;
+font-size:14px;
+}
+
+.meta-value{
+  font-size:14px;
+}
+
+.meta-item > div:last-child{
+  font-size:14px;
+}
+
+.detail-star{
+color:#e02424;
+font-weight:700;
+}
+
+/* ADMIN */
+
+.admin-panel{
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 6px 22px rgba(0,0,0,0.06);
+}
+
+.admin-title{
+font-size:24px;
+font-weight:800;
+margin-bottom:16px;
+}
+
+.admin-form{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-bottom:20px;
+}
+
+.admin-form input{
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.admin-form button{
+padding:10px;
+border:0;
+border-radius:10px;
+background:#111;
+color:white;
+cursor:pointer;
+}
+
+/* ===== ADMIN SELECT 스타일 ===== */
+.admin-form select{
+  width:100%;
+
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:14px;
+  background:#f6f6f8;
+
+  /* 🔥 핵심 (아이콘) */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:16px;
+
+  padding-right:30px;
+
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  cursor:pointer;
+}
+
+.json-output{
+width:100%;
+height:120px;
+border:1px solid #ccc;
+border-radius:10px;
+padding:10px;
+font-family:monospace;
+margin-bottom:25px;
+}
+
+/* 카드 비고 (말줄임) */
+.card-note{
+  font-size:12px;
+  color:#FF6B9A;
+  margin-top:4px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* 슬라이드 버튼 */
+.slide-wrap{
+  position:relative;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+  border:none;
+
+  background:rgba(0,0,0,0.4);
+  color:white;
+  font-size:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.slide-btn:hover{
+  background:rgba(0,0,0,0.7);
+}
+
+.slide-prev{
+  left:10px;
+}
+
+.slide-next{
+  right:10px;
+}
+
+/* 메인 페이지 작가 버튼 */
+.author-link{cursor:pointer;text-decoration:none;color:inherit;}
+
+.author-link:hover{
+  opacity:0.7;
+}
+
+/* 🔥 time 카드용 작가 링크 */
+.card-author-link{
+  cursor:pointer;
+}
+
+/* 작가 페이지 */
+#list .card{
+  margin-bottom:14px;
+  height:100%;
+}
+
+#list .card-body{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+#list .card-title{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+#list .card:last-child{
+  margin-bottom:0;
+}
+
+/* ⭐ 즐겨찾기 버튼 */
+.card{position:relative;}
+
+.fav-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s; /* ✅ 추가 */
+  z-index:10;
+}
+
+.fav-btn:hover{
+  transform:scale(1.1);
+  background:rgba(0,0,0,0.7);
+}
+
+.fav-btn::before{
+  content:"♡";
+  color:white;
+}
+
+.fav-btn.active::before{
+  content:"♥";
+  color:#ff4d6d;
+}
+
+/* =========================
+   🔥 HEADER 원형 버튼 (최종 통합)
+========================= */
+
+/* 공통 버튼 */
+.circle-btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  color:white;
+  -webkit-text-fill-color:white;
+  font-size:13px;
+  font-weight:700;
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:0.2s;
+}
+
+.circle-btn:hover{
+  transform:scale(1.08);
+  filter:brightness(0.95);
+  box-shadow:0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   🔥 버튼 색상
+========================= */
+
+.home-circle{ background:#7EE0D6; }
+.ARCHIVE-circle{ background:#F9E499; }
+.CALENDAR-circle{ background:#B4E8A9; }
+.GIDAMU-circle{ background:#A0C4FF; }
+.WISHLIST-circle{ background:#BDB2FF; }
+.fav-circle{ background:#BEE3DB; }
+.list-circle{ background:#FFADAD; }
+.admin-circle{ background:#8EE7F0; }
+
+/* =========================
+   🔥 아이콘 (통합)
+========================= */
+
+/* 공통 위치 */
+.circle-btn::after{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-52%);
+}
+
+/* 각 버튼 아이콘 */
+.home-circle::after{ content:"H"; }
+.ARCHIVE-circle::after{ content:"A"; }
+.CALENDAR-circle::after{ content:"C"; }
+.GIDAMU-circle::after{ content:"G"; }
+.WISHLIST-circle::after{ content:"W"; }
+.list-circle::after{ content:"〓"; }
+.fav-circle::after{ content:"♥"; }
+.admin-circle::after{ content:"✎"; }
+
+/* =========================
+   스크롤 버튼
+========================= */
+
+#scrollTopBtn, #scrollBottomBtn {
+  position: fixed;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+#scrollTopBtn:hover, #scrollBottomBtn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#scrollTopBtn {
+  bottom: 80px;
+}
+
+#scrollBottomBtn {
+  bottom: 20px;
+}
+
+/* ===== Mac 스타일 (진짜 버전) ===== */
+#scrollTopBtn, #scrollBottomBtn {
+  position: fixed;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(120, 120, 120, 0.7) !important;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 핵심 */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: rgba(255,255,255,0.9);
+
+  /* 입체감 */
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.25),
+    inset 0 1px 1px rgba(255,255,255,0.15);
+
+  transition: all 0.25s ease;
+}
+
+/* hover */
+#scrollTopBtn:hover, #scrollBottomBtn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.35),
+    inset 0 1px 2px rgba(255,255,255,0.2);
+}
+
+/* 위치 */
+#scrollTopBtn { bottom: 90px; }
+#scrollBottomBtn { bottom: 30px; }
+
+/* 숨김 상태 */
+.scroll-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.95);
+}
+
+/* ===== 기다무 페이지 ===== */
+
+/* 플랫폼 2단 느낌 */
+.platform-row {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  opacity: 0.9;
+}
+
+/* 요일과 구분되는 느낌 */
+.platform-row .pill {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* 선택 시 살짝 강조 */
+.platform-row .pill.active {
+  background:#FF6B9A;
+  color:white;
+}
+
+.link-btn{
+  cursor:pointer;
+  font-size:14px;
+  display:inline-block;
+  transition:0.2s;
+}
+
+.link-btn:hover{
+  transform:scale(1.2);
+}
+
+.link-circle{
+  position:absolute;
+  top:42px;   /* ✅ 아래로 이동 */
+  right:10px; /* ✅ fav와 같은 라인 */
+
+  width:32px;
+  height:32px;
+  border-radius:50%;
+
+  background:rgba(0,0,0,0.5);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  color:white;
+
+  transition:0.2s;
+  font-size:14px;
+}
+
+/* 🔥 내부 도형 */
+.link-circle::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:white;
+}
+
+.link-circle:hover{
+  transform:scale(1.1);
+  background:rgba(0,0,0,0.7);
+}
+
+/* 🔥 수정 버튼 */
+.edit-circle{
+  position:absolute;
+  top:42px;
+  right:10px;
+
+  width:32px;
+  height:32px;
+  border-radius:50%;
+
+  background:rgba(0,0,0,0.5);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  color:white;
+
+  transition:0.2s;
+  font-size:14px;
+}
+
+/* 아이콘 */
+.edit-circle::before{
+  content:"✎";
+  font-size:14px;
+}
+
+/* hover */
+.edit-circle:hover{
+  transform:scale(1.1);
+  background:rgba(0,0,0,0.7);
+}
+
+.detail-link{
+  display:inline-block;
+  max-width:300px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  color:#FF6B9A;
+}
+
+.link-circle,
+.fav-btn{
+  backdrop-filter:blur(4px);
+}
+
+/* 상세 페이지 글 수정 버튼 */
+.detail-edit-text {
+  float: right;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+/* 링크 버튼 2개 위치 분리 */
+.link1{
+  top:80px;
+  right:10px;
+}
+
+.link2{
+  top:118px;
+  right:10px;
+}
+
+/* =========================
+   🔥 FILTER BOX (archive 스타일 추가)
+========================= */
+
+.filter-box{
+  background:white;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:20px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* 라벨 + 필터 한 줄 */
+.filter-row{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+/* 라벨 pill 스타일 */
+.filter-label{
+  border:1px solid #ddd;
+  background:#f4f5f7;
+
+  padding:6px 14px;
+  border-radius:999px;
+
+  font-size:13px;
+  font-weight:600;
+  color:#555;
+
+  cursor:default;
+}
+
+/* 검색 영역 */
+.filter-search-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.filter-search-row .search-input{
+  flex:1;
+  border-radius:999px;
+}
+
+/* 초기화 버튼 */
+.reset-btn{
+  padding:6px 14px;
+  border-radius:999px;
+  border:1px solid #ddd;
+  background:#f4f5f7;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.reset-btn:hover{
+  background:#e9eaee;
+}
+
+/* 🔥 pill hover 보완 (기존 유지 + 추가) */
+.pill:hover{
+  background:#E9EAEE;
+}
+
+/* 🔥 active + hover 보완 */
+.pill.active:hover{
+  background:#FF6B9A;
+}
+
+/* =========================
+   🔥 썸네일 기준
+========================= */
+
+.thumb-wrap{
+  position:relative;
+}
+
+/* =========================
+   🔥 플랫폼 배지 (좌측 상단)
+========================= */
+
+.platform-badge{
+  position:absolute;
+  top:0;
+  left:0;
+
+  padding:5px 10px;
+  border-radius:0 0 10px 0;
+
+  font-size:12px;
+  font-weight:600;
+
+  color:white;
+  background:linear-gradient(135deg, #1e9eff, #0b6edc);
+
+  backdrop-filter:blur(4px);
+  pointer-events:none;
+}
+
+/* =========================
+   🔥 플랫폼 색상
+========================= */
+
+.platform-badge.리디{
+  background: linear-gradient(135deg, #1e9eff, #0b6edc);
+}
+
+.platform-badge.카카오{
+  background: linear-gradient(135deg, #ffbb02, #ff7a00);
+  color:#333;
+}
+
+.platform-badge.시리즈{
+  background: linear-gradient(135deg, #22c55e, #166534);
+}
+
+.platform-badge.미블{
+  background: linear-gradient(135deg, #1d4ed8, #22c1c3);
+}
+
+.platform-badge.마녀{
+  background: linear-gradient(135deg, #8a7dff, #5a4cff);
+}
+
+.platform-badge.웹소카카오{
+  background: linear-gradient(135deg, #ffcf40, #ff5e00);
+  color:#333;
+}
+
+.platform-badge.웹소리디{
+  background: linear-gradient(135deg, #1e9eff, #4f46e5);
+}
+
+/* =========================
+   🔥 요일 배지 (좌측 하단)
+========================= */
+
+.day-badge{
+  position:absolute;
+  bottom:4px;
+  left:0;
+
+  padding:4px 8px;
+  border-radius:0 10px 0 0;
+
+  font-size:12px;
+  font-weight:600;
+
+  color:white;
+  background:linear-gradient(135deg, #ff9a6b, #ff6a3d);
+
+  backdrop-filter:blur(4px);
+  pointer-events:none;
+  opacity:0.9;
+}
+
+/* =========================
+   🔥 요일별 개별 색상
+========================= */
+
+.day-badge.월,
+.day-badge.일,
+.day-badge.d6일{
+  background:linear-gradient(135deg, #ffb3c1, #ff8fab);
+}
+
+.day-badge.화,
+.day-badge.d1일,
+.day-badge.d7일{
+  background:linear-gradient(135deg, #ffd6a5, #ffb86b);
+  color:#333;
+}
+
+.day-badge.수,
+.day-badge.d2일,
+.day-badge.d8일{
+  background:linear-gradient(135deg, #fdffb6, #e9ed6b);
+  color:#333;
+}
+
+.day-badge.목,
+.day-badge.d3일,
+.day-badge.d9일{
+  background:linear-gradient(135deg, #bdb2ff, #9381ff);
+}
+
+.day-badge.금,
+.day-badge.d4일,
+.day-badge.d10일{
+  background:linear-gradient(135deg, #a0c4ff, #6ea8fe);
+}
+
+.day-badge.토,
+.day-badge.d5일,
+.day-badge.기타{
+  background:linear-gradient(135deg, #caffbf, #8bd67a);
+  color:#234;
+}
+
+.day-badge.완결{
+  background:linear-gradient(135deg, #d9d9d9, #a6a6a6);
+  color:#333;
+}
+
+/* =========================
+   작가 리스트 검색 (Book)
+========================= */
+
+.author-search-wrap{
+  display:flex;
+  justify-content:center;   /* ⭐ 가운데 정렬 */
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.author-search-wrap .search-input{
+  width:500px;              /* ⭐ 길이 증가 */
+  max-width:70%;            /* ⭐ 화면 작아지면 자동 대응 */
+}
+
+.author-search-wrap .reset-btn{
+  white-space:nowrap;
+}
+
+/* =========================
+   관리자 페이지 검색창
+========================= */
+
+.admin-search-wrap{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin:10px 0 6px 0;
+}
+
+.admin-search-wrap .search-input{
+  flex:1;
+  width:auto;
+}
+
+.admin-search-wrap .reset-btn{
+  white-space:nowrap;
+}
