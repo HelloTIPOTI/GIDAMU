@@ -1,5 +1,27 @@
 [
   {
+    "title": "캔디 계약서",
+    "artist": "케원",
+    "writer": "앰버",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "25",
+    "totalEp": "58",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5896000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1NuiXmJcGAbwbmmD6EeKWRfhP77hePz4R",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1NuiXmJcGAbwbmmD6EeKWRfhP77hePz4R",
+      "https://lh3.googleusercontent.com/d/1vj7hb9LqC_np3jQ3mFYeXk1faIBsFX10"
+    ],
+    "favorite": false
+  },
+  {
     "title": "F적 연애사",
     "artist": "타랑",
     "writer": "역",
