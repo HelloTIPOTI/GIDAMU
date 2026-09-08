@@ -1,5 +1,26 @@
 [
   {
+    "title": "아포리아(Aporia)",
+    "artist": "선태",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "54",
+    "totalEp": "120",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/120061984",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1e4LQNvQtg0F_0mXoQ7GUFsbPGbIanWxv",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1e4LQNvQtg0F_0mXoQ7GUFsbPGbIanWxv"
+    ],
+    "favorite": false
+  },
+  {
     "title": "나 말고 팬한테",
     "artist": "시쿨",
     "writer": "듀듀다다",
