@@ -49,8 +49,18 @@
       <span class="back-link" onclick="switchView('home')" style="cursor:pointer;">← 목록으로 돌아가기</span>
       <span class="detail-edit-text" id="detailEditBtn" style="cursor:pointer;">수정하기 →</span>
       <div class="detail-grid" style="margin-top:20px;">
-        <div class="thumb-wrap" id="detailThumbWrap">
-          <img id="detailThumb" class="detail-cover" src="">
+        <div class="thumb-wrap" id="detailThumbWrap" style="position: relative; display: flex; flex-direction: column; align-items: center;">
+          <!-- 이미지 슬라이드 컨테이너 -->
+          <div class="slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+            <img id="detailThumb" class="detail-cover" src="" style="width: 100%; display: block; object-fit: cover;">
+    
+            <!-- 좌우 이동 버튼 (이미지가 2장 이상일 때만 보임) -->
+            <button id="sliderPrevBtn" onclick="moveSlide(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">‹</button>
+            <button id="sliderNextBtn" onclick="moveSlide(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">›</button>
+          </div>
+  
+          <!-- 현재 페이지 인디케이터 (예: 1 / 3) -->
+          <div id="sliderIndicator" style="font-size: 13px; color: #666; margin-top: 8px; font-weight: bold; display: none;"></div>
         </div>
         <div>
           <div id="detailTitle" class="detail-title"></div>

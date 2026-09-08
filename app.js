@@ -294,6 +294,9 @@ function renderMainCards() {
 /* ==========================================================
    5. 상세 페이지 & 서브 뷰
    ========================================================== */
+let currentSlideImages = [];
+let currentSlideIndex = 0;
+
 function renderDetail(item) {
   document.getElementById("detailTitle").textContent = item.title || "";
   document.getElementById("detailPlatform").textContent = (item.platform || []).join(", ");
@@ -333,11 +336,58 @@ function renderDetail(item) {
   if(item.link2) { l2El.innerHTML = `<a href="${item.link2}" target="_blank" class="detail-link">${item.link2}</a>`; l2Wrap.style.display = "flex"; }
   else { l2Wrap.style.display = "none"; }
 
-  document.getElementById("detailThumb").src = item.thumbnail || "";
+  // 💡 버튼형 슬라이드를 위한 이미지 세팅
+  currentSlideImages = (item.images && item.images.length > 0) ? item.images : (item.thumbnail ? [item.thumbnail] : []);
+  currentSlideIndex = 0;
+  updateSlideView();
+
   document.getElementById("detailEditBtn").onclick = () => {
     const idx = ALL_DATA.findIndex(i => i.title === item.title);
     if(idx > -1) { switchView('admin'); loadItemToEdit(idx); }
   };
+}
+
+// 💡 좌우 버튼을 눌렀을 때 실행되는 슬라이드 전환 함수
+function moveSlide(direction) {
+  if (currentSlideImages.length <= 1) return;
+  
+  currentSlideIndex += direction;
+  
+  // 무한 순환 구조 (마지막 장에서 다음 누르면 첫 장으로, 첫 장에서 이전 누르면 끝장으로)
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = currentSlideImages.length - 1;
+  } else if (currentSlideIndex >= currentSlideImages.length) {
+    currentSlideIndex = 0;
+  }
+  
+  updateSlideView();
+}
+
+// 💡 슬라이드 이미지와 버튼/인디케이터 상태를 업데이트하는 함수
+function updateSlideView() {
+  const imgEl = document.getElementById("detailThumb");
+  const prevBtn = document.getElementById("sliderPrevBtn");
+  const nextBtn = document.getElementById("sliderNextBtn");
+  const indicator = document.getElementById("sliderIndicator");
+
+  if (currentSlideImages.length > 0) {
+    imgEl.src = currentSlideImages[currentSlideIndex];
+    imgEl.style.display = "block";
+  } else {
+    imgEl.src = "";
+  }
+
+  // 이미지가 2장 이상일 때만 좌우 버튼과 인디케이터 표시
+  if (currentSlideImages.length > 1) {
+    prevBtn.style.display = "flex";
+    nextBtn.style.display = "flex";
+    indicator.textContent = `${currentSlideIndex + 1} / ${currentSlideImages.length}`;
+    indicator.style.display = "block";
+  } else {
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
+    indicator.style.display = "none";
+  }
 }
 
 function renderSubView(list) {
