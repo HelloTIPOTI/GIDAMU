@@ -1,5 +1,26 @@
 [
   {
+    "title": "올림피언",
+    "artist": "아나",
+    "writer": "한여름",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "28",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001390",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1wxmJgUp9z1VFcwy1ZYzPeTTrqbqHHq5u",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1wxmJgUp9z1VFcwy1ZYzPeTTrqbqHHq5u"
+    ],
+    "favorite": false
+  },
+  {
     "title": "특별취급주의!",
     "artist": "아진",
     "writer": "",
