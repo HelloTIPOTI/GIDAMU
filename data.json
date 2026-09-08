@@ -1,5 +1,28 @@
 [
   {
+    "title": "페이트 메이트",
+    "artist": "시르",
+    "writer": "",
+    "day": "화",
+    "platform": [
+      "카카오"
+    ],
+    "currentEp": "72",
+    "totalEp": "82",
+    "startDate": "",
+    "endDate": "",
+    "note": "3일무, 대여권 X / 10",
+    "link": "https://page.kakao.com/content/65146842",
+    "link2": "https://ridibooks.com/books/2968007748",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1NWhNjtSNtXIuiSnrKadIbET7pDbEati-",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1NWhNjtSNtXIuiSnrKadIbET7pDbEati-",
+      "https://lh3.googleusercontent.com/d/1ar0rG_XH1h1sC8fNQhHi-7yTdcx9m8Hl",
+      "https://lh3.googleusercontent.com/d/1gCZMeCT8ZDQnphSsCm0G-pZ9mMIV6lIM"
+    ],
+    "favorite": false
+  },
+  {
     "title": "조각달",
     "artist": "영해신",
     "writer": "",
