@@ -1,5 +1,26 @@
 [
   {
+    "title": "특별취급주의!",
+    "artist": "아진",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "1",
+    "totalEp": "6",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/6293000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1jpbvt6ikdP3TF779fW6E15askuqZvQrP",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1jpbvt6ikdP3TF779fW6E15askuqZvQrP"
+    ],
+    "favorite": false
+  },
+  {
     "title": "여름눈",
     "artist": "안녕",
     "writer": "유랑비",
