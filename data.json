@@ -1,5 +1,26 @@
 [
   {
+    "title": "F적 연애사",
+    "artist": "타랑",
+    "writer": "역",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "35",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404036617",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1-ET73LcmkoONv_w6uz3NHVOBJ3TTZZMU",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1-ET73LcmkoONv_w6uz3NHVOBJ3TTZZMU"
+    ],
+    "favorite": false
+  },
+  {
     "title": "폼리스",
     "artist": "태건",
     "writer": "원리드",
