@@ -86,7 +86,7 @@ margin:14px 0 20px 0;
 
 .card-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill, minmax(150px, 2fr));
+grid-template-columns:repeat(auto-fill,200px);
 gap:26px;
 
 justify-content:center; /* 🔥 추가 */
@@ -1015,7 +1015,7 @@ margin-bottom:25px;
 
   /* 메인 카드 그리드: 모바일에서는 2열 또는 1열로 촘촘하게 배치 */
   .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 
