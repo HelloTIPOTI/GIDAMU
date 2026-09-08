@@ -1,5 +1,27 @@
 [
   {
+    "title": "폼리스",
+    "artist": "태건",
+    "writer": "원리드",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "50",
+    "totalEp": "71",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5934000388",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1jUCuNRbKw6ygCtzGfUd5iZd9jfb1k4dS",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1jUCuNRbKw6ygCtzGfUd5iZd9jfb1k4dS",
+      "https://lh3.googleusercontent.com/d/1nS_SiCNzUmq3AkuEdHYqQykmJfvXaPMB"
+    ],
+    "favorite": false
+  },
+  {
     "title": "배드 플랜",
     "artist": "티티",
     "writer": "",
