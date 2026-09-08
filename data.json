@@ -1,5 +1,28 @@
 [
   {
+    "title": "임계점",
+    "artist": "혁창필",
+    "writer": "에디파",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "32",
+    "totalEp": "93",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2968004876",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1N0GNRSoGcSvIE-zHtu8tsSMyhODkCJco",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1N0GNRSoGcSvIE-zHtu8tsSMyhODkCJco",
+      "https://lh3.googleusercontent.com/d/1kDdxjz-0j_1UULLf6wdd6NVE73YVlyo6",
+      "https://lh3.googleusercontent.com/d/1GC_E8RdsgLRFWIaIXjGPl0NudGbhW7rw"
+    ],
+    "favorite": false
+  },
+  {
     "title": "맹수주의보",
     "artist": "갈비",
     "writer": "얼음먼지",
