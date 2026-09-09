@@ -1,5 +1,28 @@
 [
   {
+    "title": "패션(PASSION)",
+    "artist": "강작",
+    "writer": "유우지",
+    "day": "7일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "51",
+    "totalEp": "139",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000158",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/11lJwd_RBqqxBqPyPa2oBAOVGuxZDjA_l",
+    "images": [
+      "https://lh3.googleusercontent.com/d/11lJwd_RBqqxBqPyPa2oBAOVGuxZDjA_l",
+      "https://lh3.googleusercontent.com/d/1lnxtacoIwjSpciE5c85LnNnbpijIiUUG",
+      "https://lh3.googleusercontent.com/d/1eCRc0CLh3QhpSGPb_nqStxD8BZm1XOae"
+    ],
+    "favorite": false
+  },
+  {
     "title": "Blaze out (블레이즈 아웃)",
     "artist": "꼬요",
     "writer": "채팔이",
