@@ -1,5 +1,26 @@
 [
   {
+    "title": "천추세인",
+    "artist": "부기",
+    "writer": "란마루",
+    "day": "3일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "57",
+    "totalEp": "101",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000494",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1PArbC2XSqzQ6lyu-ZH8AZcCYWesdiSwJ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1PArbC2XSqzQ6lyu-ZH8AZcCYWesdiSwJ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "모호함의 언저리",
     "artist": "이지",
     "writer": "",
