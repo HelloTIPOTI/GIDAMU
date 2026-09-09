@@ -1,5 +1,26 @@
 [
   {
+    "title": "로열 웨딩",
+    "artist": "zaru",
+    "writer": "바밀씨",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "44",
+    "totalEp": "59",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2553001044",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1AuvbK6qk1S7JNnluPEVBbObJ4cPWZFP-",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1AuvbK6qk1S7JNnluPEVBbObJ4cPWZFP-"
+    ],
+    "favorite": false
+  },
+  {
     "title": "섹시 산타 카리스마 (Sexy Santa Charisma)",
     "artist": "가트",
     "writer": "장목단",
