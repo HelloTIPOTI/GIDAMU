@@ -1,5 +1,26 @@
 [
   {
+    "title": "오메가 동식이",
+    "artist": "백달",
+    "writer": "계자",
+    "day": "6일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "22",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001683",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1C-3NC_NVuFjgs5IM3VM2lcYn0IvCHdOE",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1C-3NC_NVuFjgs5IM3VM2lcYn0IvCHdOE"
+    ],
+    "favorite": false
+  },
+  {
     "title": "솔트 소사이어티",
     "artist": "제스",
     "writer": "아르곤18",
