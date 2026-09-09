@@ -1,5 +1,29 @@
 [
   {
+    "title": "플레이어로 살아남는 방법",
+    "artist": "삼백",
+    "writer": "샴록",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "65",
+    "totalEp": "98",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5922000003",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/11hh__hpkOUZ1hIQVoPLytwEObOw95EWm",
+    "images": [
+      "https://lh3.googleusercontent.com/d/11hh__hpkOUZ1hIQVoPLytwEObOw95EWm",
+      "https://lh3.googleusercontent.com/d/1b1MfkXBUjLucJCcKqVMcO035Vlc8lfk6",
+      "https://lh3.googleusercontent.com/d/1yb5KNFanV5oZ-78ca2krqLpyBXA7J9jg",
+      "https://lh3.googleusercontent.com/d/1zoiCJpLylGLTJAjphTym3UjBPcOYsRmQ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "an Abyss : 검불의詩",
     "artist": "차지안",
     "writer": "",
