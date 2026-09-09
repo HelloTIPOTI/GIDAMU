@@ -1,5 +1,27 @@
 [
   {
+    "title": "금수별곡",
+    "artist": "호택",
+    "writer": "마셰리",
+    "day": "5일",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "20",
+    "totalEp": "28",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/9940",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/12cClduDQhxgLoOyOvng-VuSOuZO9ZGSr",
+    "images": [
+      "https://lh3.googleusercontent.com/d/12cClduDQhxgLoOyOvng-VuSOuZO9ZGSr",
+      "https://lh3.googleusercontent.com/d/1_bgfPH7Kr0hvNLS7cpMv9qSZUoA9dBTD"
+    ],
+    "favorite": false
+  },
+  {
     "title": "엔네아드 (ENNEAD)",
     "artist": "모히또",
     "writer": "",
