@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브 오더",
+    "artist": "강늑",
+    "writer": "",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "5",
+    "totalEp": "29",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/6170000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/12asPCPJLbyJ-cgBxmPhTuPPBcg0kXKjq",
+    "images": [
+      "https://lh3.googleusercontent.com/d/12asPCPJLbyJ-cgBxmPhTuPPBcg0kXKjq"
+    ],
+    "favorite": false
+  },
+  {
     "title": "미열 소년",
     "artist": "모나티",
     "writer": "클레어",
