@@ -1,5 +1,26 @@
 [
   {
+    "title": "백송의 꽃말",
+    "artist": "버찌",
+    "writer": "리도반",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "46",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5078004777",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1gwEuYRpskDCVP5cGkkX7S8qAesEpyeCA",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1gwEuYRpskDCVP5cGkkX7S8qAesEpyeCA"
+    ],
+    "favorite": false
+  },
+  {
     "title": "사랑은 달이 뜬 밤 찾아온다",
     "artist": "소운향",
     "writer": "",
