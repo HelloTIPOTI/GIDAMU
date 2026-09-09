@@ -1,5 +1,29 @@
 [
   {
+    "title": "팔재",
+    "artist": "가배마리",
+    "writer": "",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "159",
+    "totalEp": "175",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5886000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/14lWnwFtW1rGkPPr-lt2hLyyQrpyrxBQa",
+    "images": [
+      "https://lh3.googleusercontent.com/d/14lWnwFtW1rGkPPr-lt2hLyyQrpyrxBQa",
+      "https://lh3.googleusercontent.com/d/1DLQM4_t_-uQkePJcSiNsfaoRljiQEnD3",
+      "https://lh3.googleusercontent.com/d/1shcY_tFHZ7MFWS0twUx7FVj7eLjyHyk2",
+      "https://lh3.googleusercontent.com/d/1jZHf8n7oJIc_vdExT1OmoEoVNPNgcUjE"
+    ],
+    "favorite": false
+  },
+  {
     "title": "잠자는 숲속의 괴물",
     "artist": "객기",
     "writer": "탄밤이",
