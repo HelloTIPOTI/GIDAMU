@@ -1,5 +1,26 @@
 [
   {
+    "title": "눈의 여왕",
+    "artist": "공마",
+    "writer": "아마긴",
+    "day": "8일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "9",
+    "totalEp": "57",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000831",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/19mrwhQZMis_Te8DxMqnQEMCMrQDHzoVM",
+    "images": [
+      "https://lh3.googleusercontent.com/d/19mrwhQZMis_Te8DxMqnQEMCMrQDHzoVM"
+    ],
+    "favorite": false
+  },
+  {
     "title": "헤비 레인 (Heavy Rain)",
     "artist": "매듭",
     "writer": "꾸밍크",
