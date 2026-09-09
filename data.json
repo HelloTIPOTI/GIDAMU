@@ -1,5 +1,28 @@
 [
   {
+    "title": "스티그마타(Stigmata)",
+    "artist": "곽종필",
+    "writer": "TP",
+    "day": "수",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "136",
+    "totalEp": "169",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4684000040",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1oTV43kEJeYQTn5xsUIUQRPUyy2JuTM7q",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1oTV43kEJeYQTn5xsUIUQRPUyy2JuTM7q",
+      "https://lh3.googleusercontent.com/d/1oooN9_F-z8-HfrpFBskhbRpq2KkVVSi6",
+      "https://lh3.googleusercontent.com/d/1GRtGku9AHyXpaIOec_SmKmi6QE_DHXZq"
+    ],
+    "favorite": false
+  },
+  {
     "title": "달달",
     "artist": "밀보리",
     "writer": "MaRO",
