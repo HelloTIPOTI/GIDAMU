@@ -1,5 +1,28 @@
 [
   {
+    "title": "공과 사는 구분해!",
+    "artist": "호돗",
+    "writer": "",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "74",
+    "totalEp": "98",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5137000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1a7sXGt_OfW_hK5MECG5Y25wKt8z9JWiy",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1a7sXGt_OfW_hK5MECG5Y25wKt8z9JWiy",
+      "https://lh3.googleusercontent.com/d/1KhDy4uVkxOk9-1UuRVr9eoQ7U9LdzGhk",
+      "https://lh3.googleusercontent.com/d/1lzCNT9dV6lHdPTX4qzOK6VqSat7o9UrM"
+    ],
+    "favorite": false
+  },
+  {
     "title": "자취연애왕",
     "artist": "가위",
     "writer": "",
