@@ -1,5 +1,29 @@
 [
   {
+    "title": "앰버 얼럿",
+    "artist": "공태",
+    "writer": "JaneM",
+    "day": "화",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "27",
+    "totalEp": "66",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4928003864",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1y9mcOQJaYVY6Ur8gm1c5gX3GuLErVM__",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1y9mcOQJaYVY6Ur8gm1c5gX3GuLErVM__",
+      "https://lh3.googleusercontent.com/d/1AIPgtHtYkzegdIZ1vlJdfsHkXb4rntEW",
+      "https://lh3.googleusercontent.com/d/1pHQ7lmQhTG6P1JjVT8l4Jxqe4_Tc3iNN",
+      "https://lh3.googleusercontent.com/d/1pcmvsGd5mjFYbN0LUg7PTQ4S_t9odhXe"
+    ],
+    "favorite": false
+  },
+  {
     "title": "헌터는 조용히 살고 싶다",
     "artist": "리공",
     "writer": "백삼",
