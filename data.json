@@ -1,5 +1,27 @@
 [
   {
+    "title": "Blaze out (블레이즈 아웃)",
+    "artist": "꼬요",
+    "writer": "채팔이",
+    "day": "7일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "70",
+    "totalEp": "70",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/505067332",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1WseezMPsJ7XmUgHwPVBoNa4sTBxsiI2Q",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1WseezMPsJ7XmUgHwPVBoNa4sTBxsiI2Q",
+      "https://lh3.googleusercontent.com/d/1mKIm8jxSDjoPDXJgZSSzCSxtAFZlHDEk"
+    ],
+    "favorite": false
+  },
+  {
     "title": "초이스 오브 초이시스",
     "artist": "민지",
     "writer": "김다윗",
