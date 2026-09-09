@@ -1,5 +1,26 @@
 [
   {
+    "title": "죽어 마땅한 것들",
+    "artist": "밤만득",
+    "writer": "계자",
+    "day": "화",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "36",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895003169",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1W9IOpf31w-YOiYOvBMkiaMAaFz3kVo1h",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1W9IOpf31w-YOiYOvBMkiaMAaFz3kVo1h"
+    ],
+    "favorite": false
+  },
+  {
     "title": "세컨드 하프",
     "artist": "조구오",
     "writer": "후추스파클링",
