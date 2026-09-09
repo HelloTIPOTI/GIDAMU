@@ -1,5 +1,27 @@
 [
   {
+    "title": "우울한 사기꾼",
+    "artist": "난나",
+    "writer": "채팔이",
+    "day": "완결",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "47",
+    "totalEp": "64",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/12213",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1wPLCrSABi40MwtD51WVfxweqUR43M_k6",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1wPLCrSABi40MwtD51WVfxweqUR43M_k6",
+      "https://lh3.googleusercontent.com/d/1qRpa5mA_lZswaDwc8JQrgyGtRh7NRAjQ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "인 유어 아이즈",
     "artist": "로군",
     "writer": "",
