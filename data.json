@@ -1,5 +1,26 @@
 [
   {
+    "title": "할 수 없는 것들",
+    "artist": "아침",
+    "writer": "고귤",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "17",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/505107936",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1RMJocQ481OFrfpRoJ-TlO2BRt3gqogdA",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1RMJocQ481OFrfpRoJ-TlO2BRt3gqogdA"
+    ],
+    "favorite": false
+  },
+  {
     "title": "끝내 닿는 봄",
     "artist": "파건",
     "writer": "피아A",
