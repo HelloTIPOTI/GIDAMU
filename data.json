@@ -1,5 +1,28 @@
 [
   {
+    "title": "프로젝션",
+    "artist": "멍멍이",
+    "writer": "이은규",
+    "day": "10일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "38",
+    "totalEp": "62",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5285000138",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1KC6Ah9B9Q97Fw7da8eUzIZCKg_-ZMLZr",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1KC6Ah9B9Q97Fw7da8eUzIZCKg_-ZMLZr",
+      "https://lh3.googleusercontent.com/d/1QD0IXTo8JU3jNZj5vL-Xb6nnSZREmm-T",
+      "https://lh3.googleusercontent.com/d/1PO0MHEUm1yHxGNrB4dcNprtkCZayxP9m"
+    ],
+    "favorite": false
+  },
+  {
     "title": "심연에서는 양을 따라가세요",
     "artist": "북구",
     "writer": "카르페XD",
