@@ -1,5 +1,26 @@
 [
   {
+    "title": "호우주의보",
+    "artist": "203",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "21",
+    "totalEp": "31",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3885041402",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/18J-Ctr0zqd43hQayqCNB7gkFLk6UCqsG",
+    "images": [
+      "https://lh3.googleusercontent.com/d/18J-Ctr0zqd43hQayqCNB7gkFLk6UCqsG"
+    ],
+    "favorite": false
+  },
+  {
     "title": "꿀 발린 S급 가이드",
     "artist": "Dalpi",
     "writer": "카닙스",
