@@ -1,5 +1,27 @@
 [
   {
+    "title": "너드 프로젝트(Nerd Project)",
+    "artist": "그져",
+    "writer": "",
+    "day": "6일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "63",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404005012",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1ZnkDLXXscMVcTKyuPKwMl46ftlB8bfay",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1ZnkDLXXscMVcTKyuPKwMl46ftlB8bfay",
+      "https://lh3.googleusercontent.com/d/1lEmOJtXHhO3MneoacQShfRDpkBFMiFDF"
+    ],
+    "favorite": false
+  },
+  {
     "title": "오메가 동식이",
     "artist": "백달",
     "writer": "계자",
