@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브짐",
+    "artist": "무한대",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "36",
+    "totalEp": "55",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895001765",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1C1pXdEt259Xc0IA8nlmdMU_JzwvyINbi",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1C1pXdEt259Xc0IA8nlmdMU_JzwvyINbi"
+    ],
+    "favorite": false
+  },
+  {
     "title": "살인마 르웰린 씨의 낭만적인 정찬",
     "artist": "묵부",
     "writer": "숨나기",
