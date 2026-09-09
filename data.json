@@ -1,5 +1,27 @@
 [
   {
+    "title": "갱생의 여지",
+    "artist": "성아",
+    "writer": "아이언쿠쿠",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "6",
+    "totalEp": "43",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1962131432",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1yyjWgPMtfqqepnMI7ikr2Mb_4uzhUnaP",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1yyjWgPMtfqqepnMI7ikr2Mb_4uzhUnaP",
+      "https://lh3.googleusercontent.com/d/1QK66bXL3xXaXuaVQpnlzjAkOcvpP2plV"
+    ],
+    "favorite": false
+  },
+  {
     "title": "혼불",
     "artist": "스르륵코믹스",
     "writer": "톨쥬",
