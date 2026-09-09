@@ -1,5 +1,26 @@
 [
   {
+    "title": "알파인",
+    "artist": "빙수",
+    "writer": "여그니",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "29",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5103000587",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1x06uU1UeV-cC49fq6i9aeE-KxFdWNmJv",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1x06uU1UeV-cC49fq6i9aeE-KxFdWNmJv"
+    ],
+    "favorite": false
+  },
+  {
     "title": "부시통(Tinder box)",
     "artist": "산폭",
     "writer": "유우지",
