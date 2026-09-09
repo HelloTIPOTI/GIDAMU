@@ -1,5 +1,26 @@
 [
   {
+    "title": "플레이스 투 비",
+    "artist": "먼지",
+    "writer": "유우지",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "25",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404037092",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1uNfZsh7J4B0jCZk2M1-PoCB9eDxrUZQY",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1uNfZsh7J4B0jCZk2M1-PoCB9eDxrUZQY"
+    ],
+    "favorite": false
+  },
+  {
     "title": "백송의 꽃말",
     "artist": "버찌",
     "writer": "리도반",
