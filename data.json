@@ -1,5 +1,26 @@
 [
   {
+    "title": "윈터필드",
+    "artist": "봄오후",
+    "writer": "망고곰",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "31",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001550",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1sXdi1HmCK_oH8dXxh9cXF9ERG-Z2fyT6",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1sXdi1HmCK_oH8dXxh9cXF9ERG-Z2fyT6"
+    ],
+    "favorite": false
+  },
+  {
     "title": "전략적 메이팅 파트너",
     "artist": "새우죽",
     "writer": "해양생물",
