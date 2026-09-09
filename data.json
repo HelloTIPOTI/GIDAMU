@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브 블로섬",
+    "artist": "노루",
+    "writer": "",
+    "day": "목",
+    "platform": [
+      "시리즈"
+    ],
+    "currentEp": "40",
+    "totalEp": "40",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1AIjSPtOizjm43dR8Y69Qam_tyigYAfmA",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1AIjSPtOizjm43dR8Y69Qam_tyigYAfmA"
+    ],
+    "favorite": false
+  },
+  {
     "title": "쌤쌤",
     "artist": "노루",
     "writer": "",
