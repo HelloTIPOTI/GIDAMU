@@ -1,5 +1,26 @@
 [
   {
+    "title": "첫사랑 헤르츠",
+    "artist": "인선아씨",
+    "writer": "",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "1",
+    "totalEp": "15",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895003751",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1YJJOTVaMbki9SRCSwwm-7WKcNCRPB4Dy",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1YJJOTVaMbki9SRCSwwm-7WKcNCRPB4Dy"
+    ],
+    "favorite": false
+  },
+  {
     "title": "테이밍(The Taming)",
     "artist": "차다",
     "writer": "우수",
