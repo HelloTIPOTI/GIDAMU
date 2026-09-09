@@ -1,5 +1,26 @@
 [
   {
+    "title": "데스 이즈 마인",
+    "artist": "바라",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "57",
+    "totalEp": "71",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3498025162",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/11oqNUa_FNyPFBTp5phwSBzR_KnbN2qMu",
+    "images": [
+      "https://lh3.googleusercontent.com/d/11oqNUa_FNyPFBTp5phwSBzR_KnbN2qMu"
+    ],
+    "favorite": false
+  },
+  {
     "title": "러브 온에어",
     "artist": "백공",
     "writer": "",
