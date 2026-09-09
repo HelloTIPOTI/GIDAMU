@@ -1,5 +1,27 @@
 [
   {
+    "title": "인투 더 쓰릴",
+    "artist": "독액",
+    "writer": "Leefail",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "40",
+    "totalEp": "51",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/845040271",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1aCn4bTYbpUMzwC1jqOreiPWQQkvBHv_l",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1aCn4bTYbpUMzwC1jqOreiPWQQkvBHv_l",
+      "https://lh3.googleusercontent.com/d/12EBkQtIkaARdnurCabG8rV6h0QQyNFnd"
+    ],
+    "favorite": false
+  },
+  {
     "title": "서킷 브레이커",
     "artist": "무산",
     "writer": "수조",
