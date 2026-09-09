@@ -1,5 +1,27 @@
 [
   {
+    "title": "헌터는 조용히 살고 싶다",
+    "artist": "리공",
+    "writer": "백삼",
+    "day": "화",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "48",
+    "totalEp": "68",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404014531",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1BhMnY64NxDGketjZQeQpajVhSPNigWxZ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1BhMnY64NxDGketjZQeQpajVhSPNigWxZ",
+      "https://lh3.googleusercontent.com/d/1CqvODThWxH1N8pNpvqKERVWoVyymatnK"
+    ],
+    "favorite": false
+  },
+  {
     "title": "죽어 마땅한 것들",
     "artist": "밤만득",
     "writer": "계자",
