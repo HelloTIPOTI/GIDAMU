@@ -1,5 +1,26 @@
 [
   {
+    "title": "시 유 어게인",
+    "artist": "빠레트",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "58",
+    "totalEp": "90",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404008597",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1t3xDSHT5OVdSJ-l9LPU9N27o-XhkTiK1",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1t3xDSHT5OVdSJ-l9LPU9N27o-XhkTiK1"
+    ],
+    "favorite": false
+  },
+  {
     "title": "쪼가리",
     "artist": "뽀도",
     "writer": "페시케이",
