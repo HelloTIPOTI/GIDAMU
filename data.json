@@ -1,5 +1,26 @@
 [
   {
+    "title": "달달",
+    "artist": "밀보리",
+    "writer": "MaRO",
+    "day": "수",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "31",
+    "totalEp": "42",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5946000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1dFjz6V2OcmIJaL_QqSZ-0XJsxd1VIMn4",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1dFjz6V2OcmIJaL_QqSZ-0XJsxd1VIMn4"
+    ],
+    "favorite": false
+  },
+  {
     "title": "바다 밑 산호 속에는",
     "artist": "빠레트",
     "writer": "",
