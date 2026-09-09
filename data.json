@@ -1,5 +1,28 @@
 [
   {
+    "title": "조폭인 내가 고등학생이 되었습니다",
+    "artist": "기탄&찬우",
+    "writer": "호롤",
+    "day": "월",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "53",
+    "totalEp": "63",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/12020",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1a8At7GY9ev9YnbfIwL4vwEgaevU64thn",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1a8At7GY9ev9YnbfIwL4vwEgaevU64thn",
+      "https://lh3.googleusercontent.com/d/1dM-FfJyezLEsIcB53wprzDpnuO1df9N_",
+      "https://lh3.googleusercontent.com/d/13mmKLFxOU51YdD0P6dPNm_bWajPmPv18"
+    ],
+    "favorite": false
+  },
+  {
     "title": "영원한 계약",
     "artist": "해진",
     "writer": "",
