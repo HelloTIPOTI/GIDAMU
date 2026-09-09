@@ -1,5 +1,27 @@
 [
   {
+    "title": "민트사탕러브",
+    "artist": "참비&탄bullet",
+    "writer": "해저500M",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "28",
+    "totalEp": "32",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/840070530",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1P-OSK6cb-eq1tdXtoofzHU4cL2Sapxrh",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1P-OSK6cb-eq1tdXtoofzHU4cL2Sapxrh",
+      "https://lh3.googleusercontent.com/d/1QVlFZES0_wZV-92dHyBPV1DOdsLzsTiQ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "눈부신 숨",
     "artist": "팀 아가페",
     "writer": "samk",
