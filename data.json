@@ -1,5 +1,28 @@
 [
   {
+    "title": "서킷 브레이커",
+    "artist": "무산",
+    "writer": "수조",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "43",
+    "totalEp": "57",
+    "startDate": "",
+    "endDate": "",
+    "note": "시즌1 표지",
+    "link": "https://ridibooks.com/books/5615000005",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Cp7ZFW9piq1drbxmiN3YwfKxjBWA9R8c",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Cp7ZFW9piq1drbxmiN3YwfKxjBWA9R8c",
+      "https://lh3.googleusercontent.com/d/11m8o0pSkb8T4le7IHoOfil6EIao2QvHv",
+      "https://lh3.googleusercontent.com/d/1TYs1iiIYrBzN8CzDFyxUNL9UnjK1SexL"
+    ],
+    "favorite": false
+  },
+  {
     "title": "비밀이 많은 XX",
     "artist": "오류",
     "writer": "",
