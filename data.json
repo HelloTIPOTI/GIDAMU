@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브 업셋(LOVE UPSET)",
+    "artist": "부주상골",
+    "writer": "",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "16",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/6295000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1lt00IcxeH19Lk5rQiTaVQAj3yCI407GH",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1lt00IcxeH19Lk5rQiTaVQAj3yCI407GH"
+    ],
+    "favorite": false
+  },
+  {
     "title": "무책임",
     "artist": "왱벌",
     "writer": "원리드",
