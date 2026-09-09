@@ -1,5 +1,26 @@
 [
   {
+    "title": "엑스 스폰서",
+    "artist": "옴",
+    "writer": "Dips",
+    "day": "2일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "14",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3093003934",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1NOpmfMlBmV89RDdoF2vzUDFtumpi3Ok4",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1NOpmfMlBmV89RDdoF2vzUDFtumpi3Ok4"
+    ],
+    "favorite": false
+  },
+  {
     "title": "국민 배우의 몰락, XX토이 생존기",
     "artist": "4E",
     "writer": "감감뉴소식",
