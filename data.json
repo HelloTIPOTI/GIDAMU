@@ -1,5 +1,26 @@
 [
   {
+    "title": "열락의 덫",
+    "artist": "까만콩",
+    "writer": "",
+    "day": "목",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "5",
+    "totalEp": "80",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/12592",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1sO8LC_UKzEJ99M_elbaTIL8sYnpVxG9o",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1sO8LC_UKzEJ99M_elbaTIL8sYnpVxG9o"
+    ],
+    "favorite": false
+  },
+  {
     "title": "베스퍼",
     "artist": "SEJIN",
     "writer": "",
