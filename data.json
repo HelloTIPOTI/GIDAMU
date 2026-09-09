@@ -1,5 +1,26 @@
 [
   {
+    "title": "들이닥치다",
+    "artist": "조은",
+    "writer": "클라시나",
+    "day": "3일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "46",
+    "totalEp": "65",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5781000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1mqQUAwLQYp0EFS_4SM9aMSeOkyXvqe8y",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1mqQUAwLQYp0EFS_4SM9aMSeOkyXvqe8y"
+    ],
+    "favorite": false
+  },
+  {
     "title": "귀한 것",
     "artist": "짱효",
     "writer": "체체발란스",
