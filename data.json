@@ -1,5 +1,27 @@
 [
   {
+    "title": "자취연애왕",
+    "artist": "가위",
+    "writer": "",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "33",
+    "totalEp": "62",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404009502",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1xX9hLpagF1G9UmtBFiNm2Fw3dLWCJSzv",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1xX9hLpagF1G9UmtBFiNm2Fw3dLWCJSzv",
+      "https://lh3.googleusercontent.com/d/13PXJNe8KMMtpy6CPTkyAmTYyoMuzu4_W"
+    ],
+    "favorite": false
+  },
+  {
     "title": "러브 오더",
     "artist": "강늑",
     "writer": "",
