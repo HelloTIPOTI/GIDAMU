@@ -1,5 +1,27 @@
 [
   {
+    "title": "에보니 캐슬",
+    "artist": "하세",
+    "writer": "섬온화",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "27",
+    "totalEp": "45",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5623000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1T6w4euDiueYDNXEuxRfQbU3TS3M8rfYp",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1T6w4euDiueYDNXEuxRfQbU3TS3M8rfYp",
+      "https://lh3.googleusercontent.com/d/1OZuCA_y2LCjePr9vMtZTk5JJ2Qm0iwZq"
+    ],
+    "favorite": false
+  },
+  {
     "title": "공과 사는 구분해!",
     "artist": "호돗",
     "writer": "",
