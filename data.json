@@ -1,5 +1,26 @@
 [
   {
+    "title": "사랑은 달이 뜬 밤 찾아온다",
+    "artist": "소운향",
+    "writer": "",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "23",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895003698",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1bHn3BGWf-qe4qxvvhOW6wvbVCu96OoQ6",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1bHn3BGWf-qe4qxvvhOW6wvbVCu96OoQ6"
+    ],
+    "favorite": false
+  },
+  {
     "title": "할 수 없는 것들",
     "artist": "아침",
     "writer": "고귤",
