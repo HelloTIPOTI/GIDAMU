@@ -1,5 +1,27 @@
 [
   {
+    "title": "석류를 삼킨 뱀",
+    "artist": "감자전",
+    "writer": "카르페XD",
+    "day": "5일",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "47",
+    "totalEp": "50",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/13889",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1emT9obNFdd4_QymVrCYYyfPTKxR6JXqM",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1emT9obNFdd4_QymVrCYYyfPTKxR6JXqM",
+      "https://lh3.googleusercontent.com/d/13GPcvtahtjCP8lRLbHMPhDEFeMyB9XCY"
+    ],
+    "favorite": false
+  },
+  {
     "title": "금수별곡",
     "artist": "호택",
     "writer": "마셰리",
