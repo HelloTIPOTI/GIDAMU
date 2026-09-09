@@ -1,5 +1,27 @@
 [
   {
+    "title": "코드네임 아나스타샤",
+    "artist": "한",
+    "writer": "보이시즌",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "47",
+    "totalEp": "76",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5650000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1V3BImD2lx4lJYXTxGS6SnyGytUn-nnu6",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1V3BImD2lx4lJYXTxGS6SnyGytUn-nnu6",
+      "https://lh3.googleusercontent.com/d/1D0TjXHLTs9d-HTMOx2bEt7vJ4Kmhgee2"
+    ],
+    "favorite": false
+  },
+  {
     "title": "피자배달부와 골드팰리스",
     "artist": "어피",
     "writer": "",
