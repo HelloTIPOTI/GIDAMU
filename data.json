@@ -1,5 +1,27 @@
 [
   {
+    "title": "테이밍(The Taming)",
+    "artist": "차다",
+    "writer": "우수",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "31",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3498025951",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1-Xy1VN7McBwnqqhcYjWEvXLr_iFtgNmH",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1-Xy1VN7McBwnqqhcYjWEvXLr_iFtgNmH",
+      "https://lh3.googleusercontent.com/d/1d0y6tJYcecFXsVOnF9RAACFQGEhaW0-U"
+    ],
+    "favorite": false
+  },
+  {
     "title": "은밀한 머릿속 사정",
     "artist": "채구",
     "writer": "",
