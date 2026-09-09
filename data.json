@@ -1,5 +1,26 @@
 [
   {
+    "title": "무책임",
+    "artist": "왱벌",
+    "writer": "원리드",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "30",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1716002600",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1zgJfF-ZmQhOjEnReTKcisY6Clgi9zCVC",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1zgJfF-ZmQhOjEnReTKcisY6Clgi9zCVC"
+    ],
+    "favorite": false
+  },
+  {
     "title": "닳고 닳은 연애",
     "artist": "제뉴",
     "writer": "오후네시육분",
