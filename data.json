@@ -1,5 +1,27 @@
 [
   {
+    "title": "찬란한 어둠",
+    "artist": "피곤토끼",
+    "writer": "텐시엘",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "36",
+    "totalEp": "60",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/505083796",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/172o08TRoay2UkCRKpByXNjHjFzHfCnJh",
+    "images": [
+      "https://lh3.googleusercontent.com/d/172o08TRoay2UkCRKpByXNjHjFzHfCnJh",
+      "https://lh3.googleusercontent.com/d/1whMjKsX-_DgZ1Wjb1scA9RL-dGIVWYvz"
+    ],
+    "favorite": false
+  },
+  {
     "title": "너드 프로젝트(Nerd Project)",
     "artist": "그져",
     "writer": "",
