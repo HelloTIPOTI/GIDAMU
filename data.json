@@ -1,5 +1,27 @@
 [
   {
+    "title": "섭우춘빙",
+    "artist": "강노",
+    "writer": "밤꾀꼬리",
+    "day": "수",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "69",
+    "totalEp": "84",
+    "startDate": "",
+    "endDate": "",
+    "note": "시즌1 표지",
+    "link": "https://ridibooks.com/books/3498015618",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/13vFcfwGwE3T5JcfLqlQlWFyhyf5L_LN9",
+    "images": [
+      "https://lh3.googleusercontent.com/d/13vFcfwGwE3T5JcfLqlQlWFyhyf5L_LN9",
+      "https://lh3.googleusercontent.com/d/1Py3cR_-BfpNLSQkIQuPSe0kYnbhAAXEs"
+    ],
+    "favorite": false
+  },
+  {
     "title": "스티그마타(Stigmata)",
     "artist": "곽종필",
     "writer": "TP",
