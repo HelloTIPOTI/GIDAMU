@@ -1,5 +1,26 @@
 [
   {
+    "title": "동틀 무렵 너에게",
+    "artist": "개화",
+    "writer": "",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "12",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404038305",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1rY3VgocFsD0WQDUec2_qpDTsy8Hm7skJ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1rY3VgocFsD0WQDUec2_qpDTsy8Hm7skJ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "별이 내린 밤",
     "artist": "기회비용",
     "writer": "",
