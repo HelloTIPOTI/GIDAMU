@@ -1,5 +1,26 @@
 [
   {
+    "title": "영웅은 죽고 싶다",
+    "artist": "나자",
+    "writer": "임유니",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "5",
+    "totalEp": "25",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5335000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1l9ONtHsZ_elOBZ6FyB9UWqEAVEsgEOkq",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1l9ONtHsZ_elOBZ6FyB9UWqEAVEsgEOkq"
+    ],
+    "favorite": false
+  },
+  {
     "title": "윈터필드",
     "artist": "봄오후",
     "writer": "망고곰",
