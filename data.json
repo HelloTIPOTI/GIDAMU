@@ -1,5 +1,27 @@
 [
   {
+    "title": "키스 더 스컴백(KISS THE SCUMBAG)",
+    "artist": "귤먹고싶다",
+    "writer": "ZIG",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "31",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4116005168",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1z8V-JNNUP8C7tNQykuZoI7EWPbsrQ8QT",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1z8V-JNNUP8C7tNQykuZoI7EWPbsrQ8QT",
+      "https://lh3.googleusercontent.com/d/1jxQBPGTg-mfQrS5RTyl_zFSSZtOItxmk"
+    ],
+    "favorite": false
+  },
+  {
     "title": "달이 그린 새벽",
     "artist": "레드피치",
     "writer": "감서윤",
