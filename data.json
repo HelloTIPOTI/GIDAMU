@@ -1,5 +1,26 @@
 [
   {
+    "title": "내 매니저를 소개합니다",
+    "artist": "금오",
+    "writer": "오늘봄",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "28",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404036274",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1wm_1WkKohCaj6JkLnchPT455Sm_2xn46",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1wm_1WkKohCaj6JkLnchPT455Sm_2xn46"
+    ],
+    "favorite": false
+  },
+  {
     "title": "플린의 여우음료",
     "artist": "뽀담",
     "writer": "오키프A",
