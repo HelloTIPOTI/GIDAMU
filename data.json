@@ -1,5 +1,26 @@
 [
   {
+    "title": "전략적 메이팅 파트너",
+    "artist": "새우죽",
+    "writer": "해양생물",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "36",
+    "totalEp": "46",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/3543003431",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1JWW9jx3_ls7UYEApzKBOwLOt662mdnnM",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1JWW9jx3_ls7UYEApzKBOwLOt662mdnnM"
+    ],
+    "favorite": false
+  },
+  {
     "title": "동절기",
     "artist": "절구",
     "writer": "이로밀",
