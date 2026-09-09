@@ -1,5 +1,26 @@
 [
   {
+    "title": "솔트 소사이어티",
+    "artist": "제스",
+    "writer": "아르곤18",
+    "day": "6일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "5",
+    "totalEp": "34",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001537",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/13MV58aupyZeFkp5_y0k4bIVnWv6p2b8P",
+    "images": [
+      "https://lh3.googleusercontent.com/d/13MV58aupyZeFkp5_y0k4bIVnWv6p2b8P"
+    ],
+    "favorite": false
+  },
+  {
     "title": "어프록시말 가이드",
     "artist": "핗",
     "writer": "아르곤18",
