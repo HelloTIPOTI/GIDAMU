@@ -1,5 +1,30 @@
 [
   {
+    "title": "파트타임 파트너",
+    "artist": "일요일",
+    "writer": "체리만쥬",
+    "day": "8일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "51",
+    "totalEp": "89",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4974000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1VEEbpcOGY-sQKrcYOGXznCdjDmFpyYZa",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1VEEbpcOGY-sQKrcYOGXznCdjDmFpyYZa",
+      "https://lh3.googleusercontent.com/d/1HiKIP-QR1EUaDixEFooNR7UcgsTXS-Wl",
+      "https://lh3.googleusercontent.com/d/1KPOK_FQaHujOj_aJFDtryCs-ufvVO0kS",
+      "https://lh3.googleusercontent.com/d/1AfD-q-lLWNiaHsQYJ8-WKdfP15a2D-67",
+      "https://lh3.googleusercontent.com/d/1hU5YNwYjDb1PsGIJYvP_cMN8ktBZ3eKB"
+    ],
+    "favorite": false
+  },
+  {
     "title": "뜬장 위의 개",
     "artist": "차모",
     "writer": "차옌",
