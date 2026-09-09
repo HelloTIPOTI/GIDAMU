@@ -1,5 +1,26 @@
 [
   {
+    "title": "귀한 것",
+    "artist": "짱효",
+    "writer": "체체발란스",
+    "day": "3일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "69",
+    "totalEp": "79",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/1746023897",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Isl1IXOa8TGHcj5ZATvVzGAnzMewjlTW",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Isl1IXOa8TGHcj5ZATvVzGAnzMewjlTW"
+    ],
+    "favorite": false
+  },
+  {
     "title": "가이딩 해저드",
     "artist": "청년",
     "writer": "선선",
