@@ -1,5 +1,26 @@
 [
   {
+    "title": "파울즈 스타트",
+    "artist": "오늘만사는형제",
+    "writer": "",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "22",
+    "totalEp": "32",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3442001089",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1lE68xBweby4p7PKNIUj6jqxUfjuPYBrZ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1lE68xBweby4p7PKNIUj6jqxUfjuPYBrZ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "개의 가면",
     "artist": "움비프동",
     "writer": "아르곤18",
