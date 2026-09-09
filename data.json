@@ -1,5 +1,26 @@
 [
   {
+    "title": "플린의 여우음료",
+    "artist": "뽀담",
+    "writer": "오키프A",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "21",
+    "totalEp": "79",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000506",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1iWm5zjpdCDtztkvRFB0S7Rf_kjRSF4u3",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1iWm5zjpdCDtztkvRFB0S7Rf_kjRSF4u3"
+    ],
+    "favorite": false
+  },
+  {
     "title": "플레이어로 살아남는 방법",
     "artist": "삼백",
     "writer": "샴록",
