@@ -1,5 +1,26 @@
 [
   {
+    "title": "유성의 궤도",
+    "artist": "마마들",
+    "writer": "모스카레토",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "완결 후기",
+    "totalEp": "112",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4543000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1B6JH7u3biH_IoFjqiNhjdUAg9-YffWrn",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1B6JH7u3biH_IoFjqiNhjdUAg9-YffWrn"
+    ],
+    "favorite": false
+  },
+  {
     "title": "러브짐",
     "artist": "무한대",
     "writer": "",
