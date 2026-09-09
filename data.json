@@ -1,5 +1,26 @@
 [
   {
+    "title": "꼴라쥬",
+    "artist": "키포",
+    "writer": "미엔느",
+    "day": "4일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "18",
+    "totalEp": "26",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/1239022036",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1LslxBOdtpNiRYKuy-cIvg4z06M2m-qrg",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1LslxBOdtpNiRYKuy-cIvg4z06M2m-qrg"
+    ],
+    "favorite": false
+  },
+  {
     "title": "에보니 캐슬",
     "artist": "하세",
     "writer": "섬온화",
