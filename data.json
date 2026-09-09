@@ -1,5 +1,27 @@
 [
   {
+    "title": "무령의 혼",
+    "artist": "mp",
+    "writer": "오늘봄",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "60",
+    "totalEp": "70",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/1746024386",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1G93tnxj4ldCOkeHAwDvc9-6loTHmM9L7",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1G93tnxj4ldCOkeHAwDvc9-6loTHmM9L7",
+      "https://lh3.googleusercontent.com/d/1exo9uMzds-GhTK4rsxKLDzsHNYkW-C5U"
+    ],
+    "favorite": false
+  },
+  {
     "title": "노 모럴(No Moral)",
     "artist": "SHAMPOO",
     "writer": "테하누",
