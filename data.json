@@ -1,5 +1,26 @@
 [
   {
+    "title": "롱타임 레드몰",
+    "artist": "KJK",
+    "writer": "",
+    "day": "기타",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "64",
+    "totalEp": "65",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/505017981",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1JbsbTb4eIyJu6u9dLjultw9NI6BRHrEe",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1JbsbTb4eIyJu6u9dLjultw9NI6BRHrEe"
+    ],
+    "favorite": false
+  },
+  {
     "title": "오칙:효애전",
     "artist": "99",
     "writer": "",
