@@ -1,5 +1,26 @@
 [
   {
+    "title": "그림자의 영역",
+    "artist": "리런",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "56",
+    "totalEp": "72",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895002101",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1xJmK-dAsGKgsB-8zP375Jpd3_PPxD0Be",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1xJmK-dAsGKgsB-8zP375Jpd3_PPxD0Be"
+    ],
+    "favorite": false
+  },
+  {
     "title": "유성의 궤도",
     "artist": "마마들",
     "writer": "모스카레토",
