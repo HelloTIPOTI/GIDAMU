@@ -1,5 +1,26 @@
 [
   {
+    "title": "숨,의 기억",
+    "artist": "햄저",
+    "writer": "채팔이",
+    "day": "6일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "8",
+    "totalEp": "30",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000500",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1spgpkbo1aNCfGN4Xs6nA1MdsDhKYtXLp",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1spgpkbo1aNCfGN4Xs6nA1MdsDhKYtXLp"
+    ],
+    "favorite": false
+  },
+  {
     "title": "패션(PASSION)",
     "artist": "강작",
     "writer": "유우지",
