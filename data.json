@@ -1,5 +1,27 @@
 [
   {
+    "title": "초이스 오브 초이시스",
+    "artist": "민지",
+    "writer": "김다윗",
+    "day": "7일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "42",
+    "totalEp": "60",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1746024026",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/12h0MWNnzFm3zSb7jBcMk0wwutbefwMdE",
+    "images": [
+      "https://lh3.googleusercontent.com/d/12h0MWNnzFm3zSb7jBcMk0wwutbefwMdE",
+      "https://lh3.googleusercontent.com/d/1HMpI2v1IkbALsEN0RkjxK-0us8Kfko_C"
+    ],
+    "favorite": false
+  },
+  {
     "title": "수평낙하",
     "artist": "팀 S&S",
     "writer": "",
