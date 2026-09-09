@@ -1,5 +1,27 @@
 [
   {
+    "title": "캔버스에 유채",
+    "artist": "핫슈",
+    "writer": "유아히",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "35",
+    "totalEp": "65",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3093002423",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/14wVKifKqMK3tgyqHt8w8_CSPqWN5N_GQ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/14wVKifKqMK3tgyqHt8w8_CSPqWN5N_GQ",
+      "https://lh3.googleusercontent.com/d/1XJDfAfebvzFHRdoXvggDWe33VV5O-lZ3"
+    ],
+    "favorite": false
+  },
+  {
     "title": "지금부터 사내연애 썰푼다",
     "artist": "A1",
     "writer": "",
