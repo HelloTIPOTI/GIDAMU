@@ -1,5 +1,28 @@
 [
   {
+    "title": "모두에게 친절한 너는 왜",
+    "artist": "달멍",
+    "writer": "말린꽃",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "54",
+    "totalEp": "74",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5130000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1UjvVsVEjInFehwxGLpYUXvayCKyxuCXL",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1UjvVsVEjInFehwxGLpYUXvayCKyxuCXL",
+      "https://lh3.googleusercontent.com/d/12rbVVjO7m1H0aGOKTbz51MgYLfj9BOw2",
+      "https://lh3.googleusercontent.com/d/1B3PSsfOorBFyUvzSqxJCGwX1zkvgoMvV"
+    ],
+    "favorite": false
+  },
+  {
     "title": "그림자의 영역",
     "artist": "리런",
     "writer": "",
