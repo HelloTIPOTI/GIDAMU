@@ -7,7 +7,6 @@ const GITHUB_CONFIG = {
   branch: "main",
   path: "data.json",
   get token() {
-    // 브라우저에 토큰이 없으면 팝업창을 띄워 입력받고 저장합니다.
     let t = localStorage.getItem("gidamu_gh_token");
     if (!t) {
       t = prompt("GitHub Personal Access Token을 입력해주세요 (최초 1회):");
@@ -25,11 +24,14 @@ let currentView = "home";
 let currentState = { search: "", categories: [], platform: [] };
 let visibleCount = 50;
 
+// 💡 [기능 추가] 정렬 및 즐겨찾기 플랫폼 필터 상태 변수
+let currentSort = "author";        // 기본 정렬: 작가순
+let currentFavPlatform = "전체";   // 즐겨찾기 페이지 플랫폼 필터 기본값
+
 /* ==========================================================
    1. GitHub API 연동 (불러오기 & 저장하기 - 큐 시스템 적용)
    ========================================================== */
 
-// GitHub 서버에서 data.json 가져오기
 async function fetchFromGitHub() {
   const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}?ref=${GITHUB_CONFIG.branch}`;
   try {
@@ -47,20 +49,18 @@ async function fetchFromGitHub() {
   }
 }
 
-// 💡 깃허브 저장 요청이 겹치지 않게 순차적으로 처리하는 큐 변수들
 let isSavingToGitHub = false;
 let saveQueue = null;
 
 async function saveToGitHub(newData) {
   if (isSavingToGitHub) {
-    saveQueue = newData; // 이미 저장 중이면 가장 최신 데이터로 대기열에 등록
+    saveQueue = newData;
     return;
   }
 
   isSavingToGitHub = true;
   try {
     await executeSave(newData);
-    // 대기 중인 데이터가 있다면 순차적으로 마저 저장
     while (saveQueue) {
       const nextData = saveQueue;
       saveQueue = null;
@@ -71,13 +71,11 @@ async function saveToGitHub(newData) {
   }
 }
 
-// 실제 깃허브에 푸시를 날리는 내부 함수 (캐시 방지 적용)
 async function executeSave(newData) {
   const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
   
   let sha = null;
   try {
-    // 💡 [핵심] 브라우저가 예전 SHA를 기억하지 못하도록 cache: 'no-store' 추가
     const checkRes = await fetch(url, {
       headers: { Authorization: `token ${GITHUB_CONFIG.token}` },
       cache: "no-store" 
@@ -134,10 +132,9 @@ function toggleFavorite(title) {
   item.favorite = !item.favorite;
   refreshUI();
   if (currentView === 'fav') {
-    renderSubView(ALL_DATA.filter(i => i.favorite));
+    renderFavView();
   }
 
-  // 💡 팝업 없이 백그라운드에서 조용히 깃허브 동기화
   saveToGitHub(ALL_DATA).catch(e => {
     alert("즐겨찾기 서버 저장 실패: " + e.message);
     item.favorite = !item.favorite;
@@ -158,6 +155,10 @@ function switchView(viewName, param) {
   currentView = viewName;
   document.querySelectorAll(".view-section").forEach(el => el.style.display = "none");
 
+  // 서브 뷰 헤더의 플랫폼 탭 영역 초기화 처리
+  const favTabsEl = document.getElementById("favPlatformTabs");
+  if (favTabsEl) favTabsEl.style.display = "none";
+
   if (viewName === "home") {
     document.getElementById("view-home").style.display = "block";
     refreshUI();
@@ -170,10 +171,10 @@ function switchView(viewName, param) {
     renderAdminList();
   } else if (viewName === "fav") {
     document.getElementById("view-sub").style.display = "block";
-    renderSubView(ALL_DATA.filter(item => getFavorites().includes(item.title)));
+    currentFavPlatform = "전체"; // 즐겨찾기 진입 시 기본 전체 탭 선택
+    renderFavView();
   } else if (viewName === "author") {
     document.getElementById("view-sub").style.display = "block";
-    document.getElementById("subViewTitle").textContent = `작가: ${param}`;
     renderSubView(ALL_DATA.filter(item => item.artist === param || item.writer === param));
   } else if (viewName === "list") {
     document.getElementById("view-sub").style.display = "block";
@@ -183,10 +184,19 @@ function switchView(viewName, param) {
 }
 
 /* ==========================================================
-   4. 메인 화면 렌더링 & 필터
+   4. 메인 화면 렌더링 & 필터 및 정렬 기능
    ========================================================== */
 function refreshUI() {
   renderFilters();
+  renderMainCards();
+}
+
+// 💡 [기능 1 추가] 정렬 드롭다운 변경 시 실행되는 함수
+function onSortChange() {
+  const selectEl = document.getElementById("sortSelect");
+  if (selectEl) {
+    currentSort = selectEl.value;
+  }
   renderMainCards();
 }
 
@@ -197,19 +207,36 @@ function getFilteredData() {
 
   if (currentState.search.length >= 2) {
     const q = currentState.search.toLowerCase();
-    return list.filter(item =>
+    list = list.filter(item =>
       (item.title || "").toLowerCase().includes(q) ||
       (item.artist || "").toLowerCase().includes(q) ||
       (item.writer || "").toLowerCase().includes(q)
     );
+  } else {
+    if (selectedDay !== "전체") {
+      list = list.filter(item => item.day === selectedDay);
+    }
+    if (selectedPlatform) {
+      list = list.filter(item => (item.platform || []).includes(selectedPlatform));
+    }
   }
 
-  if (selectedDay !== "전체") {
-    list = list.filter(item => item.day === selectedDay);
-  }
-  if (selectedPlatform) {
-    list = list.filter(item => (item.platform || []).includes(selectedPlatform));
-  }
+  // 💡 [기능 1 추가] 정렬 적용 (작가순 / 제목순)
+  list.sort((a, b) => {
+    if (currentSort === "author") {
+      // 작가순 정렬 (artist 기준, 없으면 빈 문자열)
+      const authorA = (a.artist || "").trim();
+      const authorB = (b.artist || "").trim();
+      return authorA.localeCompare(authorB, "ko");
+    } else if (currentSort === "title") {
+      // 제목순 정렬
+      const titleA = (a.title || "").trim();
+      const titleB = (b.title || "").trim();
+      return titleA.localeCompare(titleB, "ko");
+    }
+    return 0;
+  });
+
   return list;
 }
 
@@ -319,7 +346,7 @@ function renderMainCards() {
 }
 
 /* ==========================================================
-   5. 상세 페이지 & 서브 뷰
+   5. 상세 페이지 & 서브 뷰 (즐겨찾기, 작가별 보기 등)
    ========================================================== */
 let currentSlideImages = [];
 let currentSlideIndex = 0;
@@ -363,7 +390,6 @@ function renderDetail(item) {
   if(item.link2) { l2El.innerHTML = `<a href="${item.link2}" target="_blank" class="detail-link">${item.link2}</a>`; l2Wrap.style.display = "flex"; }
   else { l2Wrap.style.display = "none"; }
 
-  // 💡 버튼형 슬라이드를 위한 이미지 세팅
   currentSlideImages = (item.images && item.images.length > 0) ? item.images : (item.thumbnail ? [item.thumbnail] : []);
   currentSlideIndex = 0;
   updateSlideView();
@@ -374,23 +400,17 @@ function renderDetail(item) {
   };
 }
 
-// 💡 좌우 버튼을 눌렀을 때 실행되는 슬라이드 전환 함수
 function moveSlide(direction) {
   if (currentSlideImages.length <= 1) return;
-  
   currentSlideIndex += direction;
-  
-  // 무한 순환 구조 (마지막 장에서 다음 누르면 첫 장으로, 첫 장에서 이전 누르면 끝장으로)
   if (currentSlideIndex < 0) {
     currentSlideIndex = currentSlideImages.length - 1;
   } else if (currentSlideIndex >= currentSlideImages.length) {
     currentSlideIndex = 0;
   }
-  
   updateSlideView();
 }
 
-// 💡 슬라이드 이미지와 버튼/인디케이터 상태를 업데이트하는 함수
 function updateSlideView() {
   const imgEl = document.getElementById("detailThumb");
   const prevBtn = document.getElementById("sliderPrevBtn");
@@ -404,7 +424,6 @@ function updateSlideView() {
     imgEl.src = "";
   }
 
-  // 이미지가 2장 이상일 때만 좌우 버튼과 인디케이터 표시
   if (currentSlideImages.length > 1) {
     prevBtn.style.display = "flex";
     nextBtn.style.display = "flex";
@@ -415,6 +434,34 @@ function updateSlideView() {
     nextBtn.style.display = "none";
     indicator.style.display = "none";
   }
+}
+
+// 💡 [기능 2 추가] 즐겨찾기 화면 전용 렌더링 및 플랫폼 탭 생성 함수
+function renderFavView() {
+  const favTabsEl = document.getElementById("favPlatformTabs");
+  if (favTabsEl) {
+    favTabsEl.style.display = "flex";
+    favTabsEl.innerHTML = "";
+
+    const platforms = ["전체", "카카오", "리디", "시리즈", "미블", "마녀", "웹소(카카오)", "웹소(리디)"];
+    platforms.forEach(p => {
+      const el = document.createElement("div");
+      el.className = "pill" + (currentFavPlatform === p ? " active" : "");
+      el.textContent = p;
+      el.onclick = () => {
+        currentFavPlatform = p;
+        renderFavView();
+      };
+      favTabsEl.appendChild(el);
+    });
+  }
+
+  let favItems = ALL_DATA.filter(item => item.favorite);
+  if (currentFavPlatform !== "전체") {
+    favItems = favItems.filter(item => (item.platform || []).includes(currentFavPlatform));
+  }
+
+  renderSubView(favItems);
 }
 
 function renderSubView(list) {
@@ -436,7 +483,6 @@ function renderSubView(list) {
 
     const card = document.createElement("div");
     card.className = "card";
-    // 💡 메인(H) 페이지 카드와 100% 동일한 HTML 구조 적용
     card.innerHTML = `
       <div class="fav-btn ${isFav ? "active" : ""}"></div>
       <div class="thumb-wrap">
@@ -460,9 +506,12 @@ function renderSubView(list) {
       </div>
     `;
 
-    // 메인 페이지와 동일한 클릭 이벤트 연결
     card.onclick = () => switchView('detail', item);
-    card.querySelector(".fav-btn").onclick = (e) => { e.stopPropagation(); toggleFavorite(item.title); refreshUI(); if(currentView === 'fav') renderSubView(ALL_DATA.filter(i => getFavorites().includes(i.title))); };
+    card.querySelector(".fav-btn").onclick = (e) => { 
+      e.stopPropagation(); 
+      toggleFavorite(item.title); 
+      if (currentView === 'fav') renderFavView(); 
+    };
     card.querySelectorAll(".author-click").forEach(el => {
       el.onclick = (e) => { e.stopPropagation(); if(el.dataset.name) switchView('author', el.dataset.name); };
     });
@@ -533,8 +582,6 @@ async function processSubmit() {
   }
 
   const thumbnail = images.length > 0 ? images[0] : (editingIndex !== null ? ALL_DATA[editingIndex].thumbnail : "");
-
-  // 💡 [핵심 수정] 기존에 이미 있던 작품을 수정하는 경우, 기존의 하트(favorite) 상태를 가져와서 유지합니다!
   const existingFavorite = (editingIndex !== null && ALL_DATA[editingIndex]) ? !!ALL_DATA[editingIndex].favorite : false;
 
   const newItem = {
@@ -552,7 +599,7 @@ async function processSubmit() {
     link2: document.getElementById("admLink2").value.trim(),
     thumbnail,
     images: images.length > 0 ? images : (editingIndex !== null ? (ALL_DATA[editingIndex].images || [thumbnail]) : []),
-    favorite: existingFavorite // 💡 하트 풀림 방지 유지 속성 추가
+    favorite: existingFavorite
   };
 
   if(editingIndex !== null) {
@@ -573,7 +620,6 @@ async function processSubmit() {
   }
 }
 
-// 기존 작품을 수정하려고 불러올 때 여러 장의 이미지 링크를 다시 input에 채워주는 함수
 function loadItemToEdit(index) {
   editingIndex = index;
   const item = ALL_DATA[index];
@@ -589,8 +635,6 @@ function loadItemToEdit(index) {
   document.getElementById("admNote").value = item.note || "";
   document.getElementById("admLink").value = item.link || "";
   document.getElementById("admLink2").value = item.link2 || "";
-  
-  // 저장된 이미지 배열이 있다면 쉼표로 이어붙여서 input에 표시
   document.getElementById("admImageNames").value = (item.images && item.images.length > 0) ? item.images.join(", ") : (item.thumbnail || "");
   
   document.getElementById("adminPanelTitle").textContent = "작품 수정";
@@ -649,27 +693,16 @@ function renderAdminList() {
 document.getElementById("admSearch")?.addEventListener("input", renderAdminList);
 document.getElementById("brandTitle")?.addEventListener("click", () => switchView('home'));
 
-// 최초 실행
 initData();
 
-/* ==========================================================
-   7. 초기화 버튼
-   ========================================================== */
-// 초기화 버튼 기능 구현
 document.getElementById("resetBtn")?.addEventListener("click", () => {
-  // 1. 검색어 입력창 비우기
   const searchInput = document.getElementById("searchInput");
   if (searchInput) searchInput.value = "";
-
-  // 2. 필터 상태(카테고리, 플랫폼, 검색어) 초기화
   currentState = { search: "", categories: [], platform: [] };
-  
-  // 3. 보여지는 개수 초기화 및 UI 새로고침
   visibleCount = 50;
   refreshUI();
 });
 
-// 실시간 검색어 입력 연동 (혹시 빠져있다면 함께 확인)
 document.getElementById("searchInput")?.addEventListener("input", (e) => {
   currentState.search = e.target.value;
   visibleCount = 50;

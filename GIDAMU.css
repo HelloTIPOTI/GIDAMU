@@ -1068,3 +1068,33 @@ margin-bottom:25px;
     font-size: 13px;
   }
 }
+
+/* =========================
+   하트 페이지 필터탭
+========================= */
+
+.flex-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0 20px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* =========================
+   메인 페이지 청렬 드롭다운
+========================= */
+
+.sort-select {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+}
+.sort-select:hover {
+  background: #f4f5f7;
+}

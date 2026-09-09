@@ -37,8 +37,17 @@
         <button id="resetBtn" class="reset-btn">초기화</button>
       </div>
     </div>
-    <div id="resultCount" class="result-count"></div>
-    <div id="cards" class="card-grid"></div>
+    
+    <!-- 💡 [기능 1 추가] 'n개 작품' 반대편에 정렬 드롭다운 배치 -->
+    <div class="flex-header-row">
+      <div id="resultCount" class="result-count" style="margin:0;"></div>
+      <select id="sortSelect" class="sort-select" onchange="onSortChange()">
+        <option value="author">작가순</option>
+        <option value="title">제목순</option>
+      </select>
+    </div>
+
+    <div id="cards" class="card-grid" style="margin-top:20px;"></div>
     <div class="loadmore-wrap">
       <button id="loadMoreBtn" class="loadmore-btn" style="display:none;">더보기</button>
     </div>
@@ -55,10 +64,12 @@
           <div class="slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
             <img id="detailThumb" class="detail-cover" src="" style="width: 100%; display: block; object-fit: cover;">
     
-            <!-- 좌우 이동 버튼 (이미지가 2장 이상일 때만 보임) -->
+            <!-- 좌우 이동 버튼 -->
             <button id="sliderPrevBtn" onclick="moveSlide(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">‹</button>
             <button id="sliderNextBtn" onclick="moveSlide(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">›</button>
           </div>
+          <!-- 인디케이터 (현재 번호 / 총 개수) -->
+          <div id="sliderIndicator" style="margin-top: 8px; font-size: 12px; color: #666; display: none;"></div>
         </div>
         <div>
           <div id="detailTitle" class="detail-title"></div>
@@ -120,7 +131,11 @@
 
   <!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
   <div id="view-sub" class="view-section" style="display:none;">
-    <span class="back-link" onclick="switchView('home')" style="cursor:pointer;">← 돌아가기</span>
+    <!-- 💡 [기능 2 추가] '← 돌아가기' 반대편에 플랫폼 탭 영역 배치 -->
+    <div class="flex-header-row" id="subHeaderRow">
+      <span class="back-link" onclick="switchView('home')" style="cursor:pointer; margin-bottom:0;">← 돌아가기</span>
+      <div id="favPlatformTabs" class="pill-row" style="margin-bottom:0; display:none;"></div>
+    </div>
     <div id="subResultCount" class="result-count"></div>
     <div id="subCards" class="card-grid"></div>
   </div>
