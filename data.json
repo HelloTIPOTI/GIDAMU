@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브 온에어",
+    "artist": "백공",
+    "writer": "",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "27",
+    "totalEp": "42",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404003304",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1158yxJHhxB5RJDANKOZy2LPR_Sfl0_R3",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1158yxJHhxB5RJDANKOZy2LPR_Sfl0_R3"
+    ],
+    "favorite": false
+  },
+  {
     "title": "대마법사는 영웅이 되고 싶지 않다",
     "artist": "빙고",
     "writer": "",
