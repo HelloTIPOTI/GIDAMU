@@ -1,5 +1,26 @@
 [
   {
+    "title": "동절기",
+    "artist": "절구",
+    "writer": "이로밀",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "24",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404036823",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Wxdpewu4abfbnuLTMSKuak4efp7B6XaL",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Wxdpewu4abfbnuLTMSKuak4efp7B6XaL"
+    ],
+    "favorite": false
+  },
+  {
     "title": "캔버스에 유채",
     "artist": "핫슈",
     "writer": "유아히",
