@@ -1,5 +1,27 @@
 [
   {
+    "title": "아르카디아",
+    "artist": "희리",
+    "writer": "조도차",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "1",
+    "totalEp": "16",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/297089388",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Ux8mIM6k_ePEVEe7RaQkINREjCqSUEdc",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Ux8mIM6k_ePEVEe7RaQkINREjCqSUEdc",
+      "https://lh3.googleusercontent.com/d/163nayUKpgVINAubPFUHd72smnJIi5DSP"
+    ],
+    "favorite": false
+  },
+  {
     "title": "상수리나무 아래",
     "artist": "P",
     "writer": "김수지",
