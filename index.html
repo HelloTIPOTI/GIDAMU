@@ -134,7 +134,21 @@
     <!-- 💡 [기능 2 추가] '← 돌아가기' 반대편에 플랫폼 탭 영역 배치 -->
     <div class="flex-header-row" id="subHeaderRow">
       <span class="back-link" onclick="switchView('home')" style="cursor:pointer; margin-bottom:0;">← 돌아가기</span>
-      <div id="favPlatformTabs" class="pill-row" style="margin-bottom:0; display:none;"></div>
+  <!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
+  <div id="view-sub" class="view-section" style="display:none;">
+    <!-- 💡 [변경] 플랫폼 필터를 탭에서 드롭다운(<select>)으로 수정 -->
+    <div class="flex-header-row" id="subHeaderRow">
+      <span class="back-link" onclick="switchView('home')" style="cursor:pointer; margin-bottom:0;">← 돌아가기</span>
+      <select id="favPlatformSelect" class="sort-select" style="display:none;" onchange="onFavPlatformChange()">
+        <option value="전체">전체 플랫폼</option>
+        <option value="카카오">카카오</option>
+        <option value="리디">리디</option>
+        <option value="시리즈">시리즈</option>
+        <option value="미블">미블</option>
+        <option value="마녀">마녀</option>
+        <option value="웹소(카카오)">웹소(카카오)</option>
+        <option value="웹소(리디)">웹소(리디)</option>
+      </select>
     </div>
     <div id="subResultCount" class="result-count"></div>
     <div id="subCards" class="card-grid"></div>

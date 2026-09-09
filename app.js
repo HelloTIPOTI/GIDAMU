@@ -149,15 +149,15 @@ function getDDay(endDate) {
 }
 
 /* ==========================================================
-   3. 화면 전환 (SPA Router)
+   3. 화면 전환 (SPA Router) 수정 부분
    ========================================================== */
 function switchView(viewName, param) {
   currentView = viewName;
   document.querySelectorAll(".view-section").forEach(el => el.style.display = "none");
 
-  // 서브 뷰 헤더의 플랫폼 탭 영역 초기화 처리
-  const favTabsEl = document.getElementById("favPlatformTabs");
-  if (favTabsEl) favTabsEl.style.display = "none";
+  // 서브 뷰 헤더의 플랫폼 드롭다운 초기화 처리 (기본 숨김)
+  const favSelectEl = document.getElementById("favPlatformSelect");
+  if (favSelectEl) favSelectEl.style.display = "none";
 
   if (viewName === "home") {
     document.getElementById("view-home").style.display = "block";
@@ -171,7 +171,7 @@ function switchView(viewName, param) {
     renderAdminList();
   } else if (viewName === "fav") {
     document.getElementById("view-sub").style.display = "block";
-    currentFavPlatform = "전체"; // 즐겨찾기 진입 시 기본 전체 탭 선택
+    currentFavPlatform = "전체"; // 즐겨찾기 진입 시 기본 '전체'로 초기화
     renderFavView();
   } else if (viewName === "author") {
     document.getElementById("view-sub").style.display = "block";
@@ -181,6 +181,34 @@ function switchView(viewName, param) {
     renderAuthorList();
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ==========================================================
+   즐겨찾기 페이지 드롭다운 연동 함수
+   ========================================================== */
+// 💡 [신규] 즐겨찾기 플랫폼 드롭다운 변경 시 실행되는 함수
+function onFavPlatformChange() {
+  const selectEl = document.getElementById("favPlatformSelect");
+  if (selectEl) {
+    currentFavPlatform = selectEl.value;
+  }
+  renderFavView();
+}
+
+// 💡 [수정] 즐겨찾기 화면 렌더링 함수 (드롭다운 상태 반영)
+function renderFavView() {
+  const favSelectEl = document.getElementById("favPlatformSelect");
+  if (favSelectEl) {
+    favSelectEl.style.display = "inline-block"; // 즐겨찾기 뷰일 때만 드롭다운 노출
+    favSelectEl.value = currentFavPlatform;
+  }
+
+  let favItems = ALL_DATA.filter(item => item.favorite);
+  if (currentFavPlatform !== "전체") {
+    favItems = favItems.filter(item => (item.platform || []).includes(currentFavPlatform));
+  }
+
+  renderSubView(favItems);
 }
 
 /* ==========================================================
