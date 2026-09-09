@@ -1,5 +1,26 @@
 [
   {
+    "title": "별이 내린 밤",
+    "artist": "기회비용",
+    "writer": "",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "19",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4624000075",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Cy96IVhWkuSq4cdfa4U9Xxca-TRUBmys",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Cy96IVhWkuSq4cdfa4U9Xxca-TRUBmys"
+    ],
+    "favorite": false
+  },
+  {
     "title": "파지",
     "artist": "농하",
     "writer": "조도차",
