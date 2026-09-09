@@ -1,5 +1,27 @@
 [
   {
+    "title": "서버 1위 힐러지만 힐은 못합니다",
+    "artist": "김쿠로",
+    "writer": "단델라이언",
+    "day": "완결",
+    "platform": [
+      "마녀"
+    ],
+    "currentEp": "54",
+    "totalEp": "64",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://www.mcomics.co.kr/webtoonComic/12162",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1IYY742b9U5mUMZUWtEUnN_iH71F89DFz",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1IYY742b9U5mUMZUWtEUnN_iH71F89DFz",
+      "https://lh3.googleusercontent.com/d/1bhN5CNeKhElQM_l0LM66Wui-qFW9gkMq"
+    ],
+    "favorite": false
+  },
+  {
     "title": "우울한 사기꾼",
     "artist": "난나",
     "writer": "채팔이",
