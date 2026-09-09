@@ -1,5 +1,26 @@
 [
   {
+    "title": "고양이 테라피",
+    "artist": "피아",
+    "writer": "마린코드",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "35",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/3093003333",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1saCnuWB67sm4TZOp3sHcDtOkaDLJklxt",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1saCnuWB67sm4TZOp3sHcDtOkaDLJklxt"
+    ],
+    "favorite": false
+  },
+  {
     "title": "코드네임 아나스타샤",
     "artist": "한",
     "writer": "보이시즌",
