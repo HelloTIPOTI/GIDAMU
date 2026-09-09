@@ -1,5 +1,26 @@
 [
   {
+    "title": "눈부신 숨",
+    "artist": "팀 아가페",
+    "writer": "samk",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "45",
+    "totalEp": "52",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/1483037111",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1fDPvmGgaa7mGZMm9QXEki2a2C4U1qYVx",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1fDPvmGgaa7mGZMm9QXEki2a2C4U1qYVx"
+    ],
+    "favorite": false
+  },
+  {
     "title": "개코도 모르면서",
     "artist": "하재",
     "writer": "유테",
