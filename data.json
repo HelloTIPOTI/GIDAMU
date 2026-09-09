@@ -1,5 +1,27 @@
 [
   {
+    "title": "악인담",
+    "artist": "사과씨",
+    "writer": "당밀",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "4",
+    "totalEp": "54",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4795000190",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1F2S-DtERw3FwesnWpzfC18Uj3g1IQk2x",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1F2S-DtERw3FwesnWpzfC18Uj3g1IQk2x",
+      "https://lh3.googleusercontent.com/d/1ryvGFv-yICDYVfhLkCDWAj6Tv-iEZ3OD"
+    ],
+    "favorite": false
+  },
+  {
     "title": "반칙",
     "artist": "엑저",
     "writer": "채팔이",
