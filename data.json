@@ -1,5 +1,28 @@
 [
   {
+    "title": "부식인",
+    "artist": "임애주",
+    "writer": "",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "21",
+    "totalEp": "76",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4928002698",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Cq0tWlb1MGi3mYCAm7okR7JQELpMO8i4",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Cq0tWlb1MGi3mYCAm7okR7JQELpMO8i4",
+      "https://lh3.googleusercontent.com/d/1uen6sJjxe9Q0Jet9zW_MuELAseHRePpn",
+      "https://lh3.googleusercontent.com/d/1cfNe1FvKjSeIa_IFd74ztLALfLEYH-Vm"
+    ],
+    "favorite": false
+  },
+  {
     "title": "민트사탕러브",
     "artist": "참비&탄bullet",
     "writer": "해저500M",
