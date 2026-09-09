@@ -1,5 +1,26 @@
 [
   {
+    "title": "불우한 삶",
+    "artist": "오슷카",
+    "writer": "백나라",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "11",
+    "totalEp": "46",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000972",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1N-4iwRoczzRQ8Xovn7ko3TyiyvbdqpmR",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1N-4iwRoczzRQ8Xovn7ko3TyiyvbdqpmR"
+    ],
+    "favorite": false
+  },
+  {
     "title": "러브 미 모어",
     "artist": "재하",
     "writer": "Whale",
