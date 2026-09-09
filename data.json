@@ -1,5 +1,29 @@
 [
   {
+    "title": "반칙",
+    "artist": "엑저",
+    "writer": "채팔이",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "107",
+    "totalEp": "146",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Xy1qKXJN3WQwrO5P4jxUaVqvyisNvJQf",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Xy1qKXJN3WQwrO5P4jxUaVqvyisNvJQf",
+      "https://lh3.googleusercontent.com/d/1-VnO8FciXoovccqgAyVcINPO99wLX-cU",
+      "https://lh3.googleusercontent.com/d/19XH93GPN9ysd2yyV_SJ0S9AjJhm0hrxk",
+      "https://lh3.googleusercontent.com/d/11IWBjTXXu3zSfZMZlgDFKWIAR6s13SJU"
+    ],
+    "favorite": false
+  },
+  {
     "title": "불우한 삶",
     "artist": "오슷카",
     "writer": "백나라",
