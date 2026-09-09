@@ -464,34 +464,6 @@ function updateSlideView() {
   }
 }
 
-// 💡 [기능 2 추가] 즐겨찾기 화면 전용 렌더링 및 플랫폼 탭 생성 함수
-function renderFavView() {
-  const favTabsEl = document.getElementById("favPlatformTabs");
-  if (favTabsEl) {
-    favTabsEl.style.display = "flex";
-    favTabsEl.innerHTML = "";
-
-    const platforms = ["전체", "카카오", "리디", "시리즈", "미블", "마녀", "웹소(카카오)", "웹소(리디)"];
-    platforms.forEach(p => {
-      const el = document.createElement("div");
-      el.className = "pill" + (currentFavPlatform === p ? " active" : "");
-      el.textContent = p;
-      el.onclick = () => {
-        currentFavPlatform = p;
-        renderFavView();
-      };
-      favTabsEl.appendChild(el);
-    });
-  }
-
-  let favItems = ALL_DATA.filter(item => item.favorite);
-  if (currentFavPlatform !== "전체") {
-    favItems = favItems.filter(item => (item.platform || []).includes(currentFavPlatform));
-  }
-
-  renderSubView(favItems);
-}
-
 function renderSubView(list) {
   const wrap = document.getElementById("subCards");
   const count = document.getElementById("subResultCount");
