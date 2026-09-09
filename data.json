@@ -1,5 +1,27 @@
 [
   {
+    "title": "아는 맛",
+    "artist": "구이사",
+    "writer": "야간비행",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "35",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895002630",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/184TSEnPk0GZl_47cey0Ncn7ClQNhEtO7",
+    "images": [
+      "https://lh3.googleusercontent.com/d/184TSEnPk0GZl_47cey0Ncn7ClQNhEtO7",
+      "https://lh3.googleusercontent.com/d/1ykBaBzN9UfdVk3kWwrMFMPD6lwm2y7VV"
+    ],
+    "favorite": false
+  },
+  {
     "title": "파울즈 스타트",
     "artist": "오늘만사는형제",
     "writer": "",
