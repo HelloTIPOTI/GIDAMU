@@ -1,5 +1,26 @@
 [
   {
+    "title": "개의 가면",
+    "artist": "움비프동",
+    "writer": "아르곤18",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "3",
+    "totalEp": "33",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404036534",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1T3QojQB9OazJaV337RvPF_AoODIfofGM",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1T3QojQB9OazJaV337RvPF_AoODIfofGM"
+    ],
+    "favorite": false
+  },
+  {
     "title": "부식인",
     "artist": "임애주",
     "writer": "",
