@@ -1,5 +1,26 @@
 [
   {
+    "title": "러브 미 모어",
+    "artist": "재하",
+    "writer": "Whale",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "1",
+    "totalEp": "16",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4443003344",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1JPKJOJ3n2f7eBDrcbMSnK_Ku6EBJsiKz",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1JPKJOJ3n2f7eBDrcbMSnK_Ku6EBJsiKz"
+    ],
+    "favorite": false
+  },
+  {
     "title": "찬란한 어둠",
     "artist": "피곤토끼",
     "writer": "텐시엘",
