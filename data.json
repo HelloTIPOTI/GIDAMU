@@ -1,5 +1,26 @@
 [
   {
+    "title": "상수리나무 아래",
+    "artist": "P",
+    "writer": "김수지",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "156",
+    "totalEp": "166",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/4766000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1mh3qZq4V_q3CZcVTtsIrG53S7Ts8DW8v",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1mh3qZq4V_q3CZcVTtsIrG53S7Ts8DW8v"
+    ],
+    "favorite": false
+  },
+  {
     "title": "디졸브 : His Last Choice",
     "artist": "거노",
     "writer": "김다윗",
