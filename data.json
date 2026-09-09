@@ -1,5 +1,27 @@
 [
   {
+    "title": "타나토스",
+    "artist": "SSOS",
+    "writer": "트라비아",
+    "day": "완결",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "25",
+    "totalEp": "63",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/297062992",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/16IbjPqJwAqqsQa_Mv00Qqfwx9-6QJnBR",
+    "images": [
+      "https://lh3.googleusercontent.com/d/16IbjPqJwAqqsQa_Mv00Qqfwx9-6QJnBR",
+      "https://lh3.googleusercontent.com/d/1QxEdGhsgZ3C95MNAOr7ykAq432rRNbzP"
+    ],
+    "favorite": false
+  },
+  {
     "title": "불길한 손님",
     "artist": "YUL",
     "writer": "러스",
