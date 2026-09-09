@@ -1,5 +1,27 @@
 [
   {
+    "title": "아우토반 로맨스",
+    "artist": "먁",
+    "writer": "표고밥",
+    "day": "목",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "6",
+    "totalEp": "43",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5783000020",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1nPSVsU-FkwWnozOce__Vt-zCYFs6HyZa",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1nPSVsU-FkwWnozOce__Vt-zCYFs6HyZa",
+      "https://lh3.googleusercontent.com/d/1YB8Eq7moCrvlbEOo2uyHeGnACMeVp4wA"
+    ],
+    "favorite": false
+  },
+  {
     "title": "데이앤나잇",
     "artist": "양이",
     "writer": "칠디",
