@@ -1,5 +1,28 @@
 [
   {
+    "title": "피자배달부와 골드팰리스",
+    "artist": "어피",
+    "writer": "",
+    "day": "2일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "91",
+    "totalEp": "112",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4844000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1xciADta2vhus0cIo82V4X-0J8iAuY3Lm",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1xciADta2vhus0cIo82V4X-0J8iAuY3Lm",
+      "https://lh3.googleusercontent.com/d/15bvFvysmQb3pULxRoBUYHbc0FQ6XaaDV",
+      "https://lh3.googleusercontent.com/d/1hBnV2D9o1NPIPRZ6qBTNSFHwpU9OJjdl"
+    ],
+    "favorite": false
+  },
+  {
     "title": "엑스 스폰서",
     "artist": "옴",
     "writer": "Dips",
