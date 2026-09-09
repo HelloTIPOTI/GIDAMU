@@ -1,5 +1,26 @@
 [
   {
+    "title": "스윗 슈가 캔디맨",
+    "artist": "이하나",
+    "writer": "아르카나",
+    "day": "수",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "16",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895003742",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1k3nsbmQDAznLq857T-KhuzpBeFES9AIh",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1k3nsbmQDAznLq857T-KhuzpBeFES9AIh"
+    ],
+    "favorite": false
+  },
+  {
     "title": "아우토반 로맨스",
     "artist": "먁",
     "writer": "표고밥",
