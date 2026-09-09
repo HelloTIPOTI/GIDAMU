@@ -1,5 +1,28 @@
 [
   {
+    "title": "허니베어",
+    "artist": "너티",
+    "writer": "루영",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "90",
+    "totalEp": "101",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4895000125",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/10hwET72ELkacEA67ejcA4gk4KPsfSgB2",
+    "images": [
+      "https://lh3.googleusercontent.com/d/10hwET72ELkacEA67ejcA4gk4KPsfSgB2",
+      "https://lh3.googleusercontent.com/d/1jX_T_qgzaqdt41y6PQlXz7qZ92BldRd5",
+      "https://lh3.googleusercontent.com/d/11sXVfBtt3kwJgcINIJNm-g1z_KVj0Z3o"
+    ],
+    "favorite": false
+  },
+  {
     "title": "언로맨틱 오피스",
     "artist": "누누",
     "writer": "",
