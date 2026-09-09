@@ -1,5 +1,26 @@
 [
   {
+    "title": "세컨드 하프",
+    "artist": "조구오",
+    "writer": "후추스파클링",
+    "day": "화",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "22",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/297088769",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1DhhwXBvrZlXNu3MKOZZA-BDWehrB7GOs",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1DhhwXBvrZlXNu3MKOZZA-BDWehrB7GOs"
+    ],
+    "favorite": false
+  },
+  {
     "title": "섭우춘빙",
     "artist": "강노",
     "writer": "밤꾀꼬리",
