@@ -1,5 +1,26 @@
 [
   {
+    "title": "양일우와 나",
+    "artist": "박노덕",
+    "writer": "",
+    "day": "5일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "29",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/2404033128",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1puxI8k7OEVtaJhE_B5rMs0JPTKOpF9xl",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1puxI8k7OEVtaJhE_B5rMs0JPTKOpF9xl"
+    ],
+    "favorite": false
+  },
+  {
     "title": "악인담",
     "artist": "사과씨",
     "writer": "당밀",
