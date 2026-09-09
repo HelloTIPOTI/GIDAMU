@@ -1,5 +1,26 @@
 [
   {
+    "title": "헤비 레인 (Heavy Rain)",
+    "artist": "매듭",
+    "writer": "꾸밍크",
+    "day": "8일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "6",
+    "totalEp": "28",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001595",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1KNTNWs-moNKAaCKCYYOYtvnUPumAlx5P",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1KNTNWs-moNKAaCKCYYOYtvnUPumAlx5P"
+    ],
+    "favorite": false
+  },
+  {
     "title": "파트타임 파트너",
     "artist": "일요일",
     "writer": "체리만쥬",
