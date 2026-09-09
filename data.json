@@ -1,5 +1,26 @@
 [
   {
+    "title": "모노크롬 다이어리",
+    "artist": "랙",
+    "writer": "",
+    "day": "토",
+    "platform": [
+      "시리즈"
+    ],
+    "currentEp": "44",
+    "totalEp": "52",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/120EaL6V2Gwn-C4VJWTna0wx9DVrYt0y7",
+    "images": [
+      "https://lh3.googleusercontent.com/d/120EaL6V2Gwn-C4VJWTna0wx9DVrYt0y7"
+    ],
+    "favorite": false
+  },
+  {
     "title": "금빛을 너에게",
     "artist": "배토디",
     "writer": "",
