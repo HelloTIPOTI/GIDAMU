@@ -1,5 +1,28 @@
 [
   {
+    "title": "토요일의 주인님",
+    "artist": "DO.D",
+    "writer": "섬온화",
+    "day": "9일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "외전1 4",
+    "totalEp": "74",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5206000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1OwTr-AKdQvoHRZwYtMc0twA9djVrg_U9",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1OwTr-AKdQvoHRZwYtMc0twA9djVrg_U9",
+      "https://lh3.googleusercontent.com/d/1W_8WR31TPdVuBPqPPHq18YjYe-AuEVra",
+      "https://lh3.googleusercontent.com/d/1ZSq3XgwDInQRCgQrdhmMXSvHnDuXy4t6"
+    ],
+    "favorite": false
+  },
+  {
     "title": "영웅은 죽고 싶다",
     "artist": "나자",
     "writer": "임유니",
