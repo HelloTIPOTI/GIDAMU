@@ -1,5 +1,27 @@
 [
   {
+    "title": "닳고 닳은 연애",
+    "artist": "제뉴",
+    "writer": "오후네시육분",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "21",
+    "totalEp": "32",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4443002856",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/14LY5E_m_DxFxDSqCCblcI7vLBFfBm7iP",
+    "images": [
+      "https://lh3.googleusercontent.com/d/14LY5E_m_DxFxDSqCCblcI7vLBFfBm7iP",
+      "https://lh3.googleusercontent.com/d/1wfyX31k50KdhILd4EQlStxg5xEjAx5Fn"
+    ],
+    "favorite": false
+  },
+  {
     "title": "앰버 얼럿",
     "artist": "공태",
     "writer": "JaneM",
