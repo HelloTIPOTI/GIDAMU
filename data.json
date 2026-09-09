@@ -1,5 +1,26 @@
 [
   {
+    "title": "시절인연",
+    "artist": "썸머",
+    "writer": "",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "92",
+    "totalEp": "134",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5113000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/19SbjptRM5CW7qq6pRUNDIrgjvsd98LZJ",
+    "images": [
+      "https://lh3.googleusercontent.com/d/19SbjptRM5CW7qq6pRUNDIrgjvsd98LZJ"
+    ],
+    "favorite": false
+  },
+  {
     "title": "마교 교주를 애지중지 키웠다",
     "artist": "아래비",
     "writer": "단애",
