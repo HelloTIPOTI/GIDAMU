@@ -1,5 +1,27 @@
 [
   {
+    "title": "안티도트",
+    "artist": "토티코",
+    "writer": "하루사리",
+    "day": "8일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "69",
+    "totalEp": "93",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5378000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/18PO4c_GMxi_ILp-VPGiI08LRiyz4r5gW",
+    "images": [
+      "https://lh3.googleusercontent.com/d/18PO4c_GMxi_ILp-VPGiI08LRiyz4r5gW",
+      "https://lh3.googleusercontent.com/d/1TOPaH2bMS6zUU_K41YXqa6FBfHWU0i3Y"
+    ],
+    "favorite": false
+  },
+  {
     "title": "토요일의 주인님",
     "artist": "DO.D",
     "writer": "섬온화",
