@@ -1,5 +1,26 @@
 [
   {
+    "title": "역살",
+    "artist": "킨고",
+    "writer": "당밀",
+    "day": "목",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "14",
+    "totalEp": "39",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5103000349",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Ym6pn3o9NWTXXYZwOi0r7YTCfZues6qi",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Ym6pn3o9NWTXXYZwOi0r7YTCfZues6qi"
+    ],
+    "favorite": false
+  },
+  {
     "title": "소꿉친구의 가이드가 되었다",
     "artist": "2396스튜디오",
     "writer": "크리스피피쉬",
