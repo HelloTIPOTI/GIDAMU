@@ -1,5 +1,26 @@
 [
   {
+    "title": "잠자는 숲속의 괴물",
+    "artist": "객기",
+    "writer": "탄밤이",
+    "day": "토",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "25",
+    "totalEp": "48",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/6009000001",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/19oIS8DdPaTyiAVTCpz_mzdYVn4pBrvai",
+    "images": [
+      "https://lh3.googleusercontent.com/d/19oIS8DdPaTyiAVTCpz_mzdYVn4pBrvai"
+    ],
+    "favorite": false
+  },
+  {
     "title": "아는 맛",
     "artist": "구이사",
     "writer": "야간비행",
