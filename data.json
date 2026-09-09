@@ -1,5 +1,28 @@
 [
   {
+    "title": "패션:라가(Raga)",
+    "artist": "알터",
+    "writer": "유우지",
+    "day": "10일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "15",
+    "totalEp": "45",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001181",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1BBg-rMdO0MqJoOIVrUp_Fxf6iBUfcUKw",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1BBg-rMdO0MqJoOIVrUp_Fxf6iBUfcUKw",
+      "https://lh3.googleusercontent.com/d/1FrLHlqs2z5GOLijxJlYwGcjeoLS3SYzv",
+      "https://lh3.googleusercontent.com/d/15wjlelwn-Q-NpnVmGANno8FQSWGPobIR"
+    ],
+    "favorite": false
+  },
+  {
     "title": "롱타임 레드몰",
     "artist": "KJK",
     "writer": "",
