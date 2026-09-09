@@ -1,5 +1,26 @@
 [
   {
+    "title": "쌤쌤",
+    "artist": "노루",
+    "writer": "",
+    "day": "목",
+    "platform": [
+      "시리즈"
+    ],
+    "currentEp": "34",
+    "totalEp": "34",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1CPWAGVZj4G0B9CXBWWT24Kp876b5N1CW",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1CPWAGVZj4G0B9CXBWWT24Kp876b5N1CW"
+    ],
+    "favorite": false
+  },
+  {
     "title": "하수구",
     "artist": "레드피치",
     "writer": "감서윤",
