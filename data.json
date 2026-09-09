@@ -1,5 +1,26 @@
 [
   {
+    "title": "비밀이 많은 XX",
+    "artist": "오류",
+    "writer": "",
+    "day": "1일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "13",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4702000103",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1h33QwcZNfAgwRXW5Qh4Q-OmlURg375Oe",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1h33QwcZNfAgwRXW5Qh4Q-OmlURg375Oe"
+    ],
+    "favorite": false
+  },
+  {
     "title": "고양이 테라피",
     "artist": "피아",
     "writer": "마린코드",
