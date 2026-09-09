@@ -1,5 +1,26 @@
 [
   {
+    "title": "락스타 네버 다이",
+    "artist": "지옹",
+    "writer": "",
+    "day": "토",
+    "platform": [
+      "시리즈"
+    ],
+    "currentEp": "50",
+    "totalEp": "50",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1EFCiKe35gzzOQZFjcl950In8Q7pMw33Q",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1EFCiKe35gzzOQZFjcl950In8Q7pMw33Q"
+    ],
+    "favorite": false
+  },
+  {
     "title": "사한",
     "artist": "청낙원",
     "writer": "그루",
