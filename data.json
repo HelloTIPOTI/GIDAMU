@@ -1,5 +1,27 @@
 [
   {
+    "title": "유인설계",
+    "artist": "묘묘리",
+    "writer": "로코모팁",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "23",
+    "totalEp": "36",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/4116005090",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1_DJEaq9pnc0tyG0sF11GMIssryVB1twH",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1_DJEaq9pnc0tyG0sF11GMIssryVB1twH",
+      "https://lh3.googleusercontent.com/d/1ivCX2m22zOcseAXsXK3CgNAL68u86LgY"
+    ],
+    "favorite": false
+  },
+  {
     "title": "러브 업셋(LOVE UPSET)",
     "artist": "부주상골",
     "writer": "",
