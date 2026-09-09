@@ -1,5 +1,27 @@
 [
   {
+    "title": "그놈이 그놈이다",
+    "artist": "도원",
+    "writer": "차선",
+    "day": "금",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "10",
+    "totalEp": "69",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-30",
+    "note": "",
+    "link": "https://ridibooks.com/books/1746027465",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1YchUo4gtMCCQ-aNHKFlmj6ftghtJ3aYe",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1YchUo4gtMCCQ-aNHKFlmj6ftghtJ3aYe",
+      "https://lh3.googleusercontent.com/d/1CCiU4oOMNwgymC619g0ksl8wOc4tJ_Ko"
+    ],
+    "favorite": false
+  },
+  {
     "title": "겨울 지나 벚꽃",
     "artist": "밤우",
     "writer": "",
