@@ -1,5 +1,26 @@
 [
   {
+    "title": "멜팅 초콜릿",
+    "artist": "CATCH",
+    "writer": "이은규",
+    "day": "2일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "10",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001933",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/18iPpV_gIZj2t__fKWr6UuBQ7aEkkzrSe",
+    "images": [
+      "https://lh3.googleusercontent.com/d/18iPpV_gIZj2t__fKWr6UuBQ7aEkkzrSe"
+    ],
+    "favorite": false
+  },
+  {
     "title": "삼천의 밤",
     "artist": "공백",
     "writer": "아마릴리아",
