@@ -38,7 +38,6 @@
       </div>
     </div>
     
-    <!-- 💡 [기능 1 추가] 'n개 작품' 반대편에 정렬 드롭다운 배치 -->
     <div class="flex-header-row">
       <div id="resultCount" class="result-count" style="margin:0;"></div>
       <select id="sortSelect" class="sort-select" onchange="onSortChange()">
@@ -60,15 +59,11 @@
       <span class="detail-edit-text" id="detailEditBtn" style="cursor:pointer;">수정하기 →</span>
       <div class="detail-grid" style="margin-top:20px;">
         <div class="thumb-wrap" id="detailThumbWrap" style="position: relative; display: flex; flex-direction: column; align-items: center;">
-          <!-- 이미지 슬라이드 컨테이너 -->
           <div class="slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
             <img id="detailThumb" class="detail-cover" src="" style="width: 100%; display: block; object-fit: cover;">
-    
-            <!-- 좌우 이동 버튼 -->
             <button id="sliderPrevBtn" onclick="moveSlide(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">‹</button>
             <button id="sliderNextBtn" onclick="moveSlide(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">›</button>
           </div>
-          <!-- 인디케이터 (현재 번호 / 총 개수) -->
           <div id="sliderIndicator" style="margin-top: 8px; font-size: 12px; color: #666; display: none;"></div>
         </div>
         <div>
@@ -129,10 +124,11 @@
     </div>
   </div>
 
-<!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
+  <!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
   <div id="view-sub" class="view-section" style="display:none;">
     <div class="flex-header-row" id="subHeaderRow">
       <span class="back-link" onclick="switchView('home')" style="cursor:pointer; margin-bottom:0;">← 돌아가기</span>
+      <!-- 즐겨찾기 플랫폼 드롭다운 -->
       <select id="favPlatformSelect" class="sort-select" style="display:none;" onchange="onFavPlatformChange()">
         <option value="전체">전체 플랫폼</option>
         <option value="카카오">카카오</option>
@@ -143,6 +139,11 @@
         <option value="웹소(카카오)">웹소(카카오)</option>
         <option value="웹소(리디)">웹소(리디)</option>
       </select>
+      <!-- 작가 리스트 정렬 드롭다운 -->
+      <select id="authorSortSelect" class="sort-select" style="display:none;" onchange="onAuthorSortChange()">
+        <option value="name">이름순</option>
+        <option value="count">작품 개수순</option>
+      </select>
     </div>
     <div id="subResultCount" class="result-count"></div>
     <div id="subCards" class="card-grid"></div>
@@ -150,7 +151,6 @@
 
 </div>
 
-<!-- 스크롤 버튼 -->
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲</button>
 <button id="scrollBottomBtn" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">▼</button>
 

@@ -24,9 +24,10 @@ let currentView = "home";
 let currentState = { search: "", categories: [], platform: [] };
 let visibleCount = 50;
 
-// 정렬 및 즐겨찾기 플랫폼 필터 상태 변수
+// 정렬 및 상태 변수
 let currentSort = "author";        // 기본 정렬: 작가순
 let currentFavPlatform = "전체";   // 즐겨찾기 페이지 플랫폼 필터 기본값
+let currentAuthorSort = "name";    // 작가 리스트 정렬 기본값 (name: 이름순, count: 작품 개수순)
 
 /* ==========================================================
    1. GitHub API 연동 (불러오기 & 저장하기 - 큐 시스템 적용)
@@ -118,8 +119,6 @@ async function executeSave(newData) {
 async function initData() {
   const result = await fetchFromGitHub();
   ALL_DATA = Array.isArray(result.data) ? result.data : [];
-  
-  // 최초 접속 시 URL 해시(#) 또는 상태에 따른 라우팅 처리
   handleRouteFromHash(true);
 }
 
@@ -162,7 +161,6 @@ function switchView(viewName, param, pushHistory = true) {
     } else if (viewName === "author" && param) {
       hash = `#author=${encodeURIComponent(param)}`;
     } else if (viewName === "fav") {
-      // 현재 선택된 플랫폼이 있다면 해시에 반영
       hash = currentFavPlatform && currentFavPlatform !== "전체" ? `#fav=${encodeURIComponent(currentFavPlatform)}` : "#fav";
     }
     history.pushState({ viewName, param }, "", hash);
@@ -174,8 +172,12 @@ function renderViewDirect(viewName, param) {
   currentView = viewName;
   document.querySelectorAll(".view-section").forEach(el => el.style.display = "none");
 
+  // 서브 화면 내 드롭다운들 일단 모두 숨김 처리
   const favSelectEl = document.getElementById("favPlatformSelect");
   if (favSelectEl) favSelectEl.style.display = "none";
+
+  const authorSortEl = document.getElementById("authorSortSelect");
+  if (authorSortEl) authorSortEl.style.display = "none";
 
   if (viewName === "home") {
     document.getElementById("view-home").style.display = "block";
@@ -227,7 +229,6 @@ function handleRouteFromHash(isInit = false) {
     currentFavPlatform = "전체";
     renderViewDirect("fav", null);
   } else if (hash.startsWith("#fav=")) {
-    // 새로고침 시 해시에 포함된 플랫폼 값을 명확히 읽어와서 저장
     currentFavPlatform = decodeURIComponent(hash.replace("#fav=", ""));
     renderViewDirect("fav", null);
   } else if (hash === "#list") {
@@ -240,7 +241,7 @@ function handleRouteFromHash(isInit = false) {
 }
 
 /* ==========================================================
-   즐겨찾기 페이지 드롭다운 연동 함수
+   즐겨찾기 및 작가 리스트 드롭다운 연동 함수
    ========================================================== */
 function onFavPlatformChange() {
   const selectEl = document.getElementById("favPlatformSelect");
@@ -252,9 +253,7 @@ function onFavPlatformChange() {
   if (currentFavPlatform && currentFavPlatform !== "전체") {
     hash = `#fav=${encodeURIComponent(currentFavPlatform)}`;
   }
-  // history.replaceState를 사용하여 주소창 해시를 강제 동기화
   history.replaceState({ viewName: "fav", param: null }, "", hash);
-
   renderFavView();
 }
 
@@ -262,7 +261,6 @@ function renderFavView() {
   const favSelectEl = document.getElementById("favPlatformSelect");
   if (favSelectEl) {
     favSelectEl.style.display = "inline-block"; 
-    // 핵심: 변수에 저장된 플랫폼 값으로 드롭다운 UI 선택 상태를 강제 설정
     favSelectEl.value = currentFavPlatform; 
   }
 
@@ -272,6 +270,14 @@ function renderFavView() {
   }
 
   renderSubView(favItems);
+}
+
+function onAuthorSortChange() {
+  const selectEl = document.getElementById("authorSortSelect");
+  if (selectEl) {
+    currentAuthorSort = selectEl.value;
+  }
+  renderAuthorList();
 }
 
 /* ==========================================================
@@ -588,6 +594,12 @@ function renderSubView(list) {
 }
 
 function renderAuthorList() {
+  const authorSortEl = document.getElementById("authorSortSelect");
+  if (authorSortEl) {
+    authorSortEl.style.display = "inline-block";
+    authorSortEl.value = currentAuthorSort;
+  }
+
   const wrap = document.getElementById("subCards");
   const count = document.getElementById("subResultCount");
   wrap.innerHTML = "";
@@ -602,7 +614,19 @@ function renderAuthorList() {
     });
   });
 
-  const authors = [...map.entries()].sort((a,b) => a[0].localeCompare(b[0], "ko"));
+  let authors = [...map.entries()];
+
+  authors.sort((a, b) => {
+    if (currentAuthorSort === "count") {
+      if (b[1] !== a[1]) {
+        return b[1] - a[1];
+      }
+      return a[0].localeCompare(b[0], "ko");
+    } else {
+      return a[0].localeCompare(b[0], "ko");
+    }
+  });
+
   count.textContent = `${authors.length}명`;
 
   authors.forEach(([name, cnt]) => {
@@ -753,7 +777,6 @@ function renderAdminList() {
 document.getElementById("admSearch")?.addEventListener("input", renderAdminList);
 document.getElementById("brandTitle")?.addEventListener("click", () => switchView('home'));
 
-// 초기 구동 실행
 initData();
 
 document.getElementById("resetBtn")?.addEventListener("click", () => {
