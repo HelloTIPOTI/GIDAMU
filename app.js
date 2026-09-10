@@ -24,7 +24,7 @@ let currentView = "home";
 let currentState = { search: "", categories: [], platform: [] };
 let visibleCount = 50;
 
-// 💡 [기능 추가] 정렬 및 즐겨찾기 플랫폼 필터 상태 변수
+// 정렬 및 즐겨찾기 플랫폼 필터 상태 변수
 let currentSort = "author";        // 기본 정렬: 작가순
 let currentFavPlatform = "전체";   // 즐겨찾기 페이지 플랫폼 필터 기본값
 
@@ -118,7 +118,9 @@ async function executeSave(newData) {
 async function initData() {
   const result = await fetchFromGitHub();
   ALL_DATA = Array.isArray(result.data) ? result.data : [];
-  refreshUI();
+  
+  // 최초 접속 시 URL 해시(#) 또는 상태에 따른 라우팅 처리
+  handleRouteFromHash(true);
 }
 
 function getFavorites() {
@@ -149,9 +151,25 @@ function getDDay(endDate) {
 }
 
 /* ==========================================================
-   3. 화면 전환 (SPA Router) 수정 부분
+   3. 화면 전환 및 브라우저 기록(History) 관리 시스템
    ========================================================== */
-function switchView(viewName, param) {
+
+// 외부에서 호출하는 화면 전환 함수 (기록 추가)
+function switchView(viewName, param, pushHistory = true) {
+  if (pushHistory) {
+    let hash = `#${viewName}`;
+    if (viewName === "detail" && param && param.title) {
+      hash = `#detail=${encodeURIComponent(param.title)}`;
+    } else if (viewName === "author" && param) {
+      hash = `#author=${encodeURIComponent(param)}`;
+    }
+    history.pushState({ viewName, param }, "", hash);
+  }
+  renderViewDirect(viewName, param);
+}
+
+// 실제 화면을 그려주는 핵심 함수
+function renderViewDirect(viewName, param) {
   currentView = viewName;
   document.querySelectorAll(".view-section").forEach(el => el.style.display = "none");
 
@@ -164,14 +182,19 @@ function switchView(viewName, param) {
     refreshUI();
   } else if (viewName === "detail") {
     document.getElementById("view-detail").style.display = "block";
-    renderDetail(param);
+    // param이 타이틀 문자열이거나 객체일 경우 모두 대응
+    let targetItem = param;
+    if (typeof param === "string") {
+      targetItem = ALL_DATA.find(i => i.title === param);
+    }
+    if (targetItem) renderDetail(targetItem);
   } else if (viewName === "admin") {
     document.getElementById("view-admin").style.display = "block";
     resetAdminForm();
     renderAdminList();
   } else if (viewName === "fav") {
     document.getElementById("view-sub").style.display = "block";
-    currentFavPlatform = "전체"; // 즐겨찾기 진입 시 기본 '전체'로 초기화
+    // 즐겨찾기 진입 시 기존에 선택했던 플랫폼이 있다면 유지, 없으면 '전체'
     renderFavView();
   } else if (viewName === "author") {
     document.getElementById("view-sub").style.display = "block";
@@ -183,10 +206,41 @@ function switchView(viewName, param) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// 브라우저 뒤로가기 / 앞으로가기 감지
+window.addEventListener("popstate", (event) => {
+  handleRouteFromHash(false);
+});
+
+// 주소창 해시값(#)을 읽어 현재 화면을 복원하는 함수 (새로고침 대응)
+function handleRouteFromHash(isInit = false) {
+  const hash = window.location.hash;
+  if (!hash || hash === "#home") {
+    renderViewDirect("home", null);
+  } else if (hash.startsWith("#detail=")) {
+    const title = decodeURIComponent(hash.replace("#detail=", ""));
+    const item = ALL_DATA.find(i => i.title === title);
+    if (item) {
+      renderViewDirect("detail", item);
+    } else {
+      renderViewDirect("home", null);
+    }
+  } else if (hash.startsWith("#author=")) {
+    const authorName = decodeURIComponent(hash.replace("#author=", ""));
+    renderViewDirect("author", authorName);
+  } else if (hash === "#fav") {
+    renderViewDirect("fav", null);
+  } else if (hash === "#list") {
+    renderViewDirect("list", null);
+  } else if (hash === "#admin") {
+    renderViewDirect("admin", null);
+  } else {
+    renderViewDirect("home", null);
+  }
+}
+
 /* ==========================================================
    즐겨찾기 페이지 드롭다운 연동 함수
    ========================================================== */
-// 💡 [신규] 즐겨찾기 플랫폼 드롭다운 변경 시 실행되는 함수
 function onFavPlatformChange() {
   const selectEl = document.getElementById("favPlatformSelect");
   if (selectEl) {
@@ -195,7 +249,6 @@ function onFavPlatformChange() {
   renderFavView();
 }
 
-// 💡 [수정] 즐겨찾기 화면 렌더링 함수 (드롭다운 상태 반영)
 function renderFavView() {
   const favSelectEl = document.getElementById("favPlatformSelect");
   if (favSelectEl) {
@@ -219,7 +272,6 @@ function refreshUI() {
   renderMainCards();
 }
 
-// 💡 [기능 1 추가] 정렬 드롭다운 변경 시 실행되는 함수
 function onSortChange() {
   const selectEl = document.getElementById("sortSelect");
   if (selectEl) {
@@ -249,15 +301,12 @@ function getFilteredData() {
     }
   }
 
-  // 💡 [기능 1 추가] 정렬 적용 (작가순 / 제목순)
   list.sort((a, b) => {
     if (currentSort === "author") {
-      // 작가순 정렬 (artist 기준, 없으면 빈 문자열)
       const authorA = (a.artist || "").trim();
       const authorB = (b.artist || "").trim();
       return authorA.localeCompare(authorB, "ko");
     } else if (currentSort === "title") {
-      // 제목순 정렬
       const titleA = (a.title || "").trim();
       const titleB = (b.title || "").trim();
       return titleA.localeCompare(titleB, "ko");
@@ -613,6 +662,7 @@ async function processSubmit() {
     await saveToGitHub(ALL_DATA);
     resetAdminForm();
     renderAdminList();
+    alert("서버 저장 완료!");
   } catch(e) {
     alert(e.message);
   } finally {
@@ -693,6 +743,7 @@ function renderAdminList() {
 document.getElementById("admSearch")?.addEventListener("input", renderAdminList);
 document.getElementById("brandTitle")?.addEventListener("click", () => switchView('home'));
 
+// 초기 구동 실행
 initData();
 
 document.getElementById("resetBtn")?.addEventListener("click", () => {
