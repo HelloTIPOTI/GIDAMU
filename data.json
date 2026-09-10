@@ -1,5 +1,26 @@
 [
   {
+    "title": "치트 데이",
+    "artist": "청사",
+    "writer": "일면식",
+    "day": "3일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "1",
+    "totalEp": "36",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/5163001357",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1Q_sV8m2kPOpkCIMQPjh30-wKS90hHluX",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1Q_sV8m2kPOpkCIMQPjh30-wKS90hHluX"
+    ],
+    "favorite": false
+  },
+  {
     "title": "멜팅 초콜릿",
     "artist": "CATCH",
     "writer": "이은규",
