@@ -162,6 +162,8 @@ function switchView(viewName, param, pushHistory = true) {
       hash = `#detail=${encodeURIComponent(param.title)}`;
     } else if (viewName === "author" && param) {
       hash = `#author=${encodeURIComponent(param)}`;
+    } else if (viewName === "fav" && currentFavPlatform && currentFavPlatform !== "전체") {
+      hash = `#fav=${encodeURIComponent(currentFavPlatform)}`;
     }
     history.pushState({ viewName, param }, "", hash);
   }
@@ -182,7 +184,6 @@ function renderViewDirect(viewName, param) {
     refreshUI();
   } else if (viewName === "detail") {
     document.getElementById("view-detail").style.display = "block";
-    // param이 타이틀 문자열이거나 객체일 경우 모두 대응
     let targetItem = param;
     if (typeof param === "string") {
       targetItem = ALL_DATA.find(i => i.title === param);
@@ -194,7 +195,6 @@ function renderViewDirect(viewName, param) {
     renderAdminList();
   } else if (viewName === "fav") {
     document.getElementById("view-sub").style.display = "block";
-    // 즐겨찾기 진입 시 기존에 선택했던 플랫폼이 있다면 유지, 없으면 '전체'
     renderFavView();
   } else if (viewName === "author") {
     document.getElementById("view-sub").style.display = "block";
@@ -228,6 +228,10 @@ function handleRouteFromHash(isInit = false) {
     const authorName = decodeURIComponent(hash.replace("#author=", ""));
     renderViewDirect("author", authorName);
   } else if (hash === "#fav") {
+    currentFavPlatform = "전체";
+    renderViewDirect("fav", null);
+  } else if (hash.startsWith("#fav=")) {
+    currentFavPlatform = decodeURIComponent(hash.replace("#fav=", ""));
     renderViewDirect("fav", null);
   } else if (hash === "#list") {
     renderViewDirect("list", null);
@@ -246,6 +250,13 @@ function onFavPlatformChange() {
   if (selectEl) {
     currentFavPlatform = selectEl.value;
   }
+  // 드롭다운 변경 시 URL 해시도 함께 갱신하여 새로고침 시 유지되도록 함
+  let hash = "#fav";
+  if (currentFavPlatform && currentFavPlatform !== "전체") {
+    hash = `#fav=${encodeURIComponent(currentFavPlatform)}`;
+  }
+  history.replaceState({ viewName: "fav", param: null }, "", hash);
+
   renderFavView();
 }
 
