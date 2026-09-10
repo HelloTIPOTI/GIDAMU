@@ -154,7 +154,6 @@ function getDDay(endDate) {
    3. 화면 전환 및 브라우저 기록(History) 관리 시스템
    ========================================================== */
 
-// 외부에서 호출하는 화면 전환 함수 (기록 추가)
 function switchView(viewName, param, pushHistory = true) {
   if (pushHistory) {
     let hash = `#${viewName}`;
@@ -162,20 +161,19 @@ function switchView(viewName, param, pushHistory = true) {
       hash = `#detail=${encodeURIComponent(param.title)}`;
     } else if (viewName === "author" && param) {
       hash = `#author=${encodeURIComponent(param)}`;
-    } else if (viewName === "fav" && currentFavPlatform && currentFavPlatform !== "전체") {
-      hash = `#fav=${encodeURIComponent(currentFavPlatform)}`;
+    } else if (viewName === "fav") {
+      // 현재 선택된 플랫폼이 있다면 해시에 반영
+      hash = currentFavPlatform && currentFavPlatform !== "전체" ? `#fav=${encodeURIComponent(currentFavPlatform)}` : "#fav";
     }
     history.pushState({ viewName, param }, "", hash);
   }
   renderViewDirect(viewName, param);
 }
 
-// 실제 화면을 그려주는 핵심 함수
 function renderViewDirect(viewName, param) {
   currentView = viewName;
   document.querySelectorAll(".view-section").forEach(el => el.style.display = "none");
 
-  // 서브 뷰 헤더의 플랫폼 드롭다운 초기화 처리 (기본 숨김)
   const favSelectEl = document.getElementById("favPlatformSelect");
   if (favSelectEl) favSelectEl.style.display = "none";
 
@@ -206,12 +204,10 @@ function renderViewDirect(viewName, param) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// 브라우저 뒤로가기 / 앞으로가기 감지
 window.addEventListener("popstate", (event) => {
   handleRouteFromHash(false);
 });
 
-// 주소창 해시값(#)을 읽어 현재 화면을 복원하는 함수 (새로고침 대응)
 function handleRouteFromHash(isInit = false) {
   const hash = window.location.hash;
   if (!hash || hash === "#home") {
@@ -231,6 +227,7 @@ function handleRouteFromHash(isInit = false) {
     currentFavPlatform = "전체";
     renderViewDirect("fav", null);
   } else if (hash.startsWith("#fav=")) {
+    // 새로고침 시 해시에 포함된 플랫폼 값을 명확히 읽어와서 저장
     currentFavPlatform = decodeURIComponent(hash.replace("#fav=", ""));
     renderViewDirect("fav", null);
   } else if (hash === "#list") {
@@ -250,11 +247,12 @@ function onFavPlatformChange() {
   if (selectEl) {
     currentFavPlatform = selectEl.value;
   }
-  // 드롭다운 변경 시 URL 해시도 함께 갱신하여 새로고침 시 유지되도록 함
+  
   let hash = "#fav";
   if (currentFavPlatform && currentFavPlatform !== "전체") {
     hash = `#fav=${encodeURIComponent(currentFavPlatform)}`;
   }
+  // history.replaceState를 사용하여 주소창 해시를 강제 동기화
   history.replaceState({ viewName: "fav", param: null }, "", hash);
 
   renderFavView();
@@ -263,8 +261,9 @@ function onFavPlatformChange() {
 function renderFavView() {
   const favSelectEl = document.getElementById("favPlatformSelect");
   if (favSelectEl) {
-    favSelectEl.style.display = "inline-block"; // 즐겨찾기 뷰일 때만 드롭다운 노출
-    favSelectEl.value = currentFavPlatform;
+    favSelectEl.style.display = "inline-block"; 
+    // 핵심: 변수에 저장된 플랫폼 값으로 드롭다운 UI 선택 상태를 강제 설정
+    favSelectEl.value = currentFavPlatform; 
   }
 
   let favItems = ALL_DATA.filter(item => item.favorite);
