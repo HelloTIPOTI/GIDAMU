@@ -1,5 +1,26 @@
 [
   {
+    "title": "알을 훔치다",
+    "artist": "맥사",
+    "writer": "라임나무",
+    "day": "일",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "2",
+    "totalEp": "9",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/845057518",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1nCC1V0o4_teGLJAFFX2ABk4RK3o8CMvf",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1nCC1V0o4_teGLJAFFX2ABk4RK3o8CMvf"
+    ],
+    "favorite": false
+  },
+  {
     "title": "귀신도 꿈을 꿀까요?",
     "artist": "용왕",
     "writer": "",
