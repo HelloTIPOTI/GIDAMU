@@ -4,7 +4,9 @@
     "artist": "공일",
     "writer": "모나글로리아",
     "day": "토",
-    "platform": [],
+    "platform": [
+      "리디"
+    ],
     "currentEp": "1",
     "totalEp": "22",
     "startDate": "",
