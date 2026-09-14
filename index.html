@@ -1,159 +1,932 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BL.T GIDAMU</title>
-<link rel="stylesheet" href="GIDAMU.css">
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/HelloTIPOTI/GIDAMU/main/GIDAMU.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 서재</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://tistory1.daumcdn.net/tistory/5870953/skin/images/book.png">
+    <style>
+        /* 스크롤바 영역 항상 확보 */
+        body {
+            overflow-y: scroll;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-[#f7f9fa] text-slate-800 min-h-screen flex flex-col justify-between">
+    <div class="max-w-2xl w-full mx-auto px-4 py-6">
+        <!-- 헤더 -->
+        <header class="flex items-center justify-between mb-5 pb-4 border-b border-slate-200">
+            <div>
+                <h1 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-book-bookmark text-slate-700"></i> 내 서재
+                </h1>
+                <p class="text-xs text-slate-500 mt-0.5">웹소설 통합 관리</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="ranking.html" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-medium px-3 py-2 rounded-xl transition flex items-center gap-1 shadow-xs">
+                    <i class="fa-solid fa-trophy"></i> 랭킹
+                </a>
+                <button onclick="openConfigModal()" class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium px-3 py-2 rounded-xl transition flex items-center gap-1 cursor-pointer shadow-xs">
+                    <i class="fa-solid fa-gear"></i> 설정
+                </button>
+                <a href="register.html" class="bg-slate-700 hover:bg-slate-800 text-slate-100 text-xs font-medium px-3.5 py-2 rounded-xl transition flex items-center gap-1 shadow-xs">
+                    <i class="fa-solid fa-plus"></i> 등록
+                </a>
+            </div>
+        </header>
 
-<header class="site-header">
-  <div class="brand" id="brandTitle" style="cursor:pointer;">BL.T GIDAMU</div>
-  <div class="header-actions">
-    <button class="circle-btn home-circle" onclick="switchView('home')"></button>
-    <button class="circle-btn fav-circle" onclick="switchView('fav')"></button>
-    <button class="circle-btn list-circle" onclick="switchView('list')"></button>
-    <button class="circle-btn admin-circle" onclick="switchView('admin')"></button>
-  </div>
-</header>
+        <!-- 검색 및 기본 필터 바 -->
+        <div class="bg-white p-4 rounded-2xl shadow-xs border border-slate-200/80 mb-3 space-y-3">
+            <div class="relative w-full">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                    <i class="fa-solid fa-search text-xs"></i>
+                </span>
+                <input type="text" id="search-input" autocomplete="off" placeholder="제목 또는 작가 검색..." class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500">
+            </div>
+            
+            <div class="flex items-center justify-between gap-2">
+                <select id="sort-select" class="border border-slate-200 bg-slate-50 rounded-xl px-3 py-2 text-xs text-slate-700 focus:outline-none w-[40%]">
+                    <option value="latest" selected>글 등록순</option>
+                    <option value="title">제목순</option>
+                    <option value="author">작가순</option>
+                </select>
 
-<div class="page">
-  
-  <!-- 1. 메인 화면 (목록 & 필터) -->
-  <div id="view-home" class="view-section">
-    <div class="filter-box">
-      <div class="filter-row">
-        <div id="categoryFilter" class="pill-row"></div>
-      </div>
-      <div class="filter-row">
-        <div class="filter-label">플랫폼</div>
-        <div id="tagFilter" class="pill-row"></div>
-      </div>
-      <div class="filter-search-row">
-        <div class="filter-label">검색</div>
-        <input id="searchInput" class="search-input" placeholder="제목 / 작가 검색">
-        <button id="resetBtn" class="reset-btn">초기화</button>
-      </div>
-    </div>
-    
-    <div class="flex-header-row">
-      <div id="resultCount" class="result-count" style="margin:0;"></div>
-      <select id="sortSelect" class="sort-select" onchange="onSortChange()">
-        <option value="author">작가순</option>
-        <option value="title">제목순</option>
-      </select>
-    </div>
+                <!-- 상태 필터 버튼들 (미소장, 대여만, 인생작만) -->
+                <div class="flex items-center gap-1.5 w-[60%] justify-end">
+                    <button id="filter-missing-btn" class="border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer">
+                        미소장
+                    </button>
+                    <button id="filter-rent-btn" class="border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer">
+                        대여
+                    </button>
+                    <button id="filter-masterpiece-btn" class="border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer">
+                        인생작
+                    </button>
+                </div>
+            </div>
 
-    <div id="cards" class="card-grid" style="margin-top:20px;"></div>
-    <div class="loadmore-wrap">
-      <button id="loadMoreBtn" class="loadmore-btn" style="display:none;">더보기</button>
-    </div>
-  </div>
-
-  <!-- 2. 상세 화면 -->
-  <div id="view-detail" class="view-section" style="display:none;">
-    <div class="detail-wrap">
-      <span class="back-link" onclick="switchView('home')" style="cursor:pointer;">← 목록으로 돌아가기</span>
-      <span class="detail-edit-text" id="detailEditBtn" style="cursor:pointer;">수정하기 →</span>
-      <div class="detail-grid" style="margin-top:20px;">
-        <div class="thumb-wrap" id="detailThumbWrap" style="position: relative; display: flex; flex-direction: column; align-items: center;">
-          <div class="slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
-            <img id="detailThumb" class="detail-cover" src="" style="width: 100%; display: block; object-fit: cover;">
-            <button id="sliderPrevBtn" onclick="moveSlide(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">‹</button>
-            <button id="sliderNextBtn" onclick="moveSlide(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: none; align-items: center; justify-content: center; z-index: 2;">›</button>
-          </div>
-          <div id="sliderIndicator" style="margin-top: 8px; font-size: 12px; color: #666; display: none;"></div>
+            <!-- 플랫폼 필터 버튼 바 -->
+            <div class="pt-2 border-t border-slate-100 flex items-center gap-1.5 overflow-x-auto pb-1">
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-700 text-slate-100 transition shrink-0 cursor-pointer" data-platform="all">전체</button>
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0 cursor-pointer" data-platform="리디">리디</button>
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0 cursor-pointer" data-platform="북큐브">북큐브</button>
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0 cursor-pointer" data-platform="카카오">카카오</button>
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0 cursor-pointer" data-platform="봄툰">봄툰</button>
+                <button class="platform-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition shrink-0 cursor-pointer" data-platform="알라딘">알라딘</button>
+            </div>
         </div>
-        <div>
-          <div id="detailTitle" class="detail-title"></div>
-          <div class="meta-item"><div class="meta-label">플랫폼</div><div class="meta-value" id="detailPlatform"></div></div>
-          <div class="meta-item"><div class="meta-label">작가</div><div class="meta-value" id="detailAuthor"></div></div>
-          <div class="meta-item"><div class="meta-label">요일</div><div class="meta-value" id="detailDay"></div></div>
-          <div class="meta-item"><div class="meta-label">회차</div><div class="meta-value" id="detailEp"></div></div>
-          <div class="meta-item" id="detailDateWrap"><div class="meta-label">기간</div><div class="meta-value" id="detailDate"></div></div>
-          <div class="meta-item" id="detailNoteWrap"><div class="meta-label">비고</div><div class="meta-value" id="detailNote"></div></div>
-          <div class="meta-item" id="detailLink1Wrap"><div class="meta-label">링크</div><div class="meta-value" id="detailLink1"></div></div>
-          <div class="meta-item" id="detailLink2Wrap"><div class="meta-label">링크2</div><div class="meta-value" id="detailLink2"></div></div>
+
+        <!-- 통계 배너 (미소장 후속권 및 등록된 작품 총 수) -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-slate-100 border border-slate-200 rounded-2xl p-3.5 flex items-center justify-between text-xs">
+                <span class="text-slate-800 font-medium flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-exclamation text-slate-700"></i> 미소장
+                </span>
+                <span class="bg-slate-700 text-slate-100 font-bold px-2.5 py-0.5 rounded-full text-xs">
+                    <span id="missing-count">0</span>권
+                </span>
+            </div>
+            <div class="bg-slate-100/80 border border-slate-200 rounded-2xl p-3.5 flex items-center justify-between text-xs">
+                <span class="text-slate-700 font-medium flex items-center gap-1.5">
+                    <i class="fa-solid fa-books text-slate-600"></i> 작품
+                </span>
+                <span class="bg-slate-700 text-slate-100 font-bold px-2.5 py-0.5 rounded-full text-xs">
+                    총 <span id="total-novel-count">0</span>개
+                </span>
+            </div>
         </div>
-      </div>
+
+        <!-- 리스트 컨테이너 -->
+        <div id="novel-list-container" class="space-y-3"></div>
+
+        <!-- 페이지네이션 -->
+        <div id="pagination-container" class="flex items-center justify-center gap-1.5 mt-6 mb-2"></div>
+
+        <!-- 로딩 & 빈 상태 -->
+        <div id="loading-state" class="py-16 text-center text-slate-400">
+            <i class="fa-solid fa-spinner fa-spin text-xl mb-2 text-slate-700"></i>
+            <p class="text-xs">데이터 불러오는 중...</p>
+        </div>
+        <div id="empty-state" class="hidden py-16 text-center text-slate-400 bg-white rounded-2xl border border-slate-200/80">
+            <i class="fa-regular fa-folder-open text-2xl mb-1.5"></i>
+            <p class="text-xs">등록된 작품이 없습니다.</p>
+        </div>
     </div>
-  </div>
 
-  <!-- 3. 관리자 화면 -->
-  <div id="view-admin" class="view-section" style="display:none;">
-    <div class="admin-panel">
-      <div class="admin-title" id="adminPanelTitle">작품 추가</div>
-      <div class="admin-form">
-        <input id="admTitle" placeholder="작품명 *">
-        <input id="admArtist" placeholder="그림작가">
-        <input id="admWriter" placeholder="스토리작가">
-        
-        <select id="admDay" class="admin-select">
-          <option value="">요일 선택</option>
-          <option value="월">월</option><option value="화">화</option><option value="수">수</option><option value="목">목</option><option value="금">금</option><option value="토">토</option><option value="일">일</option>
-          <option value="1일">1일</option><option value="2일">2일</option><option value="3일">3일</option><option value="4일">4일</option><option value="5일">5일</option><option value="6일">6일</option><option value="7일">7일</option><option value="8일">8일</option><option value="9일">9일</option><option value="10일">10일</option>
-          <option value="기타">기타</option><option value="완결">완결</option>
-        </select>
+    <!-- 상세/수정 모달 -->
+    <div id="detail-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-200" onclick="handleModalBackdropClick(event, 'detail-modal')">
+        <div id="modal-content" class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-200 flex flex-col">
+            <!-- 모달 헤더 -->
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex items-center justify-between z-10">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-book text-slate-700"></i> 작품 상세 아카이브
+                </h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 cursor-pointer">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
 
-        <select id="admPlatform" class="admin-select">
-          <option value="">플랫폼 선택</option>
-          <option value="카카오">카카오</option><option value="리디">리디</option><option value="시리즈">시리즈</option><option value="미블">미블</option><option value="마녀">마녀</option><option value="웹소(카카오)">웹소(카카오)</option><option value="웹소(리디)">웹소(리디)</option>
-        </select>
+            <!-- 모달 바디 -->
+            <div class="p-6 space-y-5 text-xs">
+                <!-- 제목 및 기본 정보 -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span id="modal-badge-masterpiece" class="hidden bg-amber-100 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-md font-bold text-[10px] flex items-center gap-1">
+                            <i class="fa-solid fa-crown"></i> 인생작
+                        </span>
+                        <span id="modal-badge-category" class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium text-[10px]"></span>
+                        <span id="modal-badge-platform" class="px-2 py-0.5 rounded-md font-medium text-[10px]"></span>
+                        <span id="modal-badge-type" class="px-2 py-0.5 rounded-md font-medium text-[10px]"></span>
+                    </div>
+                    <div class="flex items-center justify-between pt-1">
+                        <h4 id="modal-title" class="font-bold text-slate-900 text-base"></h4>
+                        <a id="modal-link" href="#" target="_blank" class="text-slate-700 bg-slate-100 px-2.5 py-1 rounded-lg text-xs font-medium flex items-center gap-1 shrink-0">
+                            플랫폼 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <input id="admCurrentEp" placeholder="본 회차">
-        <input id="admTotalEp" placeholder="총 회차">
-        <input id="admStartDate" type="date">
-        <input id="admEndDate" type="date">
-        <input id="admNote" placeholder="비고">
-        <input id="admLink" placeholder="링크 1">
-        <input id="admLink2" placeholder="링크 2">
-        <input id="admImageNames" placeholder="이미지 링크들 (쉼표로 구분하여 여러 개 입력)">
-        
-        <button id="admSubmitBtn" onclick="processSubmit()" style="grid-column: span 3;">+ 작품 추가 (GitHub 실시간 저장)</button>
-      </div>
+                <!-- 상세 메타 정보 그리드 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div>
+                        <span class="text-[10px] text-slate-400 block mb-0.5">작가</span>
+                        <span id="modal-author" class="text-slate-800 font-semibold"></span>
+                    </div>
+                    <div>
+                        <span id="modal-volume-label" class="text-[10px] text-slate-400 block mb-0.5">권수 (미소장)</span>
+                        <span id="modal-volumes" class="text-slate-800 font-semibold"></span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 block mb-0.5">별점</span>
+                        <div id="modal-rating-stars" class="text-amber-500 font-bold flex items-center gap-0.5 text-xs"></div>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 block mb-0.5">기간 정보</span>
+                        <span id="modal-dates" class="text-slate-700 text-[11px]"></span>
+                    </div>
+                </div>
 
-      <div class="admin-title" style="margin-top:30px;">등록된 작품 관리</div>
-      <div class="admin-search-wrap">
-        <input type="text" id="admSearch" class="search-input" placeholder="작품명 / 작가 검색">
-        <button type="button" onclick="document.getElementById('admSearch').value=''; renderAdminList();" class="reset-btn">초기화</button>
-      </div>
-      <div id="admResultCount" class="result-count"></div>
-      <div id="admListContainer"></div>
+                <!-- 키워드 -->
+                <div id="modal-keywords-container" class="space-y-1.5 hidden">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase">키워드</span>
+                    <div id="modal-keywords" class="flex flex-wrap gap-1.5"></div>
+                </div>
+
+                <!-- 등장인물 -->
+                <div id="modal-chars-container" class="space-y-1.5 hidden">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase">등장인물</span>
+                    <div id="modal-characters" class="p-3 bg-slate-50 rounded-xl text-slate-700 leading-relaxed border border-slate-100"></div>
+                </div>
+
+                <!-- 작품 소개 -->
+                <div id="modal-desc-container" class="space-y-1.5 hidden">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase">작품 소개</span>
+                    <div id="modal-description" class="p-3 bg-slate-50 rounded-xl text-slate-700 leading-relaxed border border-slate-100"></div>
+                </div>
+
+                <!-- 연작 가이드 -->
+                <div id="modal-guide-container" class="space-y-1.5 hidden">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase">연작 가이드</span>
+                    <div id="modal-series-guide" class="p-3 bg-slate-50 rounded-xl text-slate-700 leading-relaxed border border-slate-100"></div>
+                </div>
+
+                <!-- 표지 슬라이드 / 3열 그리드 영역 -->
+                <div id="modal-cover-section" class="hidden space-y-3 pt-2 border-t border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 uppercase">작품 표지 갤러리 (클릭시 확대)</span>
+                        <div class="flex items-center gap-1">
+                            <button onclick="switchCoverView('grid')" id="btn-view-grid" class="px-2 py-1 bg-slate-100 rounded text-[10px] font-medium text-slate-700 cursor-pointer">3열 그리드</button>
+                            <button onclick="switchCoverView('slide')" id="btn-view-slide" class="px-2 py-1 bg-slate-100 rounded text-[10px] font-medium text-slate-700 cursor-pointer">슬라이드</button>
+                        </div>
+                    </div>
+                    <!-- 그리드 뷰 -->
+                    <div id="cover-grid-view" class="grid grid-cols-3 gap-2"></div>
+                    <!-- 슬라이드 뷰 -->
+                    <div id="cover-slide-view" class="hidden relative bg-slate-100 rounded-xl overflow-hidden h-48 flex items-center justify-center">
+                        <img id="slide-img" src="" class="max-h-full object-contain cursor-pointer" onclick="openImageViewer(this.src)">
+                        <button onclick="prevSlide()" class="absolute left-2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center cursor-pointer"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                        <button onclick="nextSlide()" class="absolute right-2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center cursor-pointer"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 모달 푸터 -->
+            <div class="sticky bottom-0 bg-slate-50 px-6 py-3.5 flex items-center justify-between border-t border-slate-100">
+                <button onclick="deleteCurrentNovel()" class="bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 text-xs px-3 py-2 rounded-xl cursor-pointer transition flex items-center gap-1 font-medium">
+                    <i class="fa-solid fa-trash-can text-[11px]"></i> 삭제
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="editCurrentNovel()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 text-xs px-3.5 py-2 rounded-xl cursor-pointer transition font-medium">
+                        <i class="fa-solid fa-pen text-[10px]"></i> 수정
+                    </button>
+                    <button onclick="closeModal()" class="bg-slate-900 text-white text-xs px-4 py-2 rounded-xl cursor-pointer">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- 4. 작가별 보기 / 즐겨찾기 화면 영역 -->
-  <div id="view-sub" class="view-section" style="display:none;">
-    <div class="flex-header-row" id="subHeaderRow">
-      <span class="back-link" onclick="switchView('home')" style="cursor:pointer; margin-bottom:0;">← 돌아가기</span>
-      <!-- 즐겨찾기 플랫폼 드롭다운 -->
-      <select id="favPlatformSelect" class="sort-select" style="display:none;" onchange="onFavPlatformChange()">
-        <option value="전체">전체 플랫폼</option>
-        <option value="카카오">카카오</option>
-        <option value="리디">리디</option>
-        <option value="시리즈">시리즈</option>
-        <option value="미블">미블</option>
-        <option value="마녀">마녀</option>
-        <option value="웹소(카카오)">웹소(카카오)</option>
-        <option value="웹소(리디)">웹소(리디)</option>
-      </select>
-      <!-- 작가 리스트 정렬 드롭다운 -->
-      <select id="authorSortSelect" class="sort-select" style="display:none;" onchange="onAuthorSortChange()">
-        <option value="name">이름순</option>
-        <option value="count">작품 개수순</option>
-      </select>
+    <!-- 이미지 확대 보기 모달 (라이트박스) -->
+    <div id="image-viewer-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-[100] hidden" onclick="closeImageViewer()">
+        <div class="relative max-w-4xl max-h-[90vh] flex items-center justify-center" onclick="event.stopPropagation()">
+            <button onclick="closeImageViewer()" class="absolute -top-10 right-0 text-white hover:text-slate-300 text-2xl font-bold px-2 py-1 cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="expanded-image" src="" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl">
+        </div>
     </div>
-    <div id="subResultCount" class="result-count"></div>
-    <div id="subCards" class="card-grid"></div>
-  </div>
 
-</div>
+    <!-- 설정 모달 -->
+    <div id="config-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden" onclick="handleModalBackdropClick(event, 'config-modal')">
+        <div class="bg-white rounded-3xl shadow-xl max-w-xs w-full overflow-hidden p-5 space-y-3.5">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                <i class="fa-solid fa-gear text-slate-700"></i> GitHub 연동 설정
+            </h3>
+            <div class="space-y-2 text-xs">
+                <div>
+                    <label class="block font-bold text-slate-500 uppercase mb-0.5">Owner</label>
+                    <input type="text" id="gh-owner" autocomplete="off" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 uppercase mb-0.5">Repo</label>
+                    <input type="text" id="gh-repo" autocomplete="off" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 uppercase mb-0.5">Token</label>
+                    <input type="password" id="gh-token" autocomplete="off" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl">
+                </div>
+            </div>
+            <div class="flex justify-end gap-1.5 pt-2 border-t border-slate-100">
+                <button onclick="closeConfigModal()" class="px-3 py-1.5 border border-slate-200 text-slate-600 text-xs rounded-xl">취소</button>
+                <button onclick="saveConfig()" class="px-3 py-1.5 bg-slate-700 text-slate-100 text-xs font-medium rounded-xl">저장</button>
+            </div>
+        </div>
+    </div>
 
-<button id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲</button>
-<button id="scrollBottomBtn" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">▼</button>
+    <!-- 수정 모달 -->
+    <div id="edit-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden" onclick="handleModalBackdropClick(event, 'edit-modal')">
+        <div class="bg-white rounded-3xl shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto p-6 space-y-4">
+            <h3 class="font-bold text-slate-900 text-sm">작품 정보 수정</h3>
+            <form id="edit-form" class="space-y-4 text-xs" autocomplete="off">
+                <input type="hidden" id="edit-id">
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">제목</label>
+                    <input type="text" id="edit-title" autocomplete="off" required class="w-full px-3 py-2 border rounded-xl">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">작가</label>
+                        <input type="text" id="edit-author" autocomplete="off" required class="w-full px-3 py-2 border rounded-xl">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">플랫폼</label>
+                        <select id="edit-platform" class="w-full px-3 py-2 border rounded-xl bg-white">
+                            <option value="리디">리디</option>
+                            <option value="북큐브">북큐브</option>
+                            <option value="카카오">카카오</option>
+                            <option value="봄툰">봄툰</option>
+                            <option value="알라딘">알라딘</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- 작품 분류 및 이용 형태 추가 -->
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">작품 분류</label>
+                        <select id="edit-category" class="w-full px-3 py-2 border rounded-xl bg-white">
+                            <option value="단행본">단행본</option>
+                            <option value="웹소설">웹소설</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">이용 형태</label>
+                        <select id="edit-acquisition-type" class="w-full px-3 py-2 border rounded-xl bg-white">
+                            <option value="소장">소장</option>
+                            <option value="대여">대여</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">플랫폼 바로가기 링크</label>
+                    <input type="url" id="edit-link" autocomplete="off" placeholder="https://..." class="w-full px-3 py-2 border rounded-xl">
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">전체 권수/화수</label>
+                        <input type="number" id="edit-total" autocomplete="off" required class="w-full px-3 py-2 border rounded-xl">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">미소장 권수/화수</label>
+                        <input type="number" id="edit-missing" autocomplete="off" class="w-full px-3 py-2 border rounded-xl">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">별점</label>
+                        <select id="edit-rating" class="w-full px-3 py-2 border rounded-xl bg-white">
+                            <option value="5">5.0</option><option value="4.5">4.5</option><option value="4">4.0</option>
+                            <option value="3.5">3.5</option><option value="3">3.0</option><option value="2.5">2.5</option>
+                            <option value="2">2.0</option><option value="1.5">1.5</option><option value="1">1.0</option>
+                            <option value="0.5">0.5</option><option value="0">0</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">구매일</label>
+                        <input type="date" id="edit-purchase-date" autocomplete="off" class="w-full px-3 py-2 border rounded-xl">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-500 mb-1">대여 종료일</label>
+                        <input type="date" id="edit-expire-date" autocomplete="off" class="w-full px-3 py-2 border rounded-xl">
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="edit-is-masterpiece" class="w-4 h-4 text-slate-700 rounded border-slate-300 focus:ring-slate-500">
+                    <label for="edit-is-masterpiece" class="font-bold">인생작 체크</label>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">키워드 (띄어쓰기 구분)</label>
+                    <input type="text" id="edit-keywords" autocomplete="off" class="w-full px-3 py-2 border rounded-xl">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">표지 이미지 (구글 드라이브 주소 등, 콤마 구분)</label>
+                    <input type="text" id="edit-cover-images" autocomplete="off" class="w-full px-3 py-2 border rounded-xl">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">등장인물 (HTML)</label>
+                    <textarea id="edit-characters" rows="2" autocomplete="off" class="w-full px-3 py-2 border rounded-xl"></textarea>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">작품 소개 (HTML)</label>
+                    <textarea id="edit-description" rows="3" autocomplete="off" class="w-full px-3 py-2 border rounded-xl"></textarea>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-500 mb-1">연작 가이드 (HTML)</label>
+                    <textarea id="edit-series-guide" rows="2" autocomplete="off" class="w-full px-3 py-2 border rounded-xl"></textarea>
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeEditModal()" class="px-4 py-2 border rounded-xl">취소</button>
+                    <button type="submit" class="px-4 py-2 bg-slate-700 text-slate-100 rounded-xl">저장</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<script src="app.js"></script>
+    <script>
+        let novels = [];
+        let filteredNovels = [];
+        let fileSha = '';
+        let currentSelectedNovel = null;
+
+        // 필터 상태 변수
+        let filterMissing = false;
+        let filterRent = false;
+        let filterMasterpiece = false;
+        let activePlatform = 'all';
+
+        // 새로고침이나 저장 시에도 현재 페이지 위치를 유지하기 위해 localStorage 연동
+        let currentPage = parseInt(localStorage.getItem('novel_current_page')) || 1;
+        const itemsPerPage = 15;
+        let currentSlideIndex = 0;
+        let currentCoverList = [];
+
+        const listContainer = document.getElementById('novel-list-container');
+        const paginationContainer = document.getElementById('pagination-container');
+        const emptyState = document.getElementById('empty-state');
+        const loadingState = document.getElementById('loading-state');
+        const searchInput = document.getElementById('search-input');
+        const sortSelect = document.getElementById('sort-select');
+        const missingCountEl = document.getElementById('missing-count');
+        const totalNovelCountEl = document.getElementById('total-novel-count');
+
+        // 플랫폼별 색상 매핑 함수
+        function getPlatformBadgeStyle(platform) {
+            switch (platform) {
+                case '리디': return 'bg-[#1e9eff] text-white';
+                case '카카오': return 'bg-[#ffbb02] text-slate-900';
+                case '북큐브': return 'bg-[#fc8a31] text-white';
+                case '봄툰': return 'bg-[#ff36ac] text-white';
+                case '알라딘': return 'bg-[#7b5cff] text-white';
+                default: return 'bg-slate-100 text-slate-700';
+            }
+        }
+
+        // 이용 형태(대여/소장)별 무채색 계열 매핑 함수
+        function getAcquisitionBadgeStyle(type) {
+            if (type === '대여') {
+                return 'bg-slate-200 text-slate-700'; // 밝은 무채색(회색) 계열
+            }
+            return 'bg-slate-700 text-slate-100'; // 진한 무채색(차콜) 계열 (소장)
+        }
+
+        // 단위 판별 헬퍼 함수 ('웹소설'이면 '화', 아니면 '권')
+        function getUnit(category) {
+            return category === '웹소설' ? '화' : '권';
+        }
+
+        // 모달 배경 클릭 시 닫기 핸들러
+        function handleModalBackdropClick(event, modalId) {
+            if (event.target.id === modalId) {
+                if (modalId === 'detail-modal') closeModal();
+                else if (modalId === 'config-modal') closeConfigModal();
+                else if (modalId === 'edit-modal') closeEditModal();
+            }
+        }
+
+        // 구글 드라이브 링크 자동 변환 함수
+        function convertGoogleDriveLink(url) {
+            url = url.trim();
+            if (!url) return '';
+            let fileId = '';
+            let match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+            if (match && match[1]) fileId = match[1];
+            if (!fileId) {
+                match = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+                if (match && match[1]) fileId = match[1];
+            }
+            if (!fileId) {
+                match = url.match(/\/uc\?.*id=([a-zA-Z0-9_-]+)/);
+                if (match && match[1]) fileId = match[1];
+            }
+            if (fileId) return `https://lh3.googleusercontent.com/d/${fileId}`;
+            return url;
+        }
+
+        // 이미지 확대 보기 함수들
+        function openImageViewer(imgSrc) {
+            if (!imgSrc) return;
+            document.getElementById('expanded-image').src = imgSrc;
+            document.getElementById('image-viewer-modal').classList.remove('hidden');
+        }
+        function closeImageViewer() {
+            document.getElementById('image-viewer-modal').classList.add('hidden');
+        }
+
+        function openConfigModal() {
+            document.getElementById('gh-owner').value = localStorage.getItem('gh_owner') || '';
+            document.getElementById('gh-repo').value = localStorage.getItem('gh_repo') || '';
+            document.getElementById('gh-token').value = localStorage.getItem('gh_token') || '';
+            document.getElementById('config-modal').classList.remove('hidden');
+        }
+        function closeConfigModal() { document.getElementById('config-modal').classList.add('hidden'); }
+        function saveConfig() {
+            localStorage.setItem('gh_owner', document.getElementById('gh-owner').value.trim());
+            localStorage.setItem('gh_repo', document.getElementById('gh-repo').value.trim());
+            localStorage.setItem('gh_token', document.getElementById('gh-token').value.trim());
+            closeConfigModal();
+            fetchNovelsFromGitHub();
+        }
+
+        async function fetchNovelsFromGitHub() {
+            const owner = localStorage.getItem('gh_owner');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            if (!owner || !repo || !token) {
+                loadingState.classList.add('hidden');
+                openConfigModal();
+                return;
+            }
+
+            loadingState.classList.remove('hidden');
+            try {
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/novels.json`, {
+                    headers: { 'Authorization': `token ${token}` }
+                });
+                if (!response.ok) throw new Error('GitHub 데이터 로드 실패');
+                const data = await response.json();
+                fileSha = data.sha;
+                novels = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+                loadingState.classList.add('hidden');
+                
+                filterAndSort(true);
+            } catch (error) {
+                loadingState.classList.add('hidden');
+                alert('로드 오류: ' + error.message);
+            }
+        }
+
+        async function saveNovelsToGitHub(successMessage = '저장되었습니다.', keepPage = true) {
+            const owner = localStorage.getItem('gh_owner');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(novels, null, 4))));
+            try {
+                const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/novels.json`, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: 'Update novels archive', content: encoded, sha: fileSha })
+                });
+                if (!res.ok) throw new Error('GitHub 저장 실패');
+                const result = await res.json();
+                fileSha = result.content.sha;
+                if (successMessage) alert(successMessage);
+                
+                filterAndSort(keepPage);
+            } catch (err) {
+                alert('저장 실패: ' + err.message);
+            }
+        }
+
+        function renderStars(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (rating >= i) {
+                    html += '<i class="fa-solid fa-star"></i>';
+                } else if (rating >= i - 0.5) {
+                    html += '<i class="fa-solid fa-star-half-stroke"></i>';
+                } else {
+                    html += '<i class="fa-regular fa-star text-slate-300"></i>';
+                }
+            }
+            return html;
+        }
+
+        function renderList() {
+            listContainer.innerHTML = '';
+            paginationContainer.innerHTML = '';
+
+            const missingCount = novels.filter(n => (n.missing || 0) > 0).length;
+            missingCountEl.textContent = missingCount;
+            totalNovelCountEl.textContent = novels.length;
+
+            if (filteredNovels.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            const totalPages = Math.ceil(filteredNovels.length / itemsPerPage);
+            if (currentPage > totalPages) {
+                currentPage = Math.max(1, totalPages);
+                localStorage.setItem('novel_current_page', currentPage);
+            }
+
+            const currentItems = filteredNovels.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+            currentItems.forEach(novel => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-3.5 rounded-2xl shadow-xs border border-slate-200/80 hover:border-slate-400 transition cursor-pointer flex items-center justify-between gap-3";
+                card.onclick = () => openModal(novel);
+
+                const hasMissing = (novel.missing || 0) > 0;
+                const isMaster = novel.isMasterpiece;
+                const unit = getUnit(novel.category);
+                const platformStyle = getPlatformBadgeStyle(novel.platform || '리디');
+                const acquisitionStyle = getAcquisitionBadgeStyle(novel.acquisitionType || '소장');
+
+                card.innerHTML = `
+                    <div class="min-w-0 flex-1 space-y-1">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            ${isMaster ? '<span class="bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-0.5"><i class="fa-solid fa-crown"></i> 인생작</span>' : ''}
+                            <span class="text-[10px] px-1.5 py-0.5 rounded font-medium ${platformStyle}">${novel.platform || '리디'}</span>
+                            <span class="text-[10px] px-1.5 py-0.5 rounded font-medium ${acquisitionStyle}">${novel.acquisitionType || '소장'}</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-xs truncate">${novel.title}</h3>
+                        <p class="text-[11px] text-slate-400 truncate">${novel.author} · 전체 ${novel.total}${unit}</p>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="text-right">
+                            <div class="text-amber-500 font-bold flex items-center gap-0.5 text-xs">
+                                ${renderStars(novel.rating ?? 5.0)}
+                            </div>
+                        </div>
+                        <div>
+                            ${hasMissing ? '<span class="inline-block w-2 h-2 rounded-full bg-rose-500"></span>' : '<span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>'}
+                        </div>
+                    </div>
+                `;
+                listContainer.appendChild(card);
+            });
+
+            if (totalPages > 1) {
+                const maxVisiblePages = 5;
+                let startPage = Math.floor((currentPage - 1) / maxVisiblePages) * maxVisiblePages + 1;
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+                const prevBtn = document.createElement('button');
+                prevBtn.innerHTML = '<span class="text-[11px] font-bold">&lt;</span>';
+                prevBtn.className = `w-7 h-7 rounded-xl text-xs font-medium transition cursor-pointer flex items-center justify-center bg-white border border-slate-200 text-slate-600 ${startPage === 1 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-slate-50'}`;
+                prevBtn.onclick = () => {
+                    if (startPage > 1) {
+                        currentPage = startPage - maxVisiblePages;
+                        localStorage.setItem('novel_current_page', currentPage);
+                        renderList();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                };
+                paginationContainer.appendChild(prevBtn);
+
+                for (let i = startPage; i <= endPage; i++) {
+                    const btn = document.createElement('button');
+                    btn.textContent = i;
+                    btn.className = `w-7 h-7 rounded-xl text-xs font-medium transition cursor-pointer flex items-center justify-center ${i === currentPage ? 'bg-slate-700 text-slate-100 shadow-xs' : 'bg-white border border-slate-200 text-slate-600'}`;
+                    btn.onclick = () => { 
+                        currentPage = i; 
+                        localStorage.setItem('novel_current_page', currentPage);
+                        renderList(); 
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                    };
+                    paginationContainer.appendChild(btn);
+                }
+
+                const nextBtn = document.createElement('button');
+                nextBtn.innerHTML = '<span class="text-[11px] font-bold">&gt;</span>';
+                nextBtn.className = `w-7 h-7 rounded-xl text-xs font-medium transition cursor-pointer flex items-center justify-center bg-white border border-slate-200 text-slate-600 ${endPage === totalPages ? 'opacity-40 cursor-not-allowed' : 'hover:bg-slate-50'}`;
+                nextBtn.onclick = () => {
+                    if (endPage < totalPages) {
+                        currentPage = endPage + 1;
+                        localStorage.setItem('novel_current_page', currentPage);
+                        renderList();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                };
+                paginationContainer.appendChild(nextBtn);
+            }
+        }
+
+        function filterAndSort(keepPage = true) {
+            const keyword = searchInput.value.toLowerCase().trim();
+            const sortType = sortSelect.value;
+
+            filteredNovels = novels.filter(novel => {
+                const matchSearch = novel.title.toLowerCase().includes(keyword) || novel.author.toLowerCase().includes(keyword);
+                const matchMissing = filterMissing ? (novel.missing || 0) > 0 : true;
+                const matchRent = filterRent ? (novel.acquisitionType === '대여') : true;
+                const matchMasterpiece = filterMasterpiece ? novel.isMasterpiece : true;
+                const matchPlatform = activePlatform === 'all' || novel.platform === activePlatform;
+                return matchSearch && matchMissing && matchRent && matchMasterpiece && matchPlatform;
+            });
+
+            filteredNovels.sort((a, b) => {
+                if (sortType === 'latest') return (b.id || 0) - (a.id || 0);
+                if (sortType === 'title') return a.title.localeCompare(b.title);
+                if (sortType === 'author') return a.author.localeCompare(b.author);
+            });
+
+            if (!keepPage) {
+                currentPage = 1;
+                localStorage.setItem('novel_current_page', currentPage);
+            } else {
+                const totalPages = Math.ceil(filteredNovels.length / itemsPerPage) || 1;
+                if (currentPage > totalPages) {
+                    currentPage = totalPages;
+                    localStorage.setItem('novel_current_page', currentPage);
+                }
+            }
+            renderList();
+        }
+
+        searchInput.addEventListener('input', () => filterAndSort(false));
+        sortSelect.addEventListener('change', () => filterAndSort(false));
+
+        const filterMissingBtn = document.getElementById('filter-missing-btn');
+        filterMissingBtn.onclick = function() {
+            filterMissing = !filterMissing;
+            if (filterMissing) {
+                this.className = "border border-rose-500 bg-rose-500 hover:bg-rose-600 text-white px-2.5 py-2 rounded-xl text-[11px] font-medium transition cursor-pointer";
+            } else {
+                this.className = "border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer";
+            }
+            filterAndSort(false);
+        };
+
+        const filterRentBtn = document.getElementById('filter-rent-btn');
+        filterRentBtn.onclick = function() {
+            filterRent = !filterRent;
+            if (filterRent) {
+                this.className = "border border-sky-500 bg-sky-500 hover:bg-sky-600 text-white px-2.5 py-2 rounded-xl text-[11px] font-medium transition cursor-pointer";
+            } else {
+                this.className = "border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer";
+            }
+            filterAndSort(false);
+        };
+
+        const filterMasterpieceBtn = document.getElementById('filter-masterpiece-btn');
+        filterMasterpieceBtn.onclick = function() {
+            filterMasterpiece = !filterMasterpiece;
+            if (filterMasterpiece) {
+                this.className = "border border-amber-500 bg-amber-500 hover:bg-amber-600 text-white px-2.5 py-2 rounded-xl text-[11px] font-medium transition cursor-pointer";
+            } else {
+                this.className = "border border-slate-200 bg-slate-50 hover:bg-slate-100 px-2.5 py-2 rounded-xl text-[11px] font-medium transition text-slate-700 cursor-pointer";
+            }
+            filterAndSort(false);
+        };
+
+        document.querySelectorAll('.platform-filter-btn').forEach(btn => {
+            btn.onclick = function() {
+                document.querySelectorAll('.platform-filter-btn').forEach(b => {
+                    b.classList.remove('bg-slate-700', 'text-slate-100');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                this.classList.remove('bg-slate-100', 'text-slate-600');
+                this.classList.add('bg-slate-700', 'text-slate-100');
+                activePlatform = this.dataset.platform;
+                filterAndSort(false);
+            };
+        });
+
+        const detailModal = document.getElementById('detail-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(novel) {
+            currentSelectedNovel = novel;
+            const unit = getUnit(novel.category);
+
+            document.getElementById('modal-title').textContent = novel.title;
+            document.getElementById('modal-author').textContent = novel.author;
+            document.getElementById('modal-volume-label').textContent = novel.category === '웹소설' ? '화수 (미소장)' : '권수 (미소장)';
+            document.getElementById('modal-volumes').textContent = `${novel.total}${unit} (${novel.missing || 0}${unit})`;
+            document.getElementById('modal-link').href = novel.link && novel.link !== '#' ? novel.link : '#';
+
+            const masterBadge = document.getElementById('modal-badge-masterpiece');
+            if (novel.isMasterpiece) masterBadge.classList.remove('hidden');
+            else masterBadge.classList.add('hidden');
+
+            document.getElementById('modal-badge-category').textContent = novel.category || '웹소설';
+            
+            const modalPlatformBadge = document.getElementById('modal-badge-platform');
+            modalPlatformBadge.textContent = novel.platform || '리디';
+            modalPlatformBadge.className = `px-2 py-0.5 rounded-md font-medium text-[10px] ${getPlatformBadgeStyle(novel.platform || '리디')}`;
+
+            const modalTypeBadge = document.getElementById('modal-badge-type');
+            modalTypeBadge.textContent = novel.acquisitionType || '소장';
+            modalTypeBadge.className = `px-2 py-0.5 rounded-md font-medium text-[10px] ${getAcquisitionBadgeStyle(novel.acquisitionType || '소장')}`;
+
+            document.getElementById('modal-rating-stars').innerHTML = renderStars(novel.rating ?? 5.0);
+
+            let dateStr = novel.purchaseDate ? `${novel.purchaseDate}` : '';
+            if (novel.expireDate) dateStr += ` ~ ${novel.expireDate}`;
+            document.getElementById('modal-dates').textContent = dateStr || '정보 없음';
+
+            const coverSec = document.getElementById('modal-cover-section');
+            if (novel.coverImages) {
+                currentCoverList = novel.coverImages.split(',').map(s => convertGoogleDriveLink(s)).filter(Boolean);
+                if (currentCoverList.length > 0) {
+                    coverSec.classList.remove('hidden');
+                    switchCoverView('grid');
+                } else {
+                    coverSec.classList.add('hidden');
+                }
+            } else {
+                coverSec.classList.add('hidden');
+            }
+
+            const kwContainer = document.getElementById('modal-keywords-container');
+            const kwEl = document.getElementById('modal-keywords');
+            if (novel.keywords) {
+                kwContainer.classList.remove('hidden');
+                kwEl.innerHTML = novel.keywords.split(/\s+/).map(k => `<span class="bg-slate-100 text-slate-700 px-2 py-1 rounded-lg text-xs font-medium">#${k.replace(/^#/, '')}</span>`).join('');
+            } else {
+                kwContainer.classList.add('hidden');
+            }
+
+            renderHtmlField('modal-chars-container', 'modal-characters', novel.characters);
+            renderHtmlField('modal-desc-container', 'modal-description', novel.description);
+            renderHtmlField('modal-guide-container', 'modal-series-guide', novel.seriesGuide);
+
+            detailModal.classList.remove('hidden');
+            setTimeout(() => {
+                detailModal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function renderHtmlField(containerId, contentId, htmlText) {
+            const container = document.getElementById(containerId);
+            const content = document.getElementById(contentId);
+            if (htmlText) {
+                container.classList.remove('hidden');
+                content.innerHTML = htmlText;
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
+        function closeModal() {
+            detailModal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => detailModal.classList.add('hidden'), 200);
+        }
+
+        function switchCoverView(mode) {
+            const gridView = document.getElementById('cover-grid-view');
+            const slideView = document.getElementById('cover-slide-view');
+            if (mode === 'grid') {
+                gridView.classList.remove('hidden');
+                slideView.classList.add('hidden');
+                gridView.innerHTML = currentCoverList.map(url => `
+                    <div class="aspect-[3/4] bg-slate-100 rounded-xl overflow-hidden border border-slate-200 cursor-pointer" onclick="openImageViewer('${url}')">
+                        <img src="${url}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
+                    </div>
+                `).join('');
+            } else {
+                gridView.classList.add('hidden');
+                slideView.classList.remove('hidden');
+                currentSlideIndex = 0;
+                updateSlideImage();
+            }
+        }
+        function updateSlideImage() {
+            document.getElementById('slide-img').src = currentCoverList[currentSlideIndex] || '';
+        }
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + currentCoverList.length) % currentCoverList.length;
+            updateSlideImage();
+        }
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % currentCoverList.length;
+            updateSlideImage();
+        }
+
+        function deleteCurrentNovel() {
+            if (!currentSelectedNovel) return;
+            if (confirm(`"${currentSelectedNovel.title}" 작품을 아카이브에서 삭제하시겠습니까?`)) {
+                novels = novels.filter(n => n.id !== currentSelectedNovel.id);
+                closeModal();
+                saveNovelsToGitHub('작품이 삭제되었습니다.', true);
+            }
+        }
+
+        function editCurrentNovel() {
+            document.getElementById('edit-form').reset();
+
+            const n = currentSelectedNovel;
+            document.getElementById('edit-id').value = n.id;
+            document.getElementById('edit-title').value = n.title;
+            document.getElementById('edit-author').value = n.author;
+            document.getElementById('edit-platform').value = n.platform || '리디';
+            document.getElementById('edit-category').value = n.category || '단행본';
+            document.getElementById('edit-acquisition-type').value = n.acquisitionType || '소장';
+            document.getElementById('edit-link').value = n.link || ''; 
+            document.getElementById('edit-total').value = n.total;
+            document.getElementById('edit-missing').value = n.missing || 0;
+            document.getElementById('edit-rating').value = n.rating ?? 5;
+            document.getElementById('edit-purchase-date').value = n.purchaseDate || '';
+            document.getElementById('edit-expire-date').value = n.expireDate || '';
+            document.getElementById('edit-is-masterpiece').checked = !!n.isMasterpiece;
+            document.getElementById('edit-keywords').value = n.keywords || '';
+            document.getElementById('edit-cover-images').value = n.coverImages || '';
+            document.getElementById('edit-characters').value = n.characters || '';
+            document.getElementById('edit-description').value = n.description || '';
+            document.getElementById('edit-series-guide').value = n.seriesGuide || '';
+
+            closeModal();
+            document.getElementById('edit-modal').classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').classList.add('hidden');
+            document.getElementById('edit-form').reset();
+        }
+
+        document.getElementById('edit-form').onsubmit = async function(e) {
+            e.preventDefault();
+            const id = parseInt(document.getElementById('edit-id').value);
+            const index = novels.findIndex(n => n.id === id);
+            if (index === -1) return;
+
+            const rawCoverImages = document.getElementById('edit-cover-images').value.trim();
+            let coverImages = '';
+            if (rawCoverImages) {
+                coverImages = rawCoverImages
+                    .split(',')
+                    .map(imgUrl => convertGoogleDriveLink(imgUrl))
+                    .filter(Boolean)
+                    .join(', ');
+            }
+
+            novels[index] = {
+                ...novels[index],
+                title: document.getElementById('edit-title').value.trim(),
+                author: document.getElementById('edit-author').value.trim(),
+                platform: document.getElementById('edit-platform').value,
+                category: document.getElementById('edit-category').value,
+                acquisitionType: document.getElementById('edit-acquisition-type').value,
+                link: document.getElementById('edit-link').value.trim(),
+                total: parseInt(document.getElementById('edit-total').value),
+                missing: parseInt(document.getElementById('edit-missing').value) || 0,
+                rating: parseFloat(document.getElementById('edit-rating').value),
+                purchaseDate: document.getElementById('edit-purchase-date').value,
+                expireDate: document.getElementById('edit-expire-date').value,
+                isMasterpiece: document.getElementById('edit-is-masterpiece').checked,
+                keywords: document.getElementById('edit-keywords').value.trim(),
+                coverImages: coverImages,
+                characters: document.getElementById('edit-characters').value.trim(),
+                description: document.getElementById('edit-description').value.trim(),
+                seriesGuide: document.getElementById('edit-series-guide').value.trim()
+            };
+
+            closeEditModal();
+            saveNovelsToGitHub('성공적으로 수정되었습니다.', true);
+        };
+
+        fetchNovelsFromGitHub();
+    </script>
 </body>
 </html>
