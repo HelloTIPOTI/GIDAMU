@@ -1,5 +1,28 @@
 [
   {
+    "title": "러디 칙스",
+    "artist": "태온",
+    "writer": "제이제이",
+    "day": "월",
+    "platform": [
+      "리디"
+    ],
+    "currentEp": "6",
+    "totalEp": "37",
+    "startDate": "",
+    "endDate": "",
+    "note": "",
+    "link": "https://ridibooks.com/books/297084100",
+    "link2": "",
+    "thumbnail": "https://lh3.googleusercontent.com/d/1tuk1qU4cA2NwOZMDmBOAmk1tZX8cAmZl",
+    "images": [
+      "https://lh3.googleusercontent.com/d/1tuk1qU4cA2NwOZMDmBOAmk1tZX8cAmZl",
+      "https://lh3.googleusercontent.com/d/12HnFBZrgcF_T3cDX6OFiwoCWGpjJCJtf",
+      "https://lh3.googleusercontent.com/d/1E5b_m4M0BkGT_WFLt2zedwNZB7k2asf9"
+    ],
+    "favorite": false
+  },
+  {
     "title": "알을 훔치다",
     "artist": "맥사",
     "writer": "라임나무",
