@@ -4359,11 +4359,12 @@
     "endDate": "",
     "note": "7일무, 대여권 12",
     "link": "https://webtoon.kakao.com/content/%EC%9C%A0%EC%9B%94%EC%9D%98-%EB%8A%90%EC%99%80%EB%A5%B4/4464",
-    "link2": "",
+    "link2": "https://page.kakao.com/content/67276573",
     "thumbnail": "https://lh3.googleusercontent.com/d/1KyXRejNyLFokn8_biUdJaiwrWR-ZdoBM",
     "images": [
       "https://lh3.googleusercontent.com/d/1KyXRejNyLFokn8_biUdJaiwrWR-ZdoBM"
-    ]
+    ],
+    "favorite": false
   },
   {
     "title": "가면극",
