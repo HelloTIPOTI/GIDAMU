@@ -4173,28 +4173,6 @@
     "favorite": false
   },
   {
-    "title": "맹수주의보",
-    "artist": "갈비",
-    "writer": "얼음먼지",
-    "day": "월",
-    "platform": [
-      "카카오"
-    ],
-    "currentEp": "39",
-    "totalEp": "39",
-    "startDate": "",
-    "endDate": "",
-    "note": "3일무",
-    "link": "https://page.kakao.com/content/69401797",
-    "link2": "",
-    "thumbnail": "https://lh3.googleusercontent.com/d/1fT5Zd7z6scTuWO2sT16WCPmrwdI3B7CE",
-    "images": [
-      "https://lh3.googleusercontent.com/d/1fT5Zd7z6scTuWO2sT16WCPmrwdI3B7CE",
-      "https://lh3.googleusercontent.com/d/19Ocmxfo9MbmkltIXyhLT-1avQSVR4pSh"
-    ],
-    "favorite": true
-  },
-  {
     "title": "페이트 메이트",
     "artist": "시르",
     "writer": "",
